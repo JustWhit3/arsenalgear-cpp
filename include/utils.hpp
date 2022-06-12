@@ -7,7 +7,7 @@
 #include <type_traits>
 #include <vector>
 
-using namespace std::string_literals;
+using namespace std::literals::string_literals;
 
 namespace agr
  {
