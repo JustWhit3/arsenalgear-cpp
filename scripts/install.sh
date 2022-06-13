@@ -33,16 +33,9 @@ echo ""
 #     COMPILATION OF THE SOURCE CODE
 #     (check if doctest is installed)
 #====================================================
-if [ -f "/usr/include/doctest.h" ] ; then
+if [ -f "/usr/include/doctest.h" ] || [ -f "/usr/include/doctest/doctest.h" ] ; then
     echo "Compiling the whole arsenalgear code..."
     if ! make ; then
-        echo "Compilation failed!"
-        exit
-    fi
-elif [ -f "/usr/include/doctest/doctest.h" ] ; then
-    echo "Doctest is installed in /usr/include/doctest folder, move it in /usr/include in order to correctly use it for the library tests!"
-    echo "Compiling only the main code of arsenalgear (this is not a problem for the installation)..."
-    if ! make $main ; then
         echo "Compilation failed!"
         exit
     fi
