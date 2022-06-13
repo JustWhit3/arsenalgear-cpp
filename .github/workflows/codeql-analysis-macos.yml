@@ -37,14 +37,11 @@ jobs:
        gcc -v
        clang -v
 
-       ls -lstr /Library/Developer/CommandLineTools/usr/include/c++/*
-
        exprtk_sha1=ca5c577917646ddba3f71ce6d5dd7d01f351ee80
        wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
        mv $exprtk_sha1.zip exprtk-$exprtk_sha1.zip
        unzip exprtk-$exprtk_sha1.zip
-       sudo cp exprtk-$exprtk_sha1/exprtk.hpp /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++:
-       
+       sudo cp exprtk-$exprtk_sha1/exprtk.hpp /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/4.2.1
        rm -rf exprtk-*
 
        make
