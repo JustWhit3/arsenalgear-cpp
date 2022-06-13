@@ -39,12 +39,13 @@ TEST_OBJ := $(TEST:%=$(OBJ_DIR)/%.o)
 #====================================================
 DEPS := $(OBJ:.o=.d)
 INC_DIR := $(shell find $(SRC_DIR) -type d)
+INC_FLAGS := $(addprefix -I,$(INC_DIR))
 ifeq ($(UNAME_S),Darwin)
-    INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,`pcre-config --cflags`)
+	CPPFLAGS := -std=c++17 -g `pcre-config --cflags` $(INC_FLAGS) -MMD -MP
 else
-	INC_FLAGS := $(addprefix -I,$(INC_DIR))
+	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 endif
-CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+
 
 #====================================================
 #     ALIASES
