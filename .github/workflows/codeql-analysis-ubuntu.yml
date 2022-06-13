@@ -35,7 +35,6 @@ jobs:
       run: |
        sudo apt install build-essential g++ libboost-all-dev wget unzip doctest-dev
        sudo mv /usr/include/doctest/* /usr/include
-       pip install hurry.filesize termcolor
 
        exprtk_sha1=ca5c577917646ddba3f71ce6d5dd7d01f351ee80
        wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
