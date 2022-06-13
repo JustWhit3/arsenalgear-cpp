@@ -3,6 +3,10 @@
 #====================================================
 TARGET_EXEC := examples
 TEST_EXEC := tests
+ifeq ($(OS), Windows_NT)
+	TARGET_EXEC += .exe
+	TEST_EXEC += .exe
+endif
 LIB := libarsenalgear.a
 CC := g++
 UNAME_S := $(shell uname -s)
@@ -41,16 +45,6 @@ else
 	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 endif
 CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
-
-#====================================================
-#     OS DETECTION
-#====================================================
-
-# Windows (Cygwin)
-ifeq ($(OS), Windows_NT)
-	TARGET_EXEC += .exe
-	TEST_EXEC += .exe
-endif
 
 #====================================================
 #     ALIASES
