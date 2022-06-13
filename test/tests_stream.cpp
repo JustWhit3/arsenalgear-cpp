@@ -4,7 +4,7 @@
 #include "../include/stream.hpp"
 
 // Extra headers
-#include <doctest.h>
+#include <doctest/doctest.h>
 
 // STD headers
 #include <iostream>

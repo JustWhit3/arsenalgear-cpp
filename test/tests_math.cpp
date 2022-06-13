@@ -4,7 +4,7 @@
 #include "../include/math.hpp"
 
 //Extra headers
-#include <doctest.h>
+#include <doctest/doctest.h>
 
 //====================================================
 //     ROUNDOFF
