@@ -6,6 +6,7 @@
 #include <functional>
 #include <type_traits>
 #include <vector>
+#include <string>
 
 using namespace std::literals::string_literals;
 
