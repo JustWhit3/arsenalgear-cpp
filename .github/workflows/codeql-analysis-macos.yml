@@ -33,9 +33,8 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
+       ls /usr/include/*
        brew install boost doctest
-       gcc -v
-       clang -v
 
        exprtk_sha1=ca5c577917646ddba3f71ce6d5dd7d01f351ee80
        wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
