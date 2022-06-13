@@ -34,6 +34,8 @@ jobs:
     - name: Installing extra dependencies and compiling
       run: |
        brew install boost doctest
+       gcc -v
+       clang -v
 
        ls -lstr /Library/Developer/CommandLineTools/usr/include/c++/*
 
