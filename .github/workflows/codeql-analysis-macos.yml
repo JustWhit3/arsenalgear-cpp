@@ -36,10 +36,6 @@ jobs:
        # pcre-config --libs --cflags
        brew install boost doctest
 
-       echo $C_INCLUDE_PATH
-       export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/local/Cellar/pcre/8.45/include
-       echo $C_INCLUDE_PATH
-
        exprtk_sha1=ca5c577917646ddba3f71ce6d5dd7d01f351ee80
        wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
        mv $exprtk_sha1.zip exprtk-$exprtk_sha1.zip
