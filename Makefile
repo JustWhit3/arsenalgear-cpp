@@ -4,7 +4,7 @@
 TARGET_EXEC := examples
 TEST_EXEC := tests
 LIB := libarsenalgear.a
-CC := g++
+CC := c++
 
 #====================================================
 #     FOLDERS
@@ -35,7 +35,7 @@ TEST_OBJ := $(TEST:%=$(OBJ_DIR)/%.o)
 DEPS := $(OBJ:.o=.d)
 INC_DIR := $(shell find $(SRC_DIR) -type d)
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
-CPPFLAGS := -std=c++17 -stdlib=libc++ -ltbb -g $(INC_FLAGS) -MMD -MP
+CPPFLAGS := -std=gnu++17 -g $(INC_FLAGS) -MMD -MP
 
 #====================================================
 #     OS DETECTION
