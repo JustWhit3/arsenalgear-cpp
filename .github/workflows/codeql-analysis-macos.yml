@@ -33,14 +33,14 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
-       # pcre-config --libs --cflags
        brew install boost doctest
+       INCLUDE="$(pcre-config --libs --cflags)"
 
        exprtk_sha1=ca5c577917646ddba3f71ce6d5dd7d01f351ee80
        wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
        mv $exprtk_sha1.zip exprtk-$exprtk_sha1.zip
        unzip exprtk-$exprtk_sha1.zip
-       sudo cp exprtk-$exprtk_sha1/exprtk.hpp /usr/local/Cellar/pcre/8.45/include
+       sudo cp exprtk-$exprtk_sha1/exprtk.hpp $INCLUDE
 
        make
     - name: Perform CodeQL Analysis
