@@ -39,7 +39,7 @@ jobs:
        wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
        mv $exprtk_sha1.zip exprtk-$exprtk_sha1.zip
        unzip exprtk-$exprtk_sha1.zip
-       sudo cp exprtk-$exprtk_sha1/exprtk.hpp /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/
+       sudo cp exprtk-$exprtk_sha1/exprtk.hpp /usr/include/
        rm -rf exprtk-*
 
        make
