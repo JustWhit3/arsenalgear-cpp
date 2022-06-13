@@ -36,7 +36,7 @@ jobs:
        # pcre-config --libs --cflags
        brew install boost doctest
 
-       mkdir -p /usr/include
+       sudo mkdir -p /usr/include
        export C_INCLUDE_PATH=$C_INCLUDE_PATH:/usr/include
 
        exprtk_sha1=ca5c577917646ddba3f71ce6d5dd7d01f351ee80
