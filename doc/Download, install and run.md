@@ -26,7 +26,7 @@ Tools:
 - g++ compiler (g++ 9.3.0 has been tested so far) for compilation.
 - [GNU make](https://www.opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/#:~:text=Installing%20GNU%20Make,install%20build%2Dessential.) for compilation.
 
-> **NOTE**: if you are on MacOS you would need also [Xcode](https://www.freecodecamp.org/news/how-to-download-and-install-xcode/) installed.
+> **NOTE**: if you are on MacOS you would need also [Xcode](https://www.freecodecamp.org/news/how-to-download-and-install-xcode/) and [Homebrew](https://brew.sh/index_it) installed.
 
 Libraries and frameworks:
 
