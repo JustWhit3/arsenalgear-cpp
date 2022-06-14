@@ -45,7 +45,11 @@ TEST_OBJ := $(TEST:%=$(OBJ_DIR)/%.o)
 #     DEPENDENCIES AND FLAGS
 #====================================================
 DEPS := $(OBJ:.o=.d)
-INC_DIR := $(shell find $(SRC_DIR) -type d)
+ifeq ($(OS), Windows_NT)
+    INC_DIR := $(SRC_DIR)
+else
+	INC_DIR := $(shell find $(SRC_DIR) -type d)
+endif
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
 ifeq ($(UNAME_S),Darwin)
 	CPPFLAGS := -std=c++17 -g `pcre-config --cflags` $(INC_FLAGS) -MMD -MP
