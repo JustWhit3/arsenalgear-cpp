@@ -33,13 +33,15 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
-       choco install make boost-msvc-14.1 wget
+       choco install wget
 
        # gcc ?
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip
        unzip master.zip
-       cp -r doctest-master/doctest /usr/include
+       rm master.zip
+       mkdir -p /usr/include/doctest
+       cp doctest-master/doctest/doctest.h /usr/include/doctest
        rm -rf doctest-master
 
        wget https://github.com/ArashPartow/exprtk/archive/ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
@@ -47,6 +49,8 @@ jobs:
        unzip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
        cp exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80/exprtk.hpp /usr/include/
        rm -rf exprtk-*
+
+       choco install make boost-msvc-14.1
 
        make
     - name: Perform CodeQL Analysis
