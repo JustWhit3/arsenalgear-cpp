@@ -39,7 +39,7 @@ jobs:
        unzip master.zip
        rm master.zip
        mkdir -p /usr/include/doctest
-       cp doctest-master/doctest/doctest.h msys64\mings64\include
+       cp doctest-master/doctest/doctest.h /msys64/mings64/include
        rd -r doctest-master
 
        make
