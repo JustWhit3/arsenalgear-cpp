@@ -72,8 +72,8 @@ arsenalgear/
 │   ├── tests_stream.cpp
 │   ├── tests_utils.cpp
 ├── scripts/
-│   ├── install_cpp.sh
-│   ├── uninstall_cpp.sh
+│   ├── install.sh
+│   ├── uninstall.sh
 │   ├── debug.sh
 │   ├── update.sh
 │   ├── size_of_dir.py

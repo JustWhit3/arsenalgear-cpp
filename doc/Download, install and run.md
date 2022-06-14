@@ -2,9 +2,6 @@
 
 ## Table of contents
 
-- [Download](#download)
-  - [Download the whole repository](#download-the-whole-repository)
-  - [Download the latest release](#download-the-latest-release)
 - [Prerequisites](#prerequisites)
   - [Mandatory](#mandatory)
   - [Optional](#optional)
@@ -16,64 +13,6 @@
   - [Compile the source code example and testing](#compile-the-source-code-example-and-testing)
 - [Other scripts](#other-scripts)
   - [debug_cpp.sh](#debugsh)
-
-## Download
-
-To download the library you can proceed in two independent ways.
-
-### Download the whole repository
-
-First of all, you need to download the code: go to the [main page](https://github.com/JustWhit3/arsenalgear-cpp) of the repository and click on the upper right green button called `Code`. Than click on `Download ZIP` and wait the download to be completed.
-
-Then open a fresh shell and move the downloaded zipped file to your home directory (or to any other place you prefer):
-
-```shell
-mv Downloads/arsenalgear-cpp-main.zip $HOME
-```
-
-Where ``Downloads`` have to be replaced with the right name (and maybe the right path) of your downloads directory.
-
-Now you have to enter your home folder (unless you were already in it, in this case skip this passage), extract the folder from the zipped file and renaming itself with its right repository name. Therefore lets type this commands one after the other:
-
-```shell
-cd $HOME
-unzip arsenalgear-cpp-main.zip
-mv arsenalgear-cpp-main arsenalgear-cpp
-```
-
-And that's all. You can enter the folder by simply typing:
-
-```shell
-cd arsenalgear-cpp
-```
-
-### Download the latest release
-
-Alternatively you can download the latest version of the repository from the ``Releases`` button on the right of the repository main page by clicking on the source code link. In this case the procedure is similar:
-
-Open a fresh shell and move the downloaded zipped file to your home directory (or to any other place you prefer):
-
-```shell
-mv Downloads/arsenalgear-cpp-x.y.z.zip $HOME
-```
-
-Where `x.y.z` is the release tag and ``Downloads`` have to be replaced with the right name (and maybe the right path) of your downloads directory.
-
-Now you have to enter your home folder (unless you were already in it, in this case skip this passage), extract the folder from the zipped file and renaming itself with its right repository name. Therefore lets type this commands one after the other:
-
-```shell
-cd $HOME
-unzip arsenalgear-cpp-x.y.z.zip
-mv arsenalgear-cpp-x.y.z arsenalgear-cpp
-```
-
-> If you prefer to download the tar.gz format of the release you have to run the `gunzip` command followed by the `tar -xvf` command on the zipped release folder and than proceed with `mv`.
-
-And that's all. You can enter the folder by simply typing:
-
-```shell
-cd arsenalgear-cpp
-```
 
 ## Prerequisites
 
@@ -99,26 +38,28 @@ Tools:
 - [Valgrind](https://valgrind.org/) to run the [debug.sh](#debugsh) script.
 - [Cppcheck](https://github.com/danmar/cppcheck) to run the [debug.sh](#debugsh) script.
 - [Clang formatter](https://stackoverflow.com/questions/20756924/how-can-i-install-clang-format-in-ubuntu#:~:text=16.04%2C%20simply%20do%3A-,sudo%20apt%20install%20clang%2Dformat,-Share) to format the code for pull requests.
-- [wget](https://www.techwalla.com/articles/how-to-install-wget-in-ubuntu) to download extra dependencies repositories.
-- [unzip](https://www.mysoftkey.com/linux/how-to-do-zip-and-unzip-file-in-ubuntu-linux/) to unzip zipped directories during download and installation.
+- [wget](https://www.techwalla.com/articles/how-to-install-wget-in-ubuntu) for the installer script.
+- [unzip](https://www.mysoftkey.com/linux/how-to-do-zip-and-unzip-file-in-ubuntu-linux/) for the installer script.
 
 Libraries and frameworks:
 
 - [doctest](https://github.com/onqtam/doctest) for testing.
+- [hurry.filesize](https://pypi.org/project/hurry.filesize/) for `size_of_dir.py` script, used in the installer script.
+- [termcolor](https://pypi.org/project/termcolor/) for `size_of_dir.py` script, used in the installer script..
 
 ## Install
 
 An installer script, called [install.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/install.sh), has been introduced. This script can be used to properly install the library into your computer, in order to easily use it in your programs.
 
-Once the source code has been downloaded you can simply run this script. Enter the arsenalgear folder and type this command on the shell:
+Once the source code has been downloaded you can simply run this script from the root directory of the library:
 
 ```shell
 ./scripts/install.sh
 ```
+> **NOTE**: this script supports the installation on Ubuntu and MacOS operating systems.
 
-> **NOTE**: scripts have to be run directly from the repository home directory.
-
-A new library *libarsenalgear* will be created into the `/usr/local/lib` folder of your computer and the [*header*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include) files will be installed into `/usr/local/include`.
+A new library *libarsenalgear.a* will be created into the `/usr/local/lib` folder of your computer and the [*header*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include) files will be installed into `/usr/local/include`.
+> **NOTE**: if you are on MacOS the paths are slightly different (looks at [install.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/install.sh)).
 
 ## Update
 
@@ -175,6 +116,11 @@ Supposing you are using the library in a program called *program.cpp*, to compil
 ```shell
 g++ program.cpp -larsenalgear
 ```
+> **NOTE**: if you are on MacOS you probably need to add also the `pcre-config --cflags` flag:
+>
+> ```shell
+> g++ program.cpp `pcre-config --cflags` -larsenalgear
+> ```
 
 and then you can run the code with:
 
@@ -193,6 +139,7 @@ To compile them I prepared a [Makefile](https://github.com/JustWhit3/arsenalgear
 ```shell
 make
 ```
+> **NOTE**: this Makefile is compatible with Ubuntu and MacOS operating systems.
 
 This will compile both main and test codes. An extra **obj** folder with object files and a **bin** folder with two executables, *main* and *tests*, are now created.
 >**NOTE**: compilation may be slow due to the expensive operation of the `parsed_f` function, which uses the ExprTK library.

@@ -18,7 +18,7 @@ tool() {
 #     VALGRIND EXECUTION COMMAND
 #====================================================
 if [ "$2" == "all" ] ; then
-    for exec in cpp/bin/*
+    for exec in bin/*
     do
         echo ""
         echo "Running $1 tool on $exec..."

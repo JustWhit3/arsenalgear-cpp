@@ -5,6 +5,10 @@
 #====================================================
 declare -a headers=("arsenalgear" )
 declare -a libraries=("arsenalgear.a")
+if [[ "$UNAME" == Darwin* ]] ; then
+    INCLUDE=$(pcre-config --cflags)
+    LIB=$(pcre-config --libs)
+fi
 
 #====================================================
 #     UNINSTALL THE REPOSITORY
@@ -16,14 +20,22 @@ echo "Uninstalling the repository..."
 echo "Removing headers into /usr/local/include folder..."
 for header in "${headers[@]}"
 do
-    sudo rm -rf /usr/local/include/$header
+    if [[ "$UNAME" == Darwin* ]] ; then
+        sudo rm -rf "${INCLUDE:2}/$header"
+    else
+        sudo rm -rf /usr/local/include/"$header"
+    fi
 done
 
 #Deleting libraries:
 echo "Removing libraries into /usr/local/lib folder... "
 for library in "${libraries[@]}"
 do
-    sudo rm /usr/local/lib/$library
+    if [[ "$UNAME" == Darwin* ]] ; then
+        sudo rm -rf "${LIB:2}/$header"
+    else
+        sudo rm /usr/local/lib/"$library"
+    fi
 done
 
 #Final messages:
