@@ -32,19 +32,19 @@ jobs:
         languages: ${{ matrix.language }}
     
     - name: Installing extra dependencies and compiling
+      shell: msys
       run: |
-       echo %OSTYPE%
-       choco install make boost-msvc-14.1
+       # choco install make boost-msvc-14.1
 
        # Scarica doctest
 
        # gcc ?
 
        export exprtk_sha1=ca5c577917646ddba3f71ce6d5dd7d01f351ee80
-       wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
-       mv $exprtk_sha1.zip exprtk-$exprtk_sha1.zip
-       unzip exprtk-$exprtk_sha1.zip
-       sudo cp exprtk-$exprtk_sha1/exprtk.hpp /usr/include/
+       wget https://github.com/ArashPartow/exprtk/archive/ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
+       mv ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
+       unzip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
+       sudo cp exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80/exprtk.hpp /usr/include/
        rm -rf exprtk-*
 
        make
