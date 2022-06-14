@@ -33,6 +33,7 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
+       echo $OSTYPE
        choco install mingw -y
        choco install make gcc choco install boost-msvc-14.1
 
