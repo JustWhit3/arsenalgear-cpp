@@ -33,17 +33,17 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
-       # choco install make boost-msvc-14.1 wget
-
-       # Scarica doctest
-
-       # gcc ?
-
        wget https://github.com/ArashPartow/exprtk/archive/ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
        mv ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
        unzip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
        sudo cp exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80/exprtk.hpp /usr/include/
        rm -rf exprtk-*
+
+       # choco install make boost-msvc-14.1 wget
+
+       # Scarica doctest
+
+       # gcc ?
 
        make
     - name: Perform CodeQL Analysis
