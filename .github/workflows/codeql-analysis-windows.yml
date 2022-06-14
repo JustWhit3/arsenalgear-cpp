@@ -33,6 +33,8 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
+       make
+
        choco install wget
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip

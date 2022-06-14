@@ -25,9 +25,9 @@ LIB_DIR := lib
 #     SOURCE FILES
 #====================================================
 ifeq ($(OS), Windows_NT)
-	SRC := $(shell dir /b /s $(SRC_DIR) -name '*.cpp')
-	SRC_LIB := $(shell dir /b /s $(SRC_DIR) -type f | grep -v 'examples.cpp')
-	TEST := $(shell dir /b /s $(SRC_DIR) -type f | grep -v 'examples.cpp') $(shell dir /b /s $(TEST_DIR) -name '*.cpp')
+	SRC := $(wildcard $(SRC_DIR)/*.cpp) 
+	SRC_LIB := $(filter-out $(SRC_DIR)/examples.cpp, $(wildcard $(SRC_DIR)/*.cpp))
+	TEST := $(filter-out $(SRC_DIR)/examples.cpp, $(wildcard $(SRC_DIR)/*.cpp)) $(wildcard $(TEST_DIR)/*.cpp) 
 else
 	SRC := $(shell find $(SRC_DIR) -name '*.cpp')
 	SRC_LIB := $(shell find $(SRC_DIR) -type f | grep -v 'examples.cpp')
