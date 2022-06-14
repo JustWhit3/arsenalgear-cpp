@@ -1,11 +1,12 @@
 #====================================================
 #     VARIABLES
 #====================================================
-TARGET_EXEC := examples
-TEST_EXEC := tests
 ifeq ($(OS), Windows_NT)
-	TARGET_EXEC += .exe
-	TEST_EXEC += .exe
+	TARGET_EXEC += examples.exe
+	TEST_EXEC += tests.exe
+else
+	TARGET_EXEC := examples
+	TEST_EXEC := tests
 endif
 LIB := libarsenalgear.a
 CC := g++
@@ -23,9 +24,15 @@ LIB_DIR := lib
 #====================================================
 #     SOURCE FILES
 #====================================================
-SRC := $(shell find $(SRC_DIR) -name '*.cpp')
-SRC_LIB := $(shell find $(SRC_DIR) -type f | grep -v 'examples.cpp')
-TEST := $(shell find $(SRC_DIR) -type f | grep -v 'examples.cpp') $(shell find $(TEST_DIR) -name '*.cpp')
+ifeq ($(OS), Windows_NT)
+	SRC := $(shell dir /b /s $(SRC_DIR) -name '*.cpp')
+	SRC_LIB := $(shell dir /b /s $(SRC_DIR) -type f | grep -v 'examples.cpp')
+	TEST := $(shell dir /b /s $(SRC_DIR) -type f | grep -v 'examples.cpp') $(shell dir /b /s $(TEST_DIR) -name '*.cpp')
+else
+	SRC := $(shell find $(SRC_DIR) -name '*.cpp')
+	SRC_LIB := $(shell find $(SRC_DIR) -type f | grep -v 'examples.cpp')
+	TEST := $(shell find $(SRC_DIR) -type f | grep -v 'examples.cpp') $(shell find $(TEST_DIR) -name '*.cpp')
+endif
 
 #====================================================
 #     SOURCE OBJECTS
