@@ -40,6 +40,7 @@ Supported and tested operating systems:
 
 - Ubuntu (and the other Linux OSs).
 - Windows Subsystem for Linux (WSL).
+- MacOS.
 
 ## Documentation
 
@@ -47,6 +48,11 @@ Repository diagram structure:
 
 ```txt
 arsenalgear/
+├── .github/
+│   ├── workflows/
+│   │   ├── DocGenerator.yml
+│   │   ├── codeql-analysis-ubuntu.yml
+│   │   ├── codeql-analysis-macos.yml
 ├── doc/
 │   ├── Code structure.md
 │   ├── Download, install and run.md
