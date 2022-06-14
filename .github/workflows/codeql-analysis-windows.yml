@@ -32,7 +32,6 @@ jobs:
         languages: ${{ matrix.language }}
     
     - name: Installing extra dependencies and compiling
-      shell: msys
       run: |
        # choco install make boost-msvc-14.1
 
