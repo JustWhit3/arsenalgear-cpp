@@ -50,14 +50,14 @@ ifeq ($(UNAME_S),$(filter $(UNAME_S),Darwin Linux))
 else
     INC_DIR := $(SRC_DIR)
 endif
-INC_FLAGS := $(addprefix -I,$(INC_DIR))
 ifeq ($(UNAME_S),Darwin)
-	CPPFLAGS := -std=c++17 -g `pcre-config --cflags` $(INC_FLAGS) -MMD -MP
+	INC_FLAGS := $(addprefix -I,$(INC_DIR)) `pcre-config --cflags`
 else ifeq ($(UNAME_S),Linux)
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 else
-	CPPFLAGS := -std=c++17 -g -I`/usr/include -IC:\Program Files (x86)\Microsoft\Edge\Application` $(INC_FLAGS) -MMD -MP
+	INC_FLAGS := $(addprefix -I,$(INC_DIR)) `pcre-config --cflags` $(addprefix -I,C:\Program Files (x86)\Microsoft\Edge\Application)
 endif
+CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 
 #====================================================
 #     ALIASES
