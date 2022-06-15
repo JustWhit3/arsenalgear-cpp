@@ -33,7 +33,7 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
-       cd
+       cd /usr
        ls
        choco install unzip wget make boost-msvc-14.1
 
