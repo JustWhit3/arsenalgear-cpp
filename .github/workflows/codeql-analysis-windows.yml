@@ -44,6 +44,7 @@ jobs:
        .\bootstrap.bat
        ./b2 install --prefix=C:\B2
        $env:PATH = $env:PATH + "C:\B2\bin\b2"
+       cd -
 
        wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.zip
        unzip boost_1_79_0.zip
@@ -51,7 +52,8 @@ jobs:
        mkdir -p C:\Boost
        mv boost_1_79_0 C:\Boost
        cd C:\Boost\boost_1_79_0
-       b2
+       bootstrap
+       .\b2
        cd -
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip
