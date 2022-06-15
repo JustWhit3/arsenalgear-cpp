@@ -54,9 +54,10 @@ INC_FLAGS := $(addprefix -I,$(INC_DIR))
 ifeq ($(UNAME_S),Darwin)
 	CPPFLAGS := -std=c++17 -g `pcre-config --cflags` $(INC_FLAGS) -MMD -MP
 else ifeq ($(UNAME_S),Linux)
+#else
 	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
-else
-	CPPFLAGS := -std=c++17 -g -I/usr/include $(INC_FLAGS) -MMD -MP
+#else
+#	CPPFLAGS := -std=c++17 -g -I/usr/include $(INC_FLAGS) -MMD -MP
 endif
 
 #====================================================

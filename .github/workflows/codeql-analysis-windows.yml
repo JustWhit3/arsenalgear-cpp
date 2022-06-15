@@ -33,19 +33,19 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
-       choco install wget make boost-msvc-14.1
+       choco install unzip wget make boost-msvc-14.1
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip
        unzip master.zip
        rm master.zip
-       mkdir -p /usr/include/doctest
-       cp doctest-master/doctest/doctest.h /usr/include/
+       mkdir -p /MinGW/include/doctest
+       cp doctest-master/doctest/doctest.h /MinGW/include/
        rd -r doctest-master
 
        wget https://github.com/ArashPartow/exprtk/archive/ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
        mv ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
        unzip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
-       cp exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80/exprtk.hpp /usr/include/
+       cp exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80/exprtk.hpp /MinGW/include/
        rd -r exprtk*
 
        make
