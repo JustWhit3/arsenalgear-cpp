@@ -41,6 +41,9 @@ jobs:
        mkdir -p /usr/include
        mv boost_1_79_0 /usr/include
        cd /usr/include/boost_1_79_0
+       .\bootstrap.bat
+       ./b2 install --prefix=/usr/local
+       $env:PATH = $env:PATH + "/usr/local/bin/b2"
        b2
        cd -
 
