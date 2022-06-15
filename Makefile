@@ -55,7 +55,7 @@ ifeq ($(UNAME_S),Darwin)
 else ifeq ($(UNAME_S),Linux)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 else
-	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,/MinGW/include) $(addprefix -I,C:\Program Files (x86)\Microsoft\Edge\Application)
+	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,/MinGW/include) $(addprefix -I,'C:\Program Files (x86)\Microsoft\Edge\Application')
 endif
 CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 
