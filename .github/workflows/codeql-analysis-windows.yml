@@ -33,13 +33,14 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
+       uname -s
        choco install wget
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip
        unzip master.zip
        rm master.zip
        mkdir -p /usr/include/doctest
-       cp doctest-master/doctest/doctest.h /msys64/mings64/include
+       cp doctest-master/doctest/doctest.h /usr/include/
        rd -r doctest-master
 
        make
