@@ -38,10 +38,12 @@ jobs:
        wget https://github.com/bfgroup/b2
        unzip main.zip
        rm main.zip
-       cd main
+       mkdir -p C:\B2
+       mv main C:\B2
+       cd C:\B2\main
        .\bootstrap.bat
-       ./b2 install --prefix=C:\Boost
-       $env:PATH = $env:PATH + "/usr/local/bin/b2"
+       ./b2 install --prefix=C:\B2
+       $env:PATH = $env:PATH + "C:\B2\bin\b2"
 
        wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.zip
        unzip boost_1_79_0.zip
