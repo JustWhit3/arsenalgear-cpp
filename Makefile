@@ -5,7 +5,7 @@ UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),$(filter $(UNAME_S),Darwin Linux))  
 	TARGET_EXEC := examples
 	TEST_EXEC := tests
-else ifeq ($(UNAME_S), Windows_NT)
+else
 	TARGET_EXEC += examples.exe
 	TEST_EXEC += tests.exe
 endif
@@ -24,14 +24,14 @@ LIB_DIR := lib
 #====================================================
 #     SOURCE FILES
 #====================================================
-ifeq ($(OS), Windows_NT)
-	SRC := $(wildcard $(SRC_DIR)/*.cpp) 
-	SRC_LIB := $(filter-out $(SRC_DIR)/examples.cpp, $(wildcard $(SRC_DIR)/*.cpp))
-	TEST := $(filter-out $(SRC_DIR)/examples.cpp, $(wildcard $(SRC_DIR)/*.cpp)) $(wildcard $(TEST_DIR)/*.cpp) 
-else
+ifeq ($(UNAME_S),$(filter $(UNAME_S),Darwin Linux))
 	SRC := $(shell find $(SRC_DIR) -name '*.cpp')
 	SRC_LIB := $(shell find $(SRC_DIR) -type f | grep -v 'examples.cpp')
 	TEST := $(shell find $(SRC_DIR) -type f | grep -v 'examples.cpp') $(shell find $(TEST_DIR) -name '*.cpp')
+else
+	SRC := $(wildcard $(SRC_DIR)/*.cpp) 
+	SRC_LIB := $(filter-out $(SRC_DIR)/examples.cpp, $(wildcard $(SRC_DIR)/*.cpp))
+	TEST := $(filter-out $(SRC_DIR)/examples.cpp, $(wildcard $(SRC_DIR)/*.cpp)) $(wildcard $(TEST_DIR)/*.cpp) 
 endif
 
 #====================================================
@@ -45,18 +45,18 @@ TEST_OBJ := $(TEST:%=$(OBJ_DIR)/%.o)
 #     DEPENDENCIES AND FLAGS
 #====================================================
 DEPS := $(OBJ:.o=.d)
-ifeq ($(OS), Windows_NT)
-    INC_DIR := $(SRC_DIR)
-else
+ifeq ($(UNAME_S),$(filter $(UNAME_S),Darwin Linux))
 	INC_DIR := $(shell find $(SRC_DIR) -type d)
+else
+    INC_DIR := $(SRC_DIR)
 endif
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
 ifeq ($(UNAME_S),Darwin)
 	CPPFLAGS := -std=c++17 -g `pcre-config --cflags` $(INC_FLAGS) -MMD -MP
-else ifeq ($(OS), Windows_NT)
-	CPPFLAGS := -std=c++17 -g -I/usr/include $(INC_FLAGS) -MMD -MP
-else
+else ifeq ($(UNAME_S),Linux)
 	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+else
+	CPPFLAGS := -std=c++17 -g -I/usr/include $(INC_FLAGS) -MMD -MP
 endif
 
 #====================================================
