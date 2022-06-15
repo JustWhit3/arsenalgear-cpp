@@ -38,8 +38,9 @@ jobs:
        wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.zip
        unzip boost_1_79_0.zip
        rm boost_1_79_0.zip
-       mv boost_1_79_0 C:\
-       cd C:\boost_1_79_0
+       mkdir C:\Program files\Boost
+       mv boost_1_79_0 C:\Program files\Boost
+       cd C:\Program files\Boost\boost_1_79_0
        b2
        cd -
 
