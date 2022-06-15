@@ -37,7 +37,8 @@ jobs:
        
        wget https://github.com/bfgroup/b2
        unzip main.zip
-       cd b2-main
+       rm main.zip
+       cd main
        .\bootstrap.bat
        ./b2 install --prefix=C:\Boost
        $env:PATH = $env:PATH + "/usr/local/bin/b2"
