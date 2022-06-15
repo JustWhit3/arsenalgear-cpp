@@ -52,21 +52,21 @@ jobs:
        mkdir -p C:\Boost
        mv boost_1_79_0 C:\Boost
        cd C:\Boost\boost_1_79_0
-       bootstrap
+       .\bootstrap.bat
        .\b2
        cd -
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip
        unzip master.zip
        rm master.zip
-       mkdir -p /usr/include/doctest
-       cp doctest-master/doctest/doctest.h /usr/include/
+       mkdir -p C:\include
+       cp doctest-master\doctest\doctest.h C:\include
        rd -r doctest-master
 
        wget https://github.com/ArashPartow/exprtk/archive/ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
        mv ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
        unzip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
-       cp exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80/exprtk.hpp /usr/include/
+       cp exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80/exprtk.hpp C:\include
        rd -r exprtk*
 
        make

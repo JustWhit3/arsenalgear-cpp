@@ -55,7 +55,9 @@ ifeq ($(UNAME_S),Darwin)
 else ifeq ($(UNAME_S),Linux)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 else
-	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,/usr/include) $(addprefix -I,'C:\Program Files (x86)\Microsoft\Edge\Application')
+    WIN_INCLUDE=C:\include
+	WIN_BOOST=C:\Boost\boost_1_79_0\boost
+	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
 endif
 CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 
