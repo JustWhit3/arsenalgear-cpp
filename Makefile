@@ -1,16 +1,16 @@
 #====================================================
 #     VARIABLES
 #====================================================
-ifeq ($(OS), Windows_NT)
-	TARGET_EXEC += examples.exe
-	TEST_EXEC += tests.exe
-else
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),$(filter $(UNAME_S),Darwin Linux))  
 	TARGET_EXEC := examples
 	TEST_EXEC := tests
+else ifeq ($(UNAME_S), Windows_NT)
+	TARGET_EXEC += examples.exe
+	TEST_EXEC += tests.exe
 endif
 LIB := libarsenalgear.a
 CC := g++
-UNAME_S := $(shell uname -s)
 
 #====================================================
 #     FOLDERS
