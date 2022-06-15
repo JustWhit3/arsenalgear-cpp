@@ -35,12 +35,12 @@ jobs:
       run: |
        choco install unzip wget make 
        
-       wget https://github.com/bfgroup/b2
+       wget https://github.com/bfgroup/b2/archive/refs/heads/main.zip
        unzip main.zip
        rm main.zip
        mkdir -p C:\B2
-       mv main C:\B2
-       cd C:\B2\main
+       mv b2-main C:\B2
+       cd C:\B2\b2-main
        .\bootstrap.bat
        ./b2 install --prefix=C:\B2
        $env:PATH = $env:PATH + "C:\B2\bin\b2"
