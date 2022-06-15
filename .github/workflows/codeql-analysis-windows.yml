@@ -33,15 +33,8 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
-       choco install unzip wget make
-       
-       wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.zip
-       unzip boost_1_79_0.zip
-       rm boost_1_79_0.zip
-       cd boost_1_79_0
-       bootstrap
-       .\b2
-       cd ..
+       choco install unzip wget make pacman
+       pacman -S mingw-w64-x86_64-boost
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip
        unzip master.zip
