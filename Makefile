@@ -56,7 +56,7 @@ else ifeq ($(UNAME_S),Linux)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 else
     WIN_INCLUDE=C:\include
-	WIN_BOOST=C:\Boost\boost_1_79_0\boost
+	WIN_BOOST=C:\Boost\boost_1_79_0
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
 endif
 CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
