@@ -4,6 +4,9 @@
 #include "../include/math.hpp"
 
 //Extra headers
+#ifdef _WIN32
+#define _USE_MATH_DEFINES
+#endif
 #include <doctest/doctest.h>
 
 //====================================================
