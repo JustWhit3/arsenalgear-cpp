@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#define _USE_MATH_DEFINES
+#endif
+
 // My headers
 #include "../include/math.hpp"
 #include "../include/operators.hpp"
@@ -7,9 +11,6 @@
 
 // STD headers
 #include <iostream>
-#ifdef _WIN32
-#define _USE_MATH_DEFINES
-#endif
 #include <cmath>
 #include <string>
 
