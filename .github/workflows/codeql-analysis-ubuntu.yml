@@ -12,10 +12,6 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ${{ matrix.operating-system }}
-    strategy:
-      fail-fast: false
-      matrix:
-        operating-system: [ubuntu-latest, windows-latest]
     permissions:
       actions: read
       contents: read
@@ -24,6 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        operating-system: [ubuntu-latest, windows-latest]
         language: [ 'cpp' ]
 
     steps:
