@@ -62,7 +62,7 @@ endif
 ifeq ($(UNAME_S),$(filter $(UNAME_S),Darwin Linux))
 	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 else
-		CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -fto
+	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -flto -Wl,-allow-multiple-definition
 
 #====================================================
 #     ALIASES
