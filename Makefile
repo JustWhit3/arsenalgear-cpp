@@ -73,7 +73,7 @@ else ifeq ($(O_SYSTEM),MacOS)
 else
 	INC_DIR := $(SRC_DIR)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -fno-lto
+	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -Wl,-allow-multiple-definition
 endif
 
 #====================================================
