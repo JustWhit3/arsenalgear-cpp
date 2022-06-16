@@ -37,10 +37,11 @@ void math()
 
   // isInBounds
   std::cout << "Check if 3 is between 2 and 4: " << agr::IsInBounds( 3, 2, 4 ) << " (True)." 
-            << "\n\n";
+            << "\n";
 
   // parsed_f
   #if defined( __linux__ ) || defined( __APPLE__ )
+  std::cout << "\n";
   std::cout << "Parsing cos(x) + sin(y) for x=pi/2 and y=pi/4: " << agr::parsed_f( "cos(x)+sin(y)", M_PI/2, M_PI/4 ) 
             << "." << "\n"; 
   #endif

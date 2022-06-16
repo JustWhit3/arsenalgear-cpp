@@ -65,16 +65,14 @@ DEPS := $(OBJ:.o=.d)
 ifeq ($(O_SYSTEM),Linux)
 	INC_DIR := $(shell find $(SRC_DIR) -type d)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR))
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 else ifeq ($(O_SYSTEM),MacOS)
 	INC_DIR := $(shell find $(SRC_DIR) -type d)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) `pcre-config --cflags`
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 else
 	INC_DIR := $(SRC_DIR)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 endif
+	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 
 #====================================================
 #     ALIASES
