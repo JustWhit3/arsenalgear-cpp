@@ -120,7 +120,6 @@ echo ""
 echo ""
 read -p "Would you like to continue (y/n)? " word
 if [ "$word" == "y" ] || [ "$word" == "Y" ] ; then
-    sudo echo "Installing arsenalgear header files into /usr/local/include folder..."
     if [[ "$UNAME" == Darwin* || "$UNAME" == Linux* ]] ; then
         sudo echo "Installing arsenalgear header files into ${INCL} folder..."
         sudo mkdir -p "${INCL}"/arsenalgear
