@@ -36,7 +36,7 @@ LIB_DIR := lib
 ifeq ($(O_SYSTEM),Windows)
 	WIN_INCLUDE := C:\include
 	WIN_BOOST := C:\boost\include\boost-1_79
-	WIN_BOOST_LIB := C:\boost\lib\libboost_iostreams-mgw8-mt-x32-1_79.a
+	#WIN_BOOST_LIB := C:\boost\lib\libboost_iostreams-mgw8-mt-x32-1_79.a
 endif
 
 #====================================================
@@ -74,7 +74,8 @@ else ifeq ($(O_SYSTEM),MacOS)
 else
 	INC_DIR := $(SRC_DIR)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -l$(WIN_BOOST_LIB)
+	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -l$(WIN_BOOST_LIB) -mbig-obj
+	LDFLAGS := -mbig-obj
 endif
 
 #====================================================
