@@ -79,6 +79,18 @@ Usage: it is used to check if a value is the bound [`low`,`high`].
 
 Example usage: `agr::IsInBounds( 3.2, 1.0, 5.3 )`
 
+### parsed_f
+
+Header file and source code: [math.hpp](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/math.hpp)
+
+Namespace: `agr`
+
+Complete definition: `template <typename T> inline double parsed_f( const T_str& expr, double x, double y )`
+
+Usage: it is used to parse a string containing a two-variables function signature into a real cpp function in two points.
+>**NOTE**: the signature will be changed in order to extend the function to an n-variables function parser.
+Example usage: `agr::parsed_f( "cos(x)+sin(y)", M_PI, M_PI/4 )`
+
 ## Operators
 
 ### std::string types * int (and vice-versa)
