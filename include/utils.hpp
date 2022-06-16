@@ -1,5 +1,12 @@
+//====================================================
+//     Preprocessor settings
+//====================================================
 #ifndef UTILS_HPP
 #define UTILS_HPP
+
+//====================================================
+//     Headers
+//====================================================
 
 // STD headers
 #include <stdexcept>
@@ -8,17 +15,20 @@
 #include <vector>
 #include <string>
 
+//====================================================
+//     Namespaces
+//====================================================
 using namespace std::literals::string_literals;
 
 namespace agr
  {
   //====================================================
-  //     FUNCTIONS DEFINITION
+  //     Functions
   //====================================================
   extern std::string multi( const std::string& element, const int& n_times );
   
   //====================================================
-  //     MAXPTR
+  //     maxptr
   //====================================================
   // Function used to find the maximum value of a generic pointer containing listed values.
   // NB: second argument is the pointer dimension.
@@ -30,7 +40,7 @@ namespace agr
    }
 
   //====================================================
-  //     RUNTIME_THROWER
+  //     runtime_error_func
   //====================================================
   // Function used to throw customized runtime error.
   template <typename T>
@@ -48,7 +58,7 @@ namespace agr
    }
 
   //====================================================
-  //     ISFLOATINGPOINT
+  //     isFloatingPoint
   //====================================================
   // Function to check if an expression is a floating point or not.
   template <typename T>
@@ -58,7 +68,7 @@ namespace agr
    }
 
   //====================================================
-  //     ONE
+  //     one
   //====================================================
   // Function to find the incremented unit of a loop.
   template <typename T>

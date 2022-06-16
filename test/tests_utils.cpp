@@ -1,5 +1,12 @@
+//====================================================
+//     Preprocessor settings
+//====================================================
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #define DOCTEST_CONFIG_SUPER_FAST_ASSERTS
+
+//====================================================
+//     Headers
+//====================================================
 
 // My headers
 #include "../include/utils.hpp"
@@ -12,10 +19,13 @@
 #include <string>
 #include <vector>
 
+//====================================================
+//     Namespaces
+//====================================================
 using namespace std::string_literals;
 
 //====================================================
-//     MAXPTR
+//     maxptr
 //====================================================
 TEST_CASE( "Testing the maxptr function." )
  {
@@ -30,7 +40,7 @@ TEST_CASE( "Testing the maxptr function." )
  }
 
 //====================================================
-//     ISFLOATINGPOINT
+//     isFloatingPoint
 //====================================================
 TEST_CASE_TEMPLATE( "Testing the isFLoatingPoint function.", T, double, float, long double )
  {
@@ -42,7 +52,7 @@ TEST_CASE_TEMPLATE( "Testing the isFLoatingPoint function.", T, double, float, l
  }
 
 //====================================================
-//     RUNTIME_ERROR_FUNC
+//     runtime_error_func
 //==================================================== 
 TEST_CASE_TEMPLATE( "Testing the runtime_error_func function.", T, std::string, const char* )
  {
@@ -58,7 +68,7 @@ TEST_CASE_TEMPLATE( "Testing the runtime_error_func function.", T, std::string, 
  }
 
 //====================================================
-//     ONE
+//     one
 //==================================================== 
 TEST_CASE( "Testing the one function." )
  {
@@ -76,7 +86,7 @@ TEST_CASE( "Testing the one function." )
  }
 
 //====================================================
-//     MULTI
+//     multi
 //==================================================== 
 TEST_CASE( "Testing the multi function." )
  {

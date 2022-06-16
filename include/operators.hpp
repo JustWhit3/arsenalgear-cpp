@@ -1,11 +1,18 @@
+//====================================================
+//     Preprocessor settings
+//====================================================
 #ifndef OPERATORS_HPP
 #define OPERATORS_HPP
+
+//====================================================
+//     Headers
+//====================================================
 
 // STD headers
 #include <string>
 
 //====================================================
-//     OPERATOR * DEFINITION
+//     Operator *
 //====================================================
 template <typename T>
 extern std::string operator *( const T& generic_string, unsigned int integer );

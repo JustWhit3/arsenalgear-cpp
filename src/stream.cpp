@@ -1,3 +1,7 @@
+//====================================================
+//     Headers
+//====================================================
+
 //My headers
 #include "../include/stream.hpp"
 
@@ -8,9 +12,8 @@
 namespace agr
  {
   //====================================================
-  //     NULL_STREAM
+  //     null_stream
   //====================================================
-  //Definition of the null stream.
   boost::iostreams::stream<boost::iostreams::null_sink> null_stream 
    {
     boost::iostreams::null_sink{} 

@@ -1,3 +1,7 @@
+//====================================================
+//     Headers
+//====================================================
+
 //My headers
 #include "../include/operators.hpp"
 
@@ -5,12 +9,14 @@
 #include <boost/preprocessor/seq/for_each.hpp>
 #include <boost/preprocessor/tuple/to_seq.hpp>
 
+//====================================================
+//     Macros
+//====================================================
 #define ARGS( ... ) BOOST_PP_TUPLE_TO_SEQ( ( __VA_ARGS__ ) )
 
 //====================================================
-//     STRING * INT
+//     std::string * int
 //====================================================
-//Multiply a string by an integer.
 template <typename T>
 std::string operator *( const T& generic_string, unsigned int integer ) 
  {
@@ -30,9 +36,8 @@ std::string operator * <T> ( const T& generic_string, unsigned int integer );
 BOOST_PP_SEQ_FOR_EACH( PROD_1, _, ARGS( std::string, std::string_view ) );
 
 //====================================================
-//     INT * STRING
+//     int * std::string
 //====================================================
-//Multiply an integer by a string.
 template <typename T>
 std::string operator *( unsigned int integer, const T& generic_string ) 
  {

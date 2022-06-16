@@ -1,4 +1,11 @@
+//====================================================
+//     Preprocessor settings
+//====================================================
 #define DOCTEST_CONFIG_SUPER_FAST_ASSERTS
+
+//====================================================
+//     Headers
+//====================================================
 
 // My headers
 #include "../include/operators.hpp"
@@ -10,7 +17,7 @@
 #include <string>
 
 //====================================================
-//     OPERATOR * REDEFINITION
+//     Operator *
 //====================================================
 TEST_CASE( "Testing the * redefinition for string multiplication by an integer." )
  {

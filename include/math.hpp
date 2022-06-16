@@ -1,5 +1,12 @@
+//====================================================
+//     Preprocessor settings
+//====================================================
 #ifndef MATH_HPP
 #define MATH_HPP
+
+//====================================================
+//     Headers
+//====================================================
 
 // Extra headers
 #include <exprtk.hpp>
@@ -10,7 +17,7 @@
 namespace agr
  {
   //====================================================
-  //     ROUNDOFF
+  //     roundoff
   //====================================================
   // Function to round a floating point to n-th decimal place after comma.
   template <typename T>
@@ -22,7 +29,7 @@ namespace agr
    }
 
   //====================================================
-  //     ISINBOUNDS
+  //     IsInBounds
   //====================================================
   // Function to check if a number lies in a certain bound or not.
   template <typename T>
@@ -32,7 +39,7 @@ namespace agr
    } 
 
   //====================================================
-  //     PARSED_F
+  //     parsed_f
   //====================================================
   // Function used to parse a mathematical function f(x,y).
   template <typename T>

@@ -1,3 +1,7 @@
+//====================================================
+//     Headers
+//====================================================
+
 // My headers
 #include "../include/utils.hpp"
 
@@ -7,9 +11,8 @@
 namespace agr
  {
   //====================================================
-  //     MULTI
+  //     multi
   //====================================================
-  // Function used to return a string multiple times.
   std::string multi( const std::string& element, const int& n_times )
    {
     std::string container = "";

@@ -22,7 +22,7 @@
 #include <cmath>
 
 //====================================================
-//     ROUNDOFF
+//     roundoff
 //==================================================== 
 TEST_CASE_TEMPLATE( "Testing the roundoff function.", T, double )
  {
@@ -37,7 +37,7 @@ TEST_CASE_TEMPLATE( "Testing the roundoff function.", T, double )
  }
 
 //============================================
-//     ISINBOUNDS
+//     IsInBounds
 //============================================
 TEST_CASE_TEMPLATE( "Testing the IsInBounds function", T, double )
  {
@@ -48,7 +48,7 @@ TEST_CASE_TEMPLATE( "Testing the IsInBounds function", T, double )
  }
 
 //============================================
-//     PARSED_F
+//     parsed_f
 //============================================
 TEST_CASE( "Testing the parsed_f function." )
  {
