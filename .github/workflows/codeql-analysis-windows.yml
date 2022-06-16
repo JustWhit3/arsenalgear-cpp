@@ -53,8 +53,8 @@ jobs:
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip | Out-Null
        unzip master.zip | Out-Null
        rm master.zip
-       mkdir -p C:\include
-       cp doctest-master\doctest\doctest.h C:\include
+       mkdir -p C:\include\doctest
+       cp doctest-master\doctest\doctest.h C:\include\doctest
        rd -r doctest-master
 
        make

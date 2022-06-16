@@ -18,11 +18,12 @@ endif
 ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))  
 	TARGET_EXEC := examples
 	TEST_EXEC := tests
+	LIB := libarsenalgear.a
 else
 	TARGET_EXEC := examples.exe
 	TEST_EXEC := tests.exe
+	LIB := libarsenalgear.lib
 endif
-LIB := libarsenalgear.a
 CC := g++
 
 #====================================================
