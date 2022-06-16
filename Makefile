@@ -36,7 +36,6 @@ LIB_DIR := lib
 ifeq ($(O_SYSTEM),Windows)
 	WIN_INCLUDE := C:\include
 	WIN_BOOST := C:\boost\include\boost-1_79
-	#WIN_BOOST_LIB := C:\boost\lib\libboost_iostreams-mgw8-mt-x32-1_79.a
 endif
 
 #====================================================

@@ -57,12 +57,6 @@ jobs:
        cp doctest-master\doctest\doctest.h C:\include
        rd -r doctest-master
 
-       wget https://github.com/ArashPartow/exprtk/archive/ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip | Out-Null
-       mv ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip
-       unzip exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80.zip | Out-Null
-       cp exprtk-ca5c577917646ddba3f71ce6d5dd7d01f351ee80/exprtk.hpp C:\include
-       rd -r exprtk*
-
        make
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
