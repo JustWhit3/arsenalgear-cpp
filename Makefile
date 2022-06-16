@@ -35,7 +35,7 @@ TEST_DIR := test
 LIB_DIR := lib
 ifeq ($(O_SYSTEM),Windows)
 	WIN_INCLUDE := C:\include
-	WIN_BOOST := C:\boost\include\boost_1_79_0
+	WIN_BOOST := C:\boost\include\boost-1_79
 endif
 
 #====================================================
@@ -73,8 +73,7 @@ else ifeq ($(O_SYSTEM),MacOS)
 else
 	INC_DIR := $(SRC_DIR)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP 
-	LDFLAGS := -flto -Wl,-allow-multiple-definition -fuse-linker-plugin
+	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 endif
 
 #====================================================
