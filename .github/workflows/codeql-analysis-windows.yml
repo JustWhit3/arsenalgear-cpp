@@ -33,7 +33,7 @@ jobs:
     
     - name: Installing extra dependencies and compiling
       run: |
-       choco install unzip wget make
+       choco install unzip wget
 
        mkdir C:\install
        cd C:\install
@@ -51,16 +51,6 @@ jobs:
        b2 --build-dir="C:\install\boost_1_79_0\build" --build-type=complete --prefix="C:\boost" toolset=gcc install
        rm C:\install
        rm C:\boost-build
-
-       wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.zip | Out-Null
-       unzip boost_1_79_0.zip | Out-Null
-       rm boost_1_79_0.zip
-       mkdir -p C:\Boost
-       mv boost_1_79_0 C:\Boost
-       cd C:\Boost\boost_1_79_0
-       .\bootstrap.bat
-       .\b2
-       cd -
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip | Out-Null
        unzip master.zip | Out-Null
