@@ -46,7 +46,6 @@ jobs:
 
        make
 
-    - name: Installing extra dependencies and compiling (MacOS)
       if: matrix.os == 'macos-latest'
       run: |
        brew install boost doctest
@@ -60,7 +59,6 @@ jobs:
 
        make
 
-    - name: Installing extra dependencies and compiling (Windows)
       if: matrix.os == 'windows-latest'
       run: |
        choco install unzip wget
