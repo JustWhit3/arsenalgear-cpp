@@ -34,7 +34,8 @@ OBJ_DIR := obj
 TEST_DIR := test
 LIB_DIR := lib
 ifeq ($(O_SYSTEM),Windows)
-	WIN_INCLUDE := /usr/include
+	WIN_INCLUDE := C:\include
+	WIN_BOOST := C:\boost\include\boost-1_79
 endif
 
 #====================================================
