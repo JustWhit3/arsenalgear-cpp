@@ -51,8 +51,7 @@ arsenalgear/
 ├── .github/
 │   ├── workflows/
 │   │   ├── DocGenerator.yml
-│   │   ├── codeql-analysis-ubuntu.yml
-│   │   ├── codeql-analysis-macos.yml
+│   │   ├── codeql-analysis.yml
 ├── doc/
 │   ├── Code structure.md
 │   ├── Download, install and run.md
