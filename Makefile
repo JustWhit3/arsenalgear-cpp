@@ -56,7 +56,7 @@ else ifeq ($(UNAME_S),Linux)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 else
     WIN_INCLUDE=C:\include
-	WIN_BOOST=C:\Boost\boost_1_79_0
+	WIN_BOOST=C:\boost\include\boost_1_79_0
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
 endif
 ifeq ($(UNAME_S),$(filter $(UNAME_S),Darwin Linux))
