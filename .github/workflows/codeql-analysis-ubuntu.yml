@@ -11,7 +11,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ${{ matrix.operating-system }}
+    runs-on: ${{ matrix.os }}
     permissions:
       actions: read
       contents: read
