@@ -32,7 +32,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
     
-    - name: Installing extra dependencies and compiling
+    - name: Installing extra dependencies and compiling (Ubuntu)
       if: matrix.os == 'ubuntu-latest'
       run: |
        sudo apt install build-essential g++ libboost-all-dev wget unzip doctest-dev
@@ -45,6 +45,8 @@ jobs:
        rm -rf exprtk-*
 
        make
+
+    - name: Installing extra dependencies and compiling (MacOS)
       if: matrix.os == 'macos-latest'
       run: |
        brew install boost doctest
@@ -57,6 +59,8 @@ jobs:
        sudo cp exprtk-$exprtk_sha1/exprtk.hpp ${INCLUDE:2}
 
        make
+
+    - name: Installing extra dependencies and compiling (Windows)
       if: matrix.os == 'windows-latest'
       run: |
        choco install unzip wget
