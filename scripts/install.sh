@@ -137,7 +137,7 @@ if [ "$word" == "y" ] || [ "$word" == "Y" ] ; then
             echo "Cannot install the header file into ${INCL} position of the system!"
         fi
         echo "Installing arsenalgear lib into ${LIB} folder..."
-        if ! ( cp lib/* ${LIB} ) ; then
+        if ! ( cp -r lib/* ${LIB} ) ; then
             echo "Cannot install the library into ${LIB} position of the system!"
         fi
     fi
