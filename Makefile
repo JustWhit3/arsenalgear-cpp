@@ -59,7 +59,10 @@ else
 	WIN_BOOST=C:\Boost\boost_1_79_0
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
 endif
-CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+ifeq ($(UNAME_S),$(filter $(UNAME_S),Darwin Linux))
+	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+else
+		CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -fto
 
 #====================================================
 #     ALIASES

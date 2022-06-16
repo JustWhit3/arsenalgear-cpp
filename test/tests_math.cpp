@@ -1,13 +1,25 @@
+//====================================================
+//     Preprocessor settings
+//====================================================
+
+// Doctest
 #define DOCTEST_CONFIG_SUPER_FAST_ASSERTS
+
+// OS
+#ifdef _WIN32
+#define _USE_MATH_DEFINES
+#endif
+
+//====================================================
+//     Headers
+//====================================================
 
 // My headers
 #include "../include/math.hpp"
 
 //Extra headers
-#ifdef _WIN32
-#define _USE_MATH_DEFINES
-#endif
 #include <doctest/doctest.h>
+#include <cmath>
 
 //====================================================
 //     ROUNDOFF
