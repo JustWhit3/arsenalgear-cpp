@@ -73,7 +73,7 @@ else ifeq ($(O_SYSTEM),MacOS)
 else
 	INC_DIR := $(SRC_DIR)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -fno-lto
 endif
 
 #====================================================
@@ -93,12 +93,12 @@ tests: $(BUILD_DIR)/$(TEST_EXEC) $(LIB_DIR)/$(LIB)
 #Building main executable:
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJ)
 	@ mkdir -p $(dir $@)
-	$(CC) $(OBJ) -o $@ $(LDFLAGS) -fno-lto
+	$(CC) $(OBJ) -o $@ $(LDFLAGS)
 
 #Building test executable:
 $(BUILD_DIR)/$(TEST_EXEC): $(TEST_OBJ)
 	@ mkdir -p $(dir $@)
-	$(CC) $(TEST_OBJ) -o $@ $(LDFLAGS) -fno-lto
+	$(CC) $(TEST_OBJ) -o $@ $(LDFLAGS)
 
 #Put object files into the object dir:
 $(OBJ_DIR)/%.cpp.o: %.cpp
