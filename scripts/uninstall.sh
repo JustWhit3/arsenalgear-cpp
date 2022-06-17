@@ -32,7 +32,7 @@ do
     if [[ "$UNAME" == Darwin* || "$UNAME" == Linux* ]] ; then
         sudo rm -rf "${INCL}/$header"
     else
-        rm -rf "${INCL}\$header"
+        rm -rf "${INCL}/$header"
     fi
 done
 
@@ -43,7 +43,7 @@ do
     if [[ "$UNAME" == Darwin* || "$UNAME" == Linux* ]] ; then
         sudo rm "${LIB}/$library"
     else
-        sudo rm "${INCL}\$library"
+        rm "${INCL}/$library"
     fi
 done
 

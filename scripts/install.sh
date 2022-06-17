@@ -113,7 +113,7 @@ echo ""
 #     COMPILATION OF THE SOURCE CODE
 #     (check if doctest is installed)
 #====================================================
-if [ -f "/usr/include/doctest" ] || [ -f "/usr/local/Cellar/doctest" ] || [ -f "C:\include\doctest" ] ; then
+if [ -f "/usr/include/doctest/doctest.h" ] || [ -f "/usr/local/Cellar/doctest/doctest.h" ] || [ -f "C:\include\doctest\doctest.h" ] ; then
     echo "Compiling the whole arsenalgear code..."
     if ! make ; then
         echo "Compilation failed!"
