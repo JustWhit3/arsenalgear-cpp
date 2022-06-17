@@ -46,7 +46,6 @@ elif [[ "$UNAME" == Linux* ]] ; then
     INCL=/usr/include/
     LIB=/usr/lib/
 else
-	main="${main}.exe"
     INCL="C:\include"
     LIB="C:\lib"
 fi
