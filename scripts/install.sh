@@ -87,7 +87,7 @@ if [ "$word_o" == "y" ] || [ "$word_o" == "Y" ] ; then
         rm master.zip
         mkdir -p "C:\include\doctest"
         cp "doctest-master\doctest\doctest.h" "C:\include\doctest"
-        rd -r doctest-master
+        rm -rf doctest-master
     fi
     pip install hurry.filesize termcolor
 fi
@@ -120,7 +120,6 @@ echo ""
 echo ""
 read -p "Would you like to continue (y/n)? " word
 if [ "$word" == "y" ] || [ "$word" == "Y" ] ; then
-    sudo echo "Installing arsenalgear header files into /usr/local/include folder..."
     if [[ "$UNAME" == Darwin* || "$UNAME" == Linux* ]] ; then
         sudo echo "Installing arsenalgear header files into ${INCL} folder..."
         sudo mkdir -p "${INCL}"/arsenalgear
@@ -133,12 +132,13 @@ if [ "$word" == "y" ] || [ "$word" == "Y" ] ; then
         fi
     else
         echo "Installing arsenalgear header files into C:\include\folder..."
-        sudo mkdir -p "${INCL}\arsenalgear"
-        if ! ( sudo cp -r "include\*" "${INCL}\arsenalgear" ) ; then
+        mkdir -p "${INCL}\arsenalgear"
+        if ! ( cp -r include/* ${INCL}/arsenalgear ) ; then
             echo "Cannot install the header file into ${INCL} position of the system!"
         fi
         echo "Installing arsenalgear lib into ${LIB} folder..."
-        if ! ( sudo cp "lib\*" "${LIB}" ) ; then
+        mkdir -p "${LIB}"
+        if ! ( cp -r lib/* ${LIB} ) ; then
             echo "Cannot install the library into ${LIB} position of the system!"
         fi
     fi
