@@ -19,7 +19,7 @@ jobs:
       - name: Doxygen Action C++
         uses: mattnotmitt/doxygen-action@v1.3.1
         with:
-          working-directory: '.'
+          working-directory: '.' 
           doxyfile-path: 'Doxyfile'
 
       # store the doc files
