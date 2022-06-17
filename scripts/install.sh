@@ -132,7 +132,9 @@ echo ""
 #====================================================
 #     SAVING FILES INTO THE SYSTEM
 #====================================================
-./scripts/size_of_dir.py --paths="include lib" --message="on"
+if ! ./scripts/size_of_dir.py --paths="include lib" --message="on" ; then
+    echo "\"pip\" is not installed. Not a problem, it is used for very optional libraries."
+fi
 echo ""
 read -p "Would you like to continue (y/n)? " word
 if [ "$word" == "y" ] || [ "$word" == "Y" ] ; then
