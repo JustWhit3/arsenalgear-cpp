@@ -122,16 +122,16 @@ Supposing you are using the library in a program called *program.cpp*, to compil
 g++ program.cpp -larsenalgear
 ```
 
-> **NOTE**: if you are on **MacOS** you probably need to add also the `pcre-config --cflags` flag:
+> **NOTE**: if you are on **MacOS** you probably need to add also the `-I/usr/local/include` and `-I/usr/local/lib` flags:
 >
 > ```shell
-> g++ program.cpp `pcre-config --cflags` -larsenalgear
+> g++ program.cpp -I/usr/local/include -L/usr/local/lib -larsenalgear
 > ```
 
-> **NOTE**: if you are on **Windows** you probably need to add also the `-I/path/to/dependencies` flag:
+> **NOTE**: if you are on **Windows** you probably need to add also the `-IC:\include` and `-IC:\lib` flags:
 >
 > ```shell
-> g++ program.cpp -I/path/to/dependencies -larsenalgear
+> g++ program.cpp -IC:\include -IC:\lib -larsenalgear
 > ```
 
 and then you can run the code with:

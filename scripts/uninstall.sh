@@ -6,15 +6,12 @@
 declare -a headers=("arsenalgear" )
 declare -a libraries=("arsenalgear.a")
 if [[ "$UNAME" == Darwin* ]] ; then
-    INCLUDE=$(pcre-config --cflags)
-    LIBRARY=$(pcre-config --libs)
-    INCL=${INCLUDE:2}
-    LIB=${LIBRARY:2}
+    INCL=/usr/local/include
+    LIB=/usr/local/lib
 elif [[ "$UNAME" == Linux* ]] ; then
     INCL=/usr/include/
     LIB=/usr/lib/
 else
-	main="${main}.exe"
     INCL="C:\include"
     LIB="C:\lib"
 fi

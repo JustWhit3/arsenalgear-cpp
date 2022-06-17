@@ -38,10 +38,8 @@ install_windows_boost() {
 UNAME=$(uname)
 main="examples"
 if [[ "$UNAME" == Darwin* ]] ; then
-    INCLUDE=$(pcre-config --cflags)
-    LIBRARY=$(pcre-config --libs)
-    INCL=${INCLUDE:2}
-    LIB=${LIBRARY:2}
+    INCL=/usr/local/include
+    LIB=/usr/local/lib
 elif [[ "$UNAME" == Linux* ]] ; then
     INCL=/usr/include/
     LIB=/usr/lib/
