@@ -97,8 +97,9 @@ arsenalgear/
 General documentation:
 
 - [Contributing to the repository](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Contributing.md): a generic file containing detailed info about how to open an issue or send a pull request to contribute.
-- [Code structure](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Code%20structure.md): contains a detailed list of the `cpp` objects of the repository and how to use them.
 - [Download, install and run](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Download%2C%20install%20and%20run.md): contains instructions about how to install, download and run the repository code and extra information about the scripts of the [scripts](https://github.com/JustWhit3/arsenalgear-cpp/tree/main/scripts) folder.
+
+**Code documentation** is generated using [*Doxygen*](https://www.doxygen.nl/manual/starting.html) and can be accessed [here](https://justwhit3.github.io/arsenalgear-cpp/).
 
 ## News from the last release
 
