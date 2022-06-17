@@ -61,6 +61,8 @@ Once the source code has been downloaded you can simply run this script from the
 ```
 > **NOTE**: this script supports the installation on Ubuntu, MacOS and Windows operating systems.
 
+> **NOTE**: if you are on *Cygwin64* you may get an error related to the `\r` character. To solve it run the `dos2unix` command on the script (ex: `dos2unix install.sh`) before running it.
+
 A new library *libarsenalgear.a* (or *libarsenalgear.lib* in the Windows case) will be created into the `/usr/local/lib` folder of your computer and the [*header*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include) files will be installed into `/usr/local/include`.
 > **NOTE**: if you are on MacOS or Windows the paths are slightly different (looks at [install.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/install.sh)).
 
