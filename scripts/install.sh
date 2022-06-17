@@ -74,8 +74,6 @@ else
     read -p "Do you want to install and build Boost.org? (y/n) " word_boost
     if [ "$word_boost" == "y" ] || [ "$word_boost" == "Y" ] ; then
         install_windows_boost
-    else
-        echo "Boost.org will not be installed."
     fi
 fi
 
@@ -108,7 +106,7 @@ if [ "$word_o" == "y" ] || [ "$word_o" == "Y" ] ; then
         rm -rf doctest-master
     fi
     if ! pip install hurry.filesize termcolor ; then
-        :
+        echo "\"pip\" is not installed. Not a problem, it is used for very optional libraries."
     fi
 fi
 echo ""
@@ -117,7 +115,7 @@ echo ""
 #     COMPILATION OF THE SOURCE CODE
 #     (check if doctest is installed)
 #====================================================
-if [ -f "/usr/include/doctest/doctest.h" ] || [ -f "/usr/local/Cellar/doctest" ] || [ -f "C:\include\doctest" ] ; then
+if [ -f "/usr/include/doctest" ] || [ -f "/usr/local/Cellar/doctest" ] || [ -f "C:\include\doctest" ] ; then
     echo "Compiling the whole arsenalgear code..."
     if ! make ; then
         echo "Compilation failed!"
