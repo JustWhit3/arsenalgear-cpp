@@ -53,9 +53,17 @@ if [[ "$UNAME" == Darwin* ]] ; then
 elif [[ "$UNAME" == Linux* ]] ; then
     sudo apt install build-essential g++ libboost-all-dev wget unzip
 else
-    choco install wget unzip make
-    read -p "Do you want to install and build Boost.org? (y/n) " word__boost
-    if [ "$word__boost" == "y" ] || [ "$word__boost" == "Y" ] ; then
+    read -p "Which package-manager do you want to use? (pacman/chocolately) " word_pkg
+    if [ "$word_pkg" == "pacman" ] || [ "$word_pkg" == "Pacman" ] ; then
+        pacman -S wget unzip make
+    else if [ "$word_pkg" == "chocolately" ] || [ "$word_pkg" == "Chocolately" ] || [ "$word_pkg" == "choco" ] ; then
+        choco install wget unzip make
+    else
+        echo "Inserted package-manager $word_pkg is not supported!"
+        exit
+    fi
+    read -p "Do you want to install and build Boost.org? (y/n) " word_boost
+    if [ "$word_boost" == "y" ] || [ "$word_boost" == "Y" ] ; then
         install_windows_boost
     else
         echo "Boost.org will not be installed."
