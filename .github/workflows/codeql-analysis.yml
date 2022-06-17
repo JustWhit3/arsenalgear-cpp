@@ -73,17 +73,19 @@ jobs:
        mkdir C:\boost-build
        mkdir C:\install\boost_1_79_0\boost-build
        mkdir C:\boost
+       cd -
        cd C:\install\boost_1_79_0\tools\build
        .\bootstrap.bat gcc
        .\b2 --prefix="C:\boost-build" install
-       $Env:PATH += ";C:\boost-build\bin"
+       cd -
        cd C:\install\boost_1_79_0
        b2 --build-dir="C:\install\boost_1_79_0\build" --build-type=complete --prefix="C:\boost" toolset=gcc install
+       cd -
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip | Out-Null
        unzip master.zip | Out-Null
        rm master.zip
-       mkdir -p C:\include\doctest
+       mkdir C:\include\doctest
        cp doctest-master\doctest\doctest.h C:\include\doctest
        rd -r doctest-master
 
