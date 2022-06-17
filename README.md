@@ -56,6 +56,7 @@ arsenalgear/
 ├── .github/
 │   ├── workflows/
 │   │   ├── codeql-analysis.yml
+│   │   ├── DocGenerator.yml
 ├── doc/
 │   ├── Code structure.md
 │   ├── Download-install-run.md
@@ -82,6 +83,7 @@ arsenalgear/
 │   ├── size_of_dir.py
 ├── img/
 ├── Makefile
+├── Doxyfile
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
