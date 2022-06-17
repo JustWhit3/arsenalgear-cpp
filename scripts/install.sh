@@ -79,7 +79,7 @@ fi
 # Installing ExprTk
 if [[ "$UNAME" == Darwin* || "$UNAME" == Linux* ]] ; then
     echo ""
-    echo "Installing  library..."
+    echo "Installing ExprTk library (Linux and MacOS only)..."
     exprtk_sha1=ca5c577917646ddba3f71ce6d5dd7d01f351ee80
     wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
     mv $exprtk_sha1.zip exprtk-$exprtk_sha1.zip
@@ -87,7 +87,6 @@ if [[ "$UNAME" == Darwin* || "$UNAME" == Linux* ]] ; then
     sudo cp exprtk-$exprtk_sha1/exprtk.hpp "${INCL}"
     rm -rf exprtk-*
 fi
-echo ""
 
 # Installing optional packages
 read -p "Do you want to install optional arsenalgear prerequisites (y/n)? " word_o
