@@ -4,6 +4,9 @@
 #     Install Boost.org for Windows
 #====================================================
 install_windows_boost() {
+
+    # Downloading the package
+    echo "Downloading the source code..."
     mkdir "C:\install"
     cd "C:\install" || exit
     wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.zip
@@ -13,10 +16,16 @@ install_windows_boost() {
     mkdir "C:\boost-build"
     mkdir "C:\install\boost_1_79_0\boost-build"
     mkdir "C:\boost"
+    echo ""
+
+    # Installing the package
+    echo "Installing the package..."
     cd "C:\install\boost_1_79_0\tools\build" || exit
-    .\bootstrap.bat gcc
-    .\b2 --prefix="C:\boost-build" install
-    $Env:PATH+=";C:\boost-build\bin"
+    ./bootstrap.sh gcc
+    ./b2 --prefix="C:\boost-build" install
+    if ! $Env:PATH+=";C:\boost-build\bin" ; then
+        PATH+=C:\install
+    fi
     cd - || exit
     cd "C:\install\boost_1_79_0"  || exit
     b2 --build-dir="C:\install\boost_1_79_0\build" --build-type=complete --prefix="C:\boost" toolset=gcc install
