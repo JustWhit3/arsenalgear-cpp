@@ -23,8 +23,8 @@ install_windows_boost() {
     cd "C:\install\boost_1_79_0\tools\build" || exit
     ./bootstrap.sh gcc
     ./b2 --prefix="C:\boost-build" install
-    if ! $Env:PATH+=";C:\boost-build\bin" ; then
-        PATH+=C:\install
+    if ! PATH+="C:\install" ; then
+        $Env:PATH+=";C:\boost-build\bin"
     fi
     cd - || exit
     cd "C:\install\boost_1_79_0"  || exit
@@ -107,7 +107,9 @@ if [ "$word_o" == "y" ] || [ "$word_o" == "Y" ] ; then
         cp "doctest-master\doctest\doctest.h" "C:\include\doctest"
         rm -rf doctest-master
     fi
-    pip install hurry.filesize termcolor
+    if pip install hurry.filesize termcolor ; then
+        :
+    fi
 fi
 echo ""
 
