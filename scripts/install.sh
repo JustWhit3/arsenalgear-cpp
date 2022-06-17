@@ -107,7 +107,7 @@ if [ "$word_o" == "y" ] || [ "$word_o" == "Y" ] ; then
         cp "doctest-master\doctest\doctest.h" "C:\include\doctest"
         rm -rf doctest-master
     fi
-    if pip install hurry.filesize termcolor ; then
+    if ! pip install hurry.filesize termcolor ; then
         :
     fi
 fi
