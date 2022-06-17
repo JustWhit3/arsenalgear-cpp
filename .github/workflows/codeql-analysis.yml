@@ -55,8 +55,7 @@ jobs:
        wget https://github.com/ArashPartow/exprtk/archive/$exprtk_sha1.zip
        mv $exprtk_sha1.zip exprtk-$exprtk_sha1.zip
        unzip exprtk-$exprtk_sha1.zip
-       INCLUDE=$(pcre-config --cflags)
-       sudo cp exprtk-$exprtk_sha1/exprtk.hpp ${INCLUDE:2}
+       sudo cp exprtk-$exprtk_sha1/exprtk.hpp /usr/local/include
 
        make
 

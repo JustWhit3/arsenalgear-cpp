@@ -101,7 +101,7 @@ ifeq ($(O_SYSTEM),Linux)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 else ifeq ($(O_SYSTEM),MacOS)
 	INC_DIR := $(shell find $(SRC_DIR) -type d)
-	INC_FLAGS := $(addprefix -I,$(INC_DIR)) `pcre-config --cflags`
+	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,-I/usr/local/include)
 else
 	INC_DIR := $(SRC_DIR)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
