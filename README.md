@@ -58,7 +58,7 @@ arsenalgear/
 │   │   ├── codeql-analysis.yml
 │   │   ├── DocGenerator.yml
 ├── doc/
-│   ├── Code structure.md
+│   ├── Contributing.md
 │   ├── Download-install-run.md
 ├── include/
 │   ├── constants.hpp
