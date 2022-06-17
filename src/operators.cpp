@@ -17,6 +17,13 @@
 //====================================================
 //     std::string * int
 //====================================================
+/**
+ * @brief Function to multiply a string by an integer.
+ * 
+ * @param str The string to be multiplied.
+ * @param n The integer to be multiplied.
+ * @return std::string The multiplied string.
+ */
 template <typename T>
 std::string operator *( const T& generic_string, unsigned int integer ) 
  {
@@ -38,6 +45,13 @@ BOOST_PP_SEQ_FOR_EACH( PROD_1, _, ARGS( std::string, std::string_view ) );
 //====================================================
 //     int * std::string
 //====================================================
+/**
+ * @brief Function to multiply an integer by a string.
+ * 
+ * @param str The string to be multiplied.
+ * @param n The integer to be multiplied.
+ * @return std::string The multiplied string.
+ */
 template <typename T>
 std::string operator *( unsigned int integer, const T& generic_string ) 
  {

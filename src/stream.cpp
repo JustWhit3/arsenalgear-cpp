@@ -14,6 +14,10 @@ namespace agr
   //====================================================
   //     null_stream
   //====================================================
+  /**
+   * @brief The null_stream is a stream that does nothing.
+   * 
+   */
   boost::iostreams::stream<boost::iostreams::null_sink> null_stream 
    {
     boost::iostreams::null_sink{} 

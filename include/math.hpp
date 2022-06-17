@@ -21,7 +21,14 @@ namespace agr
   //====================================================
   //     roundoff
   //====================================================
-  // Function to round a floating point to n-th decimal place after comma.
+  /**
+   * @brief Function to round a floating point to n-th decimal place after comma.
+   * 
+   * @tparam T The Type of the variable to be rounded.
+   * @param value The variable to be rounded
+   * @param prec Precision of the rounding.
+   * @return T The rounded variable.
+   */
   template <typename T>
   inline T roundoff( const T& value, const unsigned char prec )
    {
@@ -33,7 +40,15 @@ namespace agr
   //====================================================
   //     IsInBounds
   //====================================================
-  // Function to check if a number lies in a certain bound or not.
+  /**
+   * @brief Function to check if a number lies in a certain bound or not.
+   * 
+   * @tparam T The Type of the variable to be checked.
+   * @param value The variable to be checked.
+   * @param low The lower bound.
+   * @param high The upper bound.
+   * @return bool True if the variable lies in the bound, false otherwise.
+   */
   template <typename T>
   inline bool IsInBounds( const T& value, const T& low, const T& high )
    {
@@ -43,7 +58,15 @@ namespace agr
   //====================================================
   //     parsed_f
   //====================================================
-  // Function used to parse a mathematical function f(x,y). Only for Linux and MacOS.
+  /**
+   * @brief Function to parse a mathematical expression f(x,y) (Only for Linux and MacOS).
+   * 
+   * @tparam T The Type of the expression to be parsed.
+   * @param expr The mathematical expression to be parsed.
+   * @param x The x variable.
+   * @param y The y variable.
+   * @return double The parsed expression.
+   */
   #if defined( __linux__ ) || defined( __APPLE__ )
   template <typename T>
   inline double parsed_f( const T& expr, double x, double y )
