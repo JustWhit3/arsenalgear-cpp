@@ -26,12 +26,13 @@ Tools:
 - g++ compiler (g++ 9.3.0 has been tested so far) for compilation.
 - [GNU make](https://www.opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/#:~:text=Installing%20GNU%20Make,install%20build%2Dessential.) for compilation.
 
-> **NOTE**: if you are on MacOS you would need also [Xcode](https://www.freecodecamp.org/news/how-to-download-and-install-xcode/) and [Homebrew](https://brew.sh/index_it) installed.
+> **NOTE**: if you are on **MacOS** you would need also [Xcode](https://www.freecodecamp.org/news/how-to-download-and-install-xcode/) and [Homebrew](https://brew.sh/index_it) installed.
+> **NOTE**: if you are on **Windows** you would need also [pacman](https://www.msys2.org/docs/package-management/) or [chocolately](https://chocolatey.org/) installed.
 
 Libraries and frameworks:
 
 - [Boost](https://www.boost.org/) library.
-- [ExprTK](http://www.partow.net/programming/exprtk/) library.
+- [ExprTK](http://www.partow.net/programming/exprtk/) library (no Windows).
 
 ### Optional
 
@@ -58,10 +59,10 @@ Once the source code has been downloaded you can simply run this script from the
 ```shell
 ./scripts/install.sh
 ```
-> **NOTE**: this script supports the installation on Ubuntu and MacOS operating systems.
+> **NOTE**: this script supports the installation on Ubuntu, MacOS and Windows operating systems.
 
-A new library *libarsenalgear.a* will be created into the `/usr/local/lib` folder of your computer and the [*header*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include) files will be installed into `/usr/local/include`.
-> **NOTE**: if you are on MacOS the paths are slightly different (looks at [install.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/install.sh)).
+A new library *libarsenalgear.a* (or *libarsenalgear.lib* in the Windows case) will be created into the `/usr/local/lib` folder of your computer and the [*header*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include) files will be installed into `/usr/local/include`.
+> **NOTE**: if you are on MacOS or Windows the paths are slightly different (looks at [install.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/install.sh)).
 
 ## Update
 
@@ -118,10 +119,17 @@ Supposing you are using the library in a program called *program.cpp*, to compil
 ```shell
 g++ program.cpp -larsenalgear
 ```
-> **NOTE**: if you are on MacOS you probably need to add also the `pcre-config --cflags` flag:
+
+> **NOTE**: if you are on **MacOS** you probably need to add also the `pcre-config --cflags` flag:
 >
 > ```shell
 > g++ program.cpp `pcre-config --cflags` -larsenalgear
+> ```
+
+> **NOTE**: if you are on **Windows** you probably need to add also the `-I/path/to/dependencies` flag:
+>
+> ```shell
+> g++ program.cpp -I/path/to/dependencies -larsenalgear
 > ```
 
 and then you can run the code with:
@@ -129,6 +137,8 @@ and then you can run the code with:
 ```shell
 ./a.out
 ```
+> **NOTE**: executable is called `a.exe` if you are on Windows.
+
 
 > **NOTE**: at least c++17 standard is required to successfully access al the library features.
 

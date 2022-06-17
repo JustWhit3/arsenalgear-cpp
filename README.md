@@ -2,20 +2,20 @@
 
 <h3 align="center">A library containing general purpose utils I developed for other projects</h3>
 <p align="center">
-    <img title="v1.0" alt="v1.0" src="https://img.shields.io/badge/version-v1.0-informational?style=flat-square"
-    <a href="LICENSE">
-        <img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">
-    </a>
+  <img title="v1.0" alt="v1.0" src="https://img.shields.io/badge/version-v1.0-informational?style=flat-square">
+  <img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">
 	<img title="C++17" alt="C++17" src="https://img.shields.io/badge/c++-17-informational?style=flat-square"></br>
 	<img title="Code size" alt="code size" src="https://img.shields.io/github/languages/code-size/JustWhit3/arsenalgear-cpp?color=red">
 	<img title="Repo size" alt="repo size" src="https://img.shields.io/github/repo-size/JustWhit3/arsenalgear-cpp?color=red">
-	<img title="Lines of code" alt="total lines" src="https://img.shields.io/tokei/lines/github/JustWhit3/arsenalgear-cpp?color=red">
+	<img title="Lines of code" alt="total lines" src="https://img.shields.io/tokei/lines/github/JustWhit3/arsenalgear-cpp?color=red"></br>
+  <img title="v1.0" alt="v1.0" src="https://github.com/JustWhit3/arsenalgear-cpp/actions/workflows/codeql-analysis.yml/badge.svg">
 
 ***
 
 ## Table of contents
 
 - [Introduction](#introduction)
+- [Supported operating systems](#supported-operating-systems)
 - [Documentation](#documentation)
 - [News from the last release](#news-from-the-last-release)
 - [List of features](#list-of-features)
@@ -36,11 +36,16 @@ The software is and will stay **free**, but if you want to support me with a don
 
 <a href="https://www.buymeacoffee.com/JustWhit33" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-Supported and tested operating systems:
+## Supported operating systems
 
-- Ubuntu (and the other Linux OSs).
-- Windows Subsystem for Linux (WSL).
-- MacOS.
+- **Linux**
+  - *Ubuntu* (tested)
+- **Windows**
+  - *Cygwin64* (tested)
+  - *MSYS2* (tested)
+  - *MinGW* (tested)
+  - *WSL* (tested)
+- **MacOS**
 
 ## Documentation
 
@@ -50,11 +55,10 @@ Repository diagram structure:
 arsenalgear/
 ├── .github/
 │   ├── workflows/
-│   │   ├── DocGenerator.yml
 │   │   ├── codeql-analysis.yml
 ├── doc/
 │   ├── Code structure.md
-│   ├── Download, install and run.md
+│   ├── Download-install-run.md
 ├── include/
 │   ├── constants.hpp
 │   ├── math.hpp
@@ -96,7 +100,9 @@ General documentation:
 
 ## News from the last release
 
-Anything for the moment.
+- Added full support to Windows operating systems.
+- Added full support to MacOS operating systems.
+- Added Doxygen documentation.
 
 ## List of features
 
