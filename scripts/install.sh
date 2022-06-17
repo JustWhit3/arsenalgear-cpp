@@ -56,7 +56,7 @@ else
     read -p "Which package-manager do you want to use? (pacman/chocolately) " word_pkg
     if [ "$word_pkg" == "pacman" ] || [ "$word_pkg" == "Pacman" ] ; then
         pacman -S wget unzip make
-    else if [ "$word_pkg" == "chocolately" ] || [ "$word_pkg" == "Chocolately" ] || [ "$word_pkg" == "choco" ] ; then
+    elif [ "$word_pkg" == "chocolately" ] || [ "$word_pkg" == "Chocolately" ] || [ "$word_pkg" == "choco" ] ; then
         choco install wget unzip make
     else
         echo "Inserted package-manager $word_pkg is not supported!"
