@@ -16,6 +16,7 @@ install_windows_boost() {
     cd "C:\install\boost_1_79_0\tools\build" || exit
     .\bootstrap.bat gcc
     .\b2 --prefix="C:\boost-build" install
+    $Env:PATH+=";C:\boost-build\bin"
     cd - || exit
     cd "C:\install\boost_1_79_0"  || exit
     b2 --build-dir="C:\install\boost_1_79_0\build" --build-type=complete --prefix="C:\boost" toolset=gcc install
