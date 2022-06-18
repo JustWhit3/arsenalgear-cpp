@@ -62,7 +62,9 @@ jobs:
     - name: Installing extra dependencies and compiling (Windows)
       if: matrix.os == 'windows-latest'
       run: |
-       g++ -v
+       touch prova.cpp
+       echo "int main(){}" >> prova.cpp
+       g++ -v prova.cpp
        choco install unzip wget
 
        mkdir C:\install
