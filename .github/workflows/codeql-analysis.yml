@@ -85,8 +85,8 @@ jobs:
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip | Out-Null
        unzip master.zip | Out-Null
        rm master.zip
-       mkdir C:/include/doctest
-       cp doctest-master/doctest/doctest.h C:/ProgramData/Chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+       mkdir C:/ProgramData/Chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/doctest
+       cp doctest-master/doctest/doctest.h C:/ProgramData/Chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/doctest
        rd -r doctest-master
 
        make
