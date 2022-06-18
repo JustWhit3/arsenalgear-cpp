@@ -12,8 +12,10 @@ elif [[ "$UNAME" == Linux* ]] ; then
     INCL=/usr/include/
     LIB=/usr/lib/
 else
-    INCL="C:\include"
-    LIB="C:\lib"
+    read -p "Insert the system include path in which you want to uninstall headers: " word_include
+        INCL=word_include
+    read -p "Insert the system lib path in which you want to uninstall static libraries: " word_lib
+        LIB=word_lib
 fi
 
 #====================================================

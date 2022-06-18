@@ -122,12 +122,6 @@ Supposing you are using the library in a program called *program.cpp*, to compil
 g++ program.cpp -larsenalgear
 ```
 
-> **NOTE**: if you are on **Windows** you probably need to add also the `-IC:\include` and `-IC:\lib` flags:
->
-> ```shell
-> g++ program.cpp -IC:\include -IC:\lib -larsenalgear
-> ```
-
 and then you can run the code with:
 
 ```shell

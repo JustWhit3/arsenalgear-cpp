@@ -7,28 +7,28 @@ install_windows_boost() {
 
     # Downloading the package
     echo "Downloading the source code..."
-    mkdir "C:\install"
-    cd "C:\install" || exit
+    mkdir C:/install
+    cd C:/install || exit
     wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.zip
     unzip boost_1_79_0.zip
     rm boost_1_79_0.zip
     cd - || exit
-    mkdir "C:\boost-build"
-    mkdir "C:\install\boost_1_79_0\boost-build"
-    mkdir "C:\boost"
+    mkdir C:/boost-build
+    mkdir C:/install/boost_1_79_0/boost-build
+    mkdir C:/boost
     echo ""
 
     # Installing the package
     echo "Installing the package..."
-    cd "C:\install\boost_1_79_0\tools\build" || exit
+    cd C:/install/boost_1_79_0/tools/build || exit
     ./bootstrap.sh gcc
-    ./b2 --prefix="C:\boost-build" install
-    if ! PATH+="C:\install" ; then
-        $Env:PATH+=";C:\boost-build\bin"
+    ./b2 --prefix=C:/boost-build install
+    if ! PATH+=C:/install ; then
+        $Env:PATH+=";C:/boost-build/bin"
     fi
     cd - || exit
-    cd "C:\install\boost_1_79_0"  || exit
-    b2 --build-dir="C:\install\boost_1_79_0\build" --build-type=complete --prefix="C:\boost" toolset=gcc install
+    cd C:/install/boost_1_79_0 || exit
+    b2 --build-dir=C:/install/boost_1_79_0/build --build-type=complete --prefix=C:/boost toolset=gcc install
     cd - || exit
 }
 
@@ -44,8 +44,12 @@ elif [[ "$UNAME" == Linux* ]] ; then
     INCL=/usr/include/
     LIB=/usr/lib/
 else
-    INCL="C:\include"
-    LIB="C:\lib"
+    read -p "Insert the system include path in which you want to install headers: " word_include
+        mkdir -p word_include
+        INCL=word_include
+    read -p "Insert the system lib path in which you want to install static libraries: " word_lib
+        mkdir -p word_lib
+        LIB=word_lib
 fi
 
 #====================================================
@@ -97,8 +101,8 @@ if [ "$word_o" == "y" ] || [ "$word_o" == "Y" ] ; then
         wget https://github.com/doctest/doctest/archive/refs/heads/master.zip
         unzip master.zip
         rm master.zip
-        mkdir -p "C:\include\doctest"
-        cp "doctest-master\doctest\doctest.h" "C:\include\doctest"
+        mkdir -p "${INCL}/doctest"
+        cp "doctest-master/doctest/doctest.h" "${INCL}/doctest"
         rm -rf doctest-master
     fi
     if ! pip install hurry.filesize termcolor ; then
@@ -111,7 +115,7 @@ echo ""
 #     COMPILATION OF THE SOURCE CODE
 #     (check if doctest is installed)
 #====================================================
-if [ -f "/usr/include/doctest/doctest.h" ] || [ -f "/usr/local/Cellar/doctest/doctest.h" ] || [ -f "C:\include\doctest\doctest.h" ] ; then
+if [ -f "${INCL}/doctest/doctest.h" ] || [ -f "/usr/local/Cellar/doctest/doctest.h" ] || [ -f "${INCL}/doctest/doctest.h" ] ; then
     echo "Compiling the whole arsenalgear code..."
     if ! make ; then
         echo "Compilation failed!"
@@ -147,8 +151,8 @@ if [ "$word" == "y" ] || [ "$word" == "Y" ] ; then
             echo "Cannot install the library into ${LIB} position of the system!"
         fi
     else
-        echo "Installing arsenalgear header files into C:\include\folder..."
-        mkdir -p "${INCL}\arsenalgear"
+        echo "Installing arsenalgear header files into C:/include/folder..."
+        mkdir -p "${INCL}/arsenalgear"
         if ! ( cp -r include/* ${INCL}/arsenalgear ) ; then
             echo "Cannot install the header file into ${INCL} position of the system!"
         fi
