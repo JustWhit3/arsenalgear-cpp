@@ -46,12 +46,6 @@ SRC_DIR := src
 EX_DIR := examples
 TEST_DIR := test
 
-# Othere dirs
-#ifeq ($(O_SYSTEM),Windows)
-#	WIN_INCLUDE := C:\include
-#	WIN_BOOST := C:\boost\include\boost-1_79
-#endif
-
 #====================================================
 #     SOURCE FILES
 #====================================================
@@ -96,18 +90,13 @@ TEST_OBJ := $(TEST:%=$(OBJ_DIR)/%.o)
 #     DEPENDENCIES AND FLAGS
 #====================================================
 DEPS := $(OBJ_MATH:.o=.d) $(OBJ_OPERATORS:.o=.d) $(OBJ_STREAM:.o=.d) $(OBJ_UTILS:.o=.d)
-ifeq ($(O_SYSTEM),Linux)
+ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))
 	INC_DIR := $(shell find $(SRC_DIR) -type d)
-	INC_FLAGS := $(addprefix -I,$(INC_DIR))
-else ifeq ($(O_SYSTEM),MacOS)
-	INC_DIR := $(shell find $(SRC_DIR) -type d)
-	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 else
 	INC_DIR := $(SRC_DIR)
-	#INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
-	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 endif
-	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+INC_FLAGS := $(addprefix -I,$(INC_DIR))
+CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 
 #====================================================
 #     ALIASES
