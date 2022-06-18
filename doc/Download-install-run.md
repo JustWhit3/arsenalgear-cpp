@@ -122,6 +122,8 @@ Supposing you are using the library in a program called *program.cpp*, to compil
 g++ program.cpp -larsenalgear
 ```
 
+> **NOTE**: if you are on **Windows** and didn't install the headers and libraries in a system standard path you probably need to add also the `-I\path\to\include` and `-L\path\to\lib` flags.
+
 and then you can run the code with:
 
 ```shell
