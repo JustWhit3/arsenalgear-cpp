@@ -23,7 +23,7 @@ install_windows_boost() {
     cd C:/install/boost_1_79_0/tools/build || exit
     ./bootstrap.sh gcc
     ./b2 --prefix=C:/boost-build install
-    if ! PATH+=C:/install ; then
+    if ! PATH=$PATH:C:/boost-build/bin ; then
         $Env:PATH+=";C:/boost-build/bin"
     fi
     cd - || exit
@@ -41,8 +41,8 @@ if [[ "$UNAME" == Darwin* ]] ; then
     INCL=/usr/local/include
     LIB=/usr/local/lib
 elif [[ "$UNAME" == Linux* ]] ; then
-    INCL=/usr/include/
-    LIB=/usr/lib/
+    INCL=/usr/include
+    LIB=/usr/lib
 else
     read -p "Insert the system include path in which you want to install headers: " word_include
         mkdir -p ${word_include}
@@ -151,7 +151,7 @@ if [ "$word" == "y" ] || [ "$word" == "Y" ] ; then
             echo "Cannot install the library into ${LIB} position of the system!"
         fi
     else
-        echo "Installing arsenalgear header files into C:/include/folder..."
+        echo "Installing arsenalgear header files into ${INCL}..."
         mkdir -p "${INCL}/arsenalgear"
         if ! ( cp -r include/* ${INCL}/arsenalgear ) ; then
             echo "Cannot install the header file into ${INCL} position of the system!"
