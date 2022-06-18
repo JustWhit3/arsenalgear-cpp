@@ -47,10 +47,10 @@ EX_DIR := examples
 TEST_DIR := test
 
 # Othere dirs
-ifeq ($(O_SYSTEM),Windows)
-	WIN_INCLUDE := C:\include
-	WIN_BOOST := C:\boost\include\boost-1_79
-endif
+#ifeq ($(O_SYSTEM),Windows)
+#	WIN_INCLUDE := C:\include
+#	WIN_BOOST := C:\boost\include\boost-1_79
+#endif
 
 #====================================================
 #     SOURCE FILES
@@ -104,7 +104,8 @@ else ifeq ($(O_SYSTEM),MacOS)
 	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 else
 	INC_DIR := $(SRC_DIR)
-	INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
+	#INC_FLAGS := $(addprefix -I,$(INC_DIR)) $(addprefix -I,$(WIN_INCLUDE)) $(addprefix -I,$(WIN_BOOST))
+	INC_FLAGS := $(addprefix -I,$(INC_DIR))
 endif
 	CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 
