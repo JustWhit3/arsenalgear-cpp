@@ -62,9 +62,6 @@ jobs:
     - name: Installing extra dependencies and compiling (Windows)
       if: matrix.os == 'windows-latest'
       run: |
-       touch prova.cpp
-       echo "int main(){}" >> prova.cpp
-       g++ -v prova.cpp
        choco install unzip wget
 
        mkdir C:\install
@@ -89,7 +86,7 @@ jobs:
        unzip master.zip | Out-Null
        rm master.zip
        mkdir C:\include\doctest
-       cp doctest-master\doctest\doctest.h C:\include\doctest
+       cp doctest-master\doctest\doctest.h C:/ProgramData/Chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
        rd -r doctest-master
 
        make
