@@ -30,6 +30,8 @@ install_windows_boost() {
     cd C:/install/boost_1_79_0 || exit
     b2 --build-dir=C:/install/boost_1_79_0/build --build-type=complete --prefix=C:/boost toolset=gcc install
     cd - || exit
+    cp -r C:/boost/include/boost-1_79/boost "$1"
+    cp C:/boost/lib/* "$2"
 }
 
 #====================================================
@@ -74,7 +76,7 @@ else
     fi
     read -p "Do you want to install and build Boost.org? (y/n) " word_boost
     if [ "$word_boost" == "y" ] || [ "$word_boost" == "Y" ] ; then
-        install_windows_boost
+        install_windows_boost "${INCL}" "${LIB}"
     fi
 fi
 

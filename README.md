@@ -8,7 +8,8 @@
 	<img title="Code size" alt="code size" src="https://img.shields.io/github/languages/code-size/JustWhit3/arsenalgear-cpp?color=red">
 	<img title="Repo size" alt="repo size" src="https://img.shields.io/github/repo-size/JustWhit3/arsenalgear-cpp?color=red">
 	<img title="Lines of code" alt="total lines" src="https://img.shields.io/tokei/lines/github/JustWhit3/arsenalgear-cpp?color=red"></br>
-  <img title="v1.0" alt="v1.0" src="https://github.com/JustWhit3/arsenalgear-cpp/actions/workflows/codeql-analysis.yml/badge.svg">
+  <img title="codeq" alt="codeq" src="https://github.com/JustWhit3/arsenalgear-cpp/actions/workflows/codeql-analysis.yml/badge.svg">
+  <img title="docgen" alt="docgen" src="https://github.com/JustWhit3/arsenalgear-cpp/actions/workflows/DocGenerator.yml/badge.svg">
 
 ***
 
@@ -97,7 +98,7 @@ arsenalgear/
 General documentation:
 
 - [Contributing to the repository](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Contributing.md): a generic file containing detailed info about how to open an issue or send a pull request to contribute.
-- [Download, install and run](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Download%2C%20install%20and%20run.md): contains instructions about how to install, download and run the repository code and extra information about the scripts of the [scripts](https://github.com/JustWhit3/arsenalgear-cpp/tree/main/scripts) folder.
+- [Download, install and run](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Download-install-run.md): contains instructions about how to install, download and run the repository code and extra information about the scripts of the [scripts](https://github.com/JustWhit3/arsenalgear-cpp/tree/main/scripts) folder.
 
 **Code documentation** is generated using [*Doxygen*](https://www.doxygen.nl/manual/starting.html) and can be accessed [here](https://justwhit3.github.io/arsenalgear-cpp/).
 

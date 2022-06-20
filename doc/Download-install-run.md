@@ -131,7 +131,6 @@ and then you can run the code with:
 ```
 > **NOTE**: executable is called `a.exe` if you are on Windows.
 
-
 > **NOTE**: at least c++17 standard is required to successfully access al the library features.
 
 ### Compile the source code example and testing
@@ -143,7 +142,7 @@ To compile them I prepared a [Makefile](https://github.com/JustWhit3/arsenalgear
 ```shell
 make
 ```
-> **NOTE**: this Makefile is compatible with Ubuntu and MacOS operating systems.
+> **NOTE**: this Makefile is compatible with Ubuntu, MacOS and Windows operating systems.
 
 This will compile both main and test codes. An extra **obj** folder with object files and a **bin** folder with two executables, *main* and *tests*, are now created.
 >**NOTE**: compilation may be slow due to the expensive operation of the `parsed_f` function, which uses the ExprTK library.
@@ -153,6 +152,8 @@ You have simply to run the former in order to run the entire example code:
 ```shell
 ./bin/examples
 ```
+
+> **NOTE**: executables end with `.exe` if you are on Windows of course.
 
 or the latter in order to test the correct functionalities of the library classes methods and functions:
 
