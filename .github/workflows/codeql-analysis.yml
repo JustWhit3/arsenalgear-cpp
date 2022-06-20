@@ -68,7 +68,6 @@ jobs:
        cd C:/install
        wget https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.zip | Out-Null
        unzip boost_1_79_0.zip | Out-Null
-       rm boost_1_79_0.zip
        mkdir C:/boost-build
        mkdir C:/install/boost_1_79_0/boost-build
        mkdir C:/boost
@@ -84,10 +83,8 @@ jobs:
 
        wget https://github.com/doctest/doctest/archive/refs/heads/master.zip | Out-Null
        unzip master.zip | Out-Null
-       rm master.zip
        mkdir C:/ProgramData/Chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/doctest
        cp doctest-master/doctest/doctest.h C:/ProgramData/Chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/doctest
-       rd -r doctest-master
 
        make
     - name: Perform CodeQL Analysis
