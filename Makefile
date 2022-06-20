@@ -96,7 +96,7 @@ else
 	INC_DIR := $(SRC_DIR)
 endif
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
-CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -D_GLIBCXX_USE_CXX11_ABI=0
 
 #====================================================
 #     ALIASES
