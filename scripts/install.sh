@@ -118,7 +118,7 @@ echo ""
 #     (check if doctest is installed)
 #====================================================
 echo "Compiling only the main code of arsenalgear (this is not a problem for the installation)..."
-if ! make ; then
+if ! make $main ; then
     echo "Compilation failed!"
     exit
 fi
