@@ -21,15 +21,14 @@ ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))
 	STREAM_EX := stream
 	UTILS_EX := utils
 	TEST_EXEC := tests
-	LIB := libarsenalgear.a
 else
 	MATH_EX := math.exe
 	OPERATORS_EX := operators.exe
 	STREAM_EX := stream.exe
 	UTILS_EX := utils.exe
 	TEST_EXEC := tests.exe
-	LIB := libarsenalgear.lib
 endif
+LIB := libarsenalgear.a
 CC := g++
 
 #====================================================
