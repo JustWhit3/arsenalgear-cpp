@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['isfloatingpoint_34',['isFloatingPoint',['../namespaceagr.html#a21b12bca8d0df757471946f03f51b3f9',1,'agr']]],
-  ['isinbounds_35',['IsInBounds',['../namespaceagr.html#a1204c90fcc0baef948c5302bb127cc4a',1,'agr']]]
+  ['getcommandout_40',['getCommandOut',['../namespaceagr.html#a1941ebf177b4bdb1d7f322ed3daed0bc',1,'agr']]]
 ];
