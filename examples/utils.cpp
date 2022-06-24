@@ -50,6 +50,9 @@ void utils()
 
   // multi
   std::cout << "Repeating \"this\" for 3 times_ " << agr::multi( "this", 3 ) << "\n\n";
+
+  //split_string 
+  std::cout << "Splitting \"this strin\" and getting last element: " << agr::split_string( "this string", " " ).back() << "\n\n";
  }
 
 //====================================================

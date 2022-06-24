@@ -93,3 +93,12 @@ TEST_CASE( "Testing the multi function." )
   CHECK_EQ( agr::multi( "this", 2 ), "thisthis" );
   CHECK_EQ( agr::multi( "a ", 5 ), "a a a a a " );
  }
+
+//====================================================
+//     split_string
+//==================================================== 
+TEST_CASE( "Testing the split_string function." )
+ {
+  CHECK_EQ( agr::split_string( "aa bb cc", " " )[1], "bb" );
+  CHECK_EQ( agr::split_string( "aaqfq dddd ff", " " ).back(), "ff" );
+ }
