@@ -64,8 +64,10 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: |
        choco install unzip wget pacman
+       pacman -S mingw-w64-x86_64-doctest
+       pacman -Ss doctest
        cd /mingw64
-       ls
+       
 
        mkdir C:/install
        cd C:/install
