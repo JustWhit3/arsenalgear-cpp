@@ -67,6 +67,16 @@ jobs:
        git clone https://github.com/Microsoft/vcpkg.git
        .\vcpkg\bootstrap-vcpkg.bat
        .\vcpkg\vcpkg.exe install boost:x64-windows
+       cd /vcpkg/installed/x64-windows
+       ls
+
+
+
+       .\vcpkg\vcpkg.exe install boost:x64-windows
+       /vcpkg/installed/x64-windows/include/
+
+       cp vcpkg/installed/x64-windows/include/boost C:/ProgramData/Chocolatey/lib/mingw/tools/install/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+       cp /vcpkg/installed/x64-windows/lib/*boost* C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib
 
        mkdir C:/install
        cd C:/install
