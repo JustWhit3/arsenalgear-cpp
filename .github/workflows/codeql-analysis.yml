@@ -63,11 +63,10 @@ jobs:
     - name: Installing extra dependencies and compiling (Windows)
       if: matrix.os == 'windows-latest'
       run: |
-       choco install unzip wget pacman
-       pacman -S mingw-w64-x86_64-doctest
-       pacman -Ss doctest
-       cd /mingw64
-       
+       choco install unzip wget
+       git clone https://github.com/Microsoft/vcpkg.git
+       .\vcpkg\bootstrap-vcpkg.bat
+       .\vcpkg\vcpkg.exe install boost:x64-windows
 
        mkdir C:/install
        cd C:/install
