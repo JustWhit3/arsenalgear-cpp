@@ -2,7 +2,7 @@
 
 <h3 align="center">A library containing general purpose utils I developed for other projects</h3>
 <p align="center">
-  <img title="v1.1" alt="v1.1" src="https://img.shields.io/badge/version-v1.1-informational?style=flat-square">
+  <img title="v1.2" alt="v1.2" src="https://img.shields.io/badge/version-v1.2-informational?style=flat-square">
   <img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">
 	<img title="C++17" alt="C++17" src="https://img.shields.io/badge/c++-17-informational?style=flat-square"></br>
 	<img title="Code size" alt="code size" src="https://img.shields.io/github/languages/code-size/JustWhit3/arsenalgear-cpp?color=red">
@@ -18,7 +18,7 @@
 - [Introduction](#introduction)
 - [Supported operating systems](#supported-operating-systems)
 - [Documentation](#documentation)
-- [News from the last release](#news-from-the-last-release)
+- [News from the latest release](#news-from-the-last-release)
 - [List of features](#list-of-features)
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
@@ -67,15 +67,18 @@ arsenalgear/
 │   ├── operators.hpp
 │   ├── stream.hpp
 │   ├── utils.hpp
+│   ├── system.hpp
 ├── src/
 │   ├── examples.cpp
 │   ├── operators.cpp
 │   ├── stream.cpp
+│   ├── system.cpp
 ├── test/
 │   ├── tests_math.cpp
 │   ├── tests_operators.cpp
 │   ├── tests_stream.cpp
 │   ├── tests_utils.cpp
+│   ├── tests_system.cpp
 ├── scripts/
 │   ├── install.sh
 │   ├── uninstall.sh
@@ -102,8 +105,9 @@ General documentation:
 
 **Code documentation** is generated using [*Doxygen*](https://www.doxygen.nl/manual/starting.html) and can be accessed [here](https://justwhit3.github.io/arsenalgear-cpp/).
 
-## News from the last release
+## News from the latest release
 
+- Added [system](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/system.hpp) utils.
 - Added full support to Windows operating systems.
 - Added full support to MacOS operating systems.
 - Added Doxygen documentation.
@@ -117,6 +121,7 @@ Here you can find the list of features implemented in the current version of the
 - [Operators](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/operators.hpp): contains a list of operators redefinition.
 - [Stream](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/stream.hpp): contains a list of input / output stream tools.
 - [Utils](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/utils.hpp): contains a list of generic utils which don't fit any of the other categories.
+- [System](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/system.hpp): contains a list of generic utils to manage system settings.
 
 ## Credits
 

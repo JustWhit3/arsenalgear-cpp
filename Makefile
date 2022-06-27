@@ -20,16 +20,17 @@ ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))
 	OPERATORS_EX := operators
 	STREAM_EX := stream
 	UTILS_EX := utils
-	TEST_EXEC := tests
-	LIB := libarsenalgear.a
+	SYSTEM_EX := system
+	TEST_EX := tests
 else
 	MATH_EX := math.exe
 	OPERATORS_EX := operators.exe
 	STREAM_EX := stream.exe
 	UTILS_EX := utils.exe
-	TEST_EXEC := tests.exe
-	LIB := libarsenalgear.lib
+	SYSTEM_EX := system.exe
+	TEST_EX := tests.exe
 endif
+LIB := libarsenalgear.a
 CC := g++
 
 #====================================================
@@ -55,6 +56,7 @@ ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))
 	SRC_OPERATORS := $(shell find $(SRC_DIR) -name '*.cpp') $(shell find $(EX_DIR) -name 'operators.cpp')
 	SRC_STREAM := $(shell find $(SRC_DIR) -name '*.cpp') $(shell find $(EX_DIR) -name 'stream.cpp')
 	SRC_UTILS := $(shell find $(SRC_DIR) -name '*.cpp') $(shell find $(EX_DIR) -name 'utils.cpp')
+	SRC_SYSTEM := $(shell find $(SRC_DIR) -name '*.cpp') $(shell find $(EX_DIR) -name 'system.cpp')
 
 	# Other source files
 	SRC_LIB := $(shell find $(SRC_DIR) -name '*.cpp')
@@ -66,6 +68,7 @@ else
 	SRC_OPERATORS := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(EX_DIR)/operators.cpp)
 	SRC_STREAM := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(EX_DIR)/stream.cpp)
 	SRC_UTILS := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(EX_DIR)/utils.cpp)
+	SRC_SYSTEM := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(EX_DIR)/system.cpp)
 
 	# Source files fo examples
 	SRC_LIB := $(wildcard $(SRC_DIR)/*.cpp)
@@ -81,6 +84,7 @@ OBJ_MATH := $(SRC_MATH:%=$(OBJ_DIR)/%.o)
 OBJ_OPERATORS := $(SRC_OPERATORS:%=$(OBJ_DIR)/%.o)
 OBJ_STREAM := $(SRC_STREAM:%=$(OBJ_DIR)/%.o)
 OBJ_UTILS := $(SRC_UTILS:%=$(OBJ_DIR)/%.o)
+OBJ_SYSTEM := $(SRC_SYSTEM:%=$(OBJ_DIR)/%.o)
 
 # Other source objects
 OBJ_LIB := $(SRC_LIB:%=$(OBJ_DIR)/%.o)
@@ -89,14 +93,15 @@ TEST_OBJ := $(TEST:%=$(OBJ_DIR)/%.o)
 #====================================================
 #     DEPENDENCIES AND FLAGS
 #====================================================
-DEPS := $(OBJ_MATH:.o=.d) $(OBJ_OPERATORS:.o=.d) $(OBJ_STREAM:.o=.d) $(OBJ_UTILS:.o=.d)
+DEPS := $(OBJ_MATH:.o=.d) $(OBJ_OPERATORS:.o=.d) $(OBJ_STREAM:.o=.d) $(OBJ_UTILS:.o=.d) $(OBJ_SYSTEM:.o=.d)
 ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))
 	INC_DIR := $(shell find $(SRC_DIR) -type d)
 else
 	INC_DIR := $(SRC_DIR)
 endif
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
-CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
+WFLAGS := -Wall -Wextra -Wno-reorder
+CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP -D_GLIBCXX_USE_CXX11_ABI=0 $(WFLAGS)
 
 #====================================================
 #     ALIASES
@@ -108,9 +113,9 @@ CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP
 #====================================================
 
 #Building all:
-all: $(BUILD_DIR)/$(MATH_EX) $(BUILD_DIR)/$(OPERATORS_EX) $(BUILD_DIR)/$(STREAM_EX) $(BUILD_DIR)/$(UTILS_EX) $(BUILD_DIR)/$(TEST_EXEC) $(LIB_DIR)/$(LIB)
-examples: $(BUILD_DIR)/$(MATH_EX) $(BUILD_DIR)/$(OPERATORS_EX) $(BUILD_DIR)/$(STREAM_EX) $(BUILD_DIR)/$(UTILS_EX) $(LIB_DIR)/$(LIB)
-tests: $(BUILD_DIR)/$(TEST_EXEC)
+all: $(BUILD_DIR)/$(MATH_EX) $(BUILD_DIR)/$(OPERATORS_EX) $(BUILD_DIR)/$(STREAM_EX) $(BUILD_DIR)/$(UTILS_EX) $(BUILD_DIR)/$(SYSTEM_EX) $(BUILD_DIR)/$(TEST_EX) $(LIB_DIR)/$(LIB)
+examples: $(BUILD_DIR)/$(MATH_EX) $(BUILD_DIR)/$(OPERATORS_EX) $(BUILD_DIR)/$(STREAM_EX) $(BUILD_DIR)/$(UTILS_EX) $(BUILD_DIR)/$(SYSTEM_EX) $(LIB_DIR)/$(LIB)
+tests: $(BUILD_DIR)/$(TEST_EX)
 
 #====================================================
 #     Building examples
@@ -136,10 +141,15 @@ $(BUILD_DIR)/$(UTILS_EX): $(OBJ_UTILS)
 	@ mkdir -p $(dir $@)
 	$(CC) $(OBJ_UTILS) -o $@ $(LDFLAGS)
 
+# System
+$(BUILD_DIR)/$(SYSTEM_EX): $(OBJ_SYSTEM)
+	@ mkdir -p $(dir $@)
+	$(CC) $(OBJ_SYSTEM) -o $@ $(LDFLAGS)
+
 #====================================================
 #     Building tests
 #====================================================
-$(BUILD_DIR)/$(TEST_EXEC): $(TEST_OBJ)
+$(BUILD_DIR)/$(TEST_EX): $(TEST_OBJ)
 	@ mkdir -p $(dir $@)
 	$(CC) $(TEST_OBJ) -o $@ $(LDFLAGS)
 

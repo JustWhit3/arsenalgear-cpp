@@ -26,6 +26,7 @@ namespace agr
   //     Functions
   //====================================================
   extern std::string multi( const std::string& element, const int& n_times );
+  extern std::vector <std::string> split_string( const std::string& input, const std::string& regex );
   
   //====================================================
   //     maxptr
@@ -76,11 +77,10 @@ namespace agr
   /**
    * @brief Function to check if an expression is a floating point or not.
    * @tparam T The type of the expression.
-   * @param expression The expression to be checked.
    * @return bool True if the expression is a floating point, false otherwise.
    */
   template <typename T>
-  inline bool isFloatingPoint( const T& expression )
+  inline bool isFloatingPoint( const T& )
    {
     return std::is_floating_point <T>::value;
    }
