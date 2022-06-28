@@ -15,6 +15,7 @@
 
 // STD headers
 #include <iostream>
+#include <streambuf>
 
 //============================================
 //     null_stream
@@ -29,4 +30,17 @@ TEST_CASE( "Testing the null_stream." )
 
   CHECK_EQ( v(), 5 );
   CHECK_EQ( v( std::cout ), 10 );
+ }
+
+//============================================
+//     savebuf class
+//============================================
+TEST_CASE( "Testing the savebuf class." )
+ {
+  std::streambuf* coutbuf = std::cout.rdbuf();
+  agr::savebuf sbuf( coutbuf );
+  std::cout.rdbuf( &sbuf );
+  std::cout << "Test";
+  std::cout.rdbuf( coutbuf );
+  CHECK_EQ( sbuf.str(), "Test" );
  }

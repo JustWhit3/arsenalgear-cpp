@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/JustWhit3/arsenalgear-cpp/blob/main/img/logo.svg" height=220></p>
 
-<h3 align="center">A library containing general purpose utils I developed for other projects</h3>
+<h3 align="center">A library containing general purpose utils</h3>
 <p align="center">
   <img title="v1.2" alt="v1.2" src="https://img.shields.io/badge/version-v1.2-informational?style=flat-square">
   <img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">

@@ -4,6 +4,7 @@
 
 // STD headers
 #include <iostream>
+#include <streambuf>
 
 // My headers
 #include "../include/stream.hpp"
@@ -18,7 +19,14 @@ void stream()
                       << "======================================================" << "\n"
 
                       << "\n";
-  //Nothing for the moment.
+
+  //Store the output of a stream using the savebuf class
+  std::streambuf* coutbuf = std::cout.rdbuf();
+  agr::savebuf sbuf( coutbuf );
+  std::cout.rdbuf( &sbuf );
+  std::cout << "This string";
+  std::cout.rdbuf( coutbuf ); // restore the original stream buffer
+  std::cout << "\nI have saved: " << sbuf.str() << "\n\n";
  }
 
 //====================================================
