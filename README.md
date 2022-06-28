@@ -50,63 +50,17 @@ The software is and will stay **free**, but if you want to support me with a don
 
 ## Documentation
 
-Repository diagram structure:
-
-```txt
-arsenalgear/
-├── .github/
-│   ├── workflows/
-│   │   ├── codeql-analysis.yml
-│   │   ├── DocGenerator.yml
-├── doc/
-│   ├── Contributing.md
-│   ├── Download-install-run.md
-├── include/
-│   ├── constants.hpp
-│   ├── math.hpp
-│   ├── operators.hpp
-│   ├── stream.hpp
-│   ├── utils.hpp
-│   ├── system.hpp
-├── src/
-│   ├── examples.cpp
-│   ├── operators.cpp
-│   ├── stream.cpp
-│   ├── system.cpp
-├── test/
-│   ├── tests_math.cpp
-│   ├── tests_operators.cpp
-│   ├── tests_stream.cpp
-│   ├── tests_utils.cpp
-│   ├── tests_system.cpp
-├── scripts/
-│   ├── install.sh
-│   ├── uninstall.sh
-│   ├── debug.sh
-│   ├── update.sh
-│   ├── size_of_dir.py
-├── img/
-├── Makefile
-├── Doxyfile
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CITATION.cff
-├── .gitignore
-├── .all-contributorsrc
-├── .clang-format
-├── .valgrindrc
-```
-
 General documentation:
 
 - [Contributing to the repository](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Contributing.md): a generic file containing detailed info about how to open an issue or send a pull request to contribute.
 - [Download, install and run](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Download-install-run.md): contains instructions about how to install, download and run the repository code and extra information about the scripts of the [scripts](https://github.com/JustWhit3/arsenalgear-cpp/tree/main/scripts) folder.
+- [Repository structure](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Repository-structure.md): detailed repository diagram structure.
 
 **Code documentation** is generated using [*Doxygen*](https://www.doxygen.nl/manual/starting.html) and can be accessed [here](https://justwhit3.github.io/arsenalgear-cpp/).
 
 ## News from the latest release
 
+- Added a new [stream](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/stream.hpp) class.
 - Added [system](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/system.hpp) utils.
 - Added full support to Windows operating systems.
 - Added full support to MacOS operating systems.
@@ -116,12 +70,12 @@ General documentation:
 
 Here you can find the list of features implemented in the current version of the library:
 
-- [Constants](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/constants.hpp): contains a list of constants developed for utility.
-- [Math](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/math.hpp): contains a list of mathematical tools.
-- [Operators](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/operators.hpp): contains a list of operators redefinition.
-- [Stream](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/stream.hpp): contains a list of input / output stream tools.
-- [Utils](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/utils.hpp): contains a list of generic utils which don't fit any of the other categories.
-- [System](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/system.hpp): contains a list of generic utils to manage system settings.
+- [Constants](https://justwhit3.github.io/arsenalgear-cpp/constants_8hpp.html): contains a list of constants developed for utility.
+- [Math](https://justwhit3.github.io/arsenalgear-cpp/math_8hpp.html): contains a list of mathematical tools.
+- [Operators](https://justwhit3.github.io/arsenalgear-cpp/operators_8hpp.html): contains a list of operators redefinition.
+- [Stream](https://justwhit3.github.io/arsenalgear-cpp/stream_8hpp.html): contains a list of input / output stream tools.
+- [Utils](https://justwhit3.github.io/arsenalgear-cpp/system_8hpp.html): contains a list of generic utils which don't fit any of the other categories.
+- [System](https://justwhit3.github.io/arsenalgear-cpp/utils_8hpp.html): contains a list of generic utils to manage system settings.
 
 ## Credits
 
