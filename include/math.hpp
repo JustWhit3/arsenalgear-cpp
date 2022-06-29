@@ -67,10 +67,10 @@ namespace agr
    * @param y The y variable.
    * @return double The parsed expression.
    */
-  #if defined( __linux__ ) || defined( __APPLE__ )
   template <typename T>
   inline double parsed_f( const T& expr, double x, double y )
    {
+    #if defined( __linux__ ) || defined( __APPLE__ )
     exprtk::rtl::io::file::package<double> fileio_package;
 
     static exprtk::symbol_table<double> symbol_table;
@@ -87,8 +87,8 @@ namespace agr
      }
 
     return expression.value();
+    #endif
    }
-  #endif
  }
 
 #endif
