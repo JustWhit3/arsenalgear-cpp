@@ -101,7 +101,10 @@ else
 endif
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
 WFLAGS := -Wall -Wextra -Wno-reorder
-CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP $(WFLAGS) -fconcepts
+CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP $(WFLAGS) 
+ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),Linux))
+	PPFLAGS += -fconcepts
+endif
 
 #====================================================
 #     ALIASES
