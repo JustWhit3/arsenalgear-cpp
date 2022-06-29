@@ -114,10 +114,10 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">//====================================================</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">//     parsed_f</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespaceagr.html#a074f78cbf478240a6f3d6deabe9aa23a">   71</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="namespaceagr.html#a074f78cbf478240a6f3d6deabe9aa23a">parsed_f</a>( <span class="keyword">const</span> T&amp; expr, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y )</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">    #if defined( __linux__ ) || defined( __APPLE__ )</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"></span><span class="preprocessor">  #if defined( __linux__ ) || defined( __APPLE__ )</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">double</span> parsed_f( <span class="keyword">const</span> T&amp; expr, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y )</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    exprtk::rtl::io::file::package&lt;double&gt; fileio_package;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> exprtk::symbol_table&lt;double&gt; symbol_table;</div>
@@ -134,13 +134,12 @@ $(function() {
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;     }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> expression.value();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;   }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">  #endif</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:17</div></div>
-<div class="ttc" id="anamespaceagr_html_a074f78cbf478240a6f3d6deabe9aa23a"><div class="ttname"><a href="namespaceagr.html#a074f78cbf478240a6f3d6deabe9aa23a">agr::parsed_f</a></div><div class="ttdeci">double parsed_f(const T &amp;expr, double x, double y)</div><div class="ttdoc">Function to parse a mathematical expression f(x,y) (Only for Linux and MacOS).</div><div class="ttdef"><b>Definition:</b> math.hpp:71</div></div>
 <div class="ttc" id="anamespaceagr_html_a1204c90fcc0baef948c5302bb127cc4a"><div class="ttname"><a href="namespaceagr.html#a1204c90fcc0baef948c5302bb127cc4a">agr::IsInBounds</a></div><div class="ttdeci">bool IsInBounds(const T &amp;value, const T &amp;low, const T &amp;high)</div><div class="ttdoc">Function to check if a number lies in a certain bound or not.</div><div class="ttdef"><b>Definition:</b> math.hpp:53</div></div>
 <div class="ttc" id="anamespaceagr_html_a955159eb8ba52ef974bfb4084e1ba45f"><div class="ttname"><a href="namespaceagr.html#a955159eb8ba52ef974bfb4084e1ba45f">agr::roundoff</a></div><div class="ttdeci">T roundoff(const T &amp;value, const unsigned char prec)</div><div class="ttdoc">Function to round a floating point to n-th decimal place after comma.</div><div class="ttdef"><b>Definition:</b> math.hpp:33</div></div>
 </div><!-- fragment --></div><!-- contents -->

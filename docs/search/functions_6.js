@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['roundoff_52',['roundoff',['../namespaceagr.html#a955159eb8ba52ef974bfb4084e1ba45f',1,'agr']]],
-  ['runtime_5ferror_5ffunc_53',['runtime_error_func',['../namespaceagr.html#aae2c5723694d7158f14af078be215369',1,'agr']]]
+  ['savebuf_52',['savebuf',['../classagr_1_1savebuf.html#a06d15ec453d2e97fb24bfe72e9b96630',1,'agr::savebuf']]],
+  ['split_5fstring_53',['split_string',['../namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd',1,'agr']]],
+  ['str_54',['str',['../classagr_1_1savebuf.html#aea87b126d50a1565fda4fae17bd74688',1,'agr::savebuf']]]
 ];
