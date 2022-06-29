@@ -101,10 +101,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">maxptr</a> (T *ptr, int ptr_dim)</td></tr>
 <tr class="memdesc:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to find the maximum value of a generic pointer containing listed values.  <a href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">More...</a><br /></td></tr>
 <tr class="separator:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae2c5723694d7158f14af078be215369"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aae2c5723694d7158f14af078be215369"><td class="memTemplItemLeft" align="right" valign="top">std::runtime_error&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#aae2c5723694d7158f14af078be215369">runtime_error_func</a> (const std::string &amp;beg, T variable, const std::string &amp;end)</td></tr>
-<tr class="memdesc:aae2c5723694d7158f14af078be215369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to throw customized runtime error.  <a href="namespaceagr.html#aae2c5723694d7158f14af078be215369">More...</a><br /></td></tr>
-<tr class="separator:aae2c5723694d7158f14af078be215369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4985365fab7e1937492277a49ee3cb2f"><td class="memTemplParams" colspan="2">template&lt;typename T_err  = std::runtime_error&gt; </td></tr>
+<tr class="memitem:a4985365fab7e1937492277a49ee3cb2f"><td class="memTemplItemLeft" align="right" valign="top">T_err&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a4985365fab7e1937492277a49ee3cb2f">except_error_func</a> (const std::string &amp;beg, auto variable, const std::string &amp;end)</td></tr>
+<tr class="memdesc:a4985365fab7e1937492277a49ee3cb2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to throw customized stdexception error.  <a href="namespaceagr.html#a4985365fab7e1937492277a49ee3cb2f">More...</a><br /></td></tr>
+<tr class="separator:a4985365fab7e1937492277a49ee3cb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30f754b298e55c68819829df78d936cb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a30f754b298e55c68819829df78d936cb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a> (const T &amp;)</td></tr>
 <tr class="memdesc:a30f754b298e55c68819829df78d936cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check if an expression is a floating point or not.  <a href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">More...</a><br /></td></tr>
@@ -129,6 +129,67 @@ Variables</h2></td></tr>
 <tr class="separator:af68907b37ef6e4abe00f6cf74778cde0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a4985365fab7e1937492277a49ee3cb2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4985365fab7e1937492277a49ee3cb2f">&#9670;&nbsp;</a></span>except_error_func()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T_err  = std::runtime_error&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T_err agr::except_error_func </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>beg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">auto&#160;</td>
+          <td class="paramname"><em>variable</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function used to throw customized stdexception error. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T_err</td><td>The type of the exception error. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">beg</td><td>The first part of the error message. </td></tr>
+    <tr><td class="paramname">variable</td><td>The variable to be inserted in the error message. </td></tr>
+    <tr><td class="paramname">end</td><td>The last part of the error message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T_err The modified exception error. </dd></dl>
+
+</div>
+</div>
 <a id="a1941ebf177b4bdb1d7f322ed3daed0bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1941ebf177b4bdb1d7f322ed3daed0bc">&#9670;&nbsp;</a></span>getCommandOut()</h2>
 
@@ -440,67 +501,6 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T The rounded variable. </dd></dl>
-
-</div>
-</div>
-<a id="aae2c5723694d7158f14af078be215369"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae2c5723694d7158f14af078be215369">&#9670;&nbsp;</a></span>runtime_error_func()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::runtime_error agr::runtime_error_func </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>beg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>variable</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>end</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Function used to throw customized runtime error. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type of the error message. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">beg</td><td>The first part of the error message. </td></tr>
-    <tr><td class="paramname">variable</td><td>The variable to be inserted in the error message. </td></tr>
-    <tr><td class="paramname">end</td><td>The last part of the error message. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::runtime_error The modified runtime error. </dd></dl>
 
 </div>
 </div>
