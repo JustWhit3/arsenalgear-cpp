@@ -14,6 +14,7 @@
 #include <type_traits>
 #include <vector>
 #include <string>
+#include <stdexcept>
 
 //====================================================
 //     Namespaces
@@ -46,19 +47,19 @@ namespace agr
    }
 
   //====================================================
-  //     runtime_error_func
+  //     except_error_func
   //====================================================
   // Function used to throw customized runtime error.
   /**
-   * @brief Function used to throw customized runtime error.
-   * @tparam T The type of the error message.
+   * @brief Function used to throw customized stdexception error.
+   * @tparam T_err The type of the exception error.
    * @param beg The first part of the error message.
    * @param variable The variable to be inserted in the error message.
    * @param end The last part of the error message.
-   * @return std::runtime_error The modified runtime error.
+   * @return T_err The modified exception error.
    */
-  template <typename T>
-  inline std::runtime_error runtime_error_func( const std::string& beg, T variable, const std::string& end )
+  template <typename T_err = std::runtime_error>
+  inline T_err except_error_func( const std::string& beg, auto variable, const std::string& end )
    {
     static std::string error = "\033[31m" +
                                beg + " \""s + 
@@ -68,7 +69,7 @@ namespace agr
                                end +
                                "\033[39m";
 
-    return std::runtime_error( error ); 
+    return T_err( error ); 
    }
 
   //====================================================

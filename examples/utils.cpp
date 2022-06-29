@@ -9,6 +9,7 @@
 // STD headers
 #include <iostream>
 #include <string>
+#include <stdexcept>
 
 //====================================================
 //     utils
@@ -33,7 +34,9 @@ void utils()
   // runtime_error_func
   // commented since it quit the program. Uncomment to try it:
   // std::cout << "Runtime error function example: ";
-  // throw agr::runtime_error_func( "Inserted command", "<command>", "is not supported!" );
+  // throw agr::except_error_func( "Inserted command", "<command>", "is not supported!" );
+  // std::cout << "Out of range function example: ";
+  // throw agr::except_error_func<std::out_of_range>( "Inserted command", "<command>", "is not supported!" );
 
   // isFLoatingPoint
   std::cout << "Check if 0.00034 is a floating point: " << agr::isFloatingPoint( 0.00034 ) 
@@ -52,7 +55,7 @@ void utils()
   std::cout << "Repeating \"this\" for 3 times_ " << agr::multi( "this", 3 ) << "\n\n";
 
   //split_string 
-  std::cout << "Splitting \"this strin\" and getting last element: " << agr::split_string( "this string", " " ).back() << "\n\n";
+  std::cout << "Splitting \"this string\" and getting last element: " << agr::split_string( "this string", " " ).back() << "\n\n";
  }
 
 //====================================================

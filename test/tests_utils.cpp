@@ -18,6 +18,7 @@
 // STD headers
 #include <string>
 #include <vector>
+#include <stdexcept>
 
 //====================================================
 //     Namespaces
@@ -52,19 +53,20 @@ TEST_CASE_TEMPLATE( "Testing the isFLoatingPoint function.", T, double, float, l
  }
 
 //====================================================
-//     runtime_error_func
+//     except_error_func
 //==================================================== 
-TEST_CASE_TEMPLATE( "Testing the runtime_error_func function.", T, std::string, const char* )
+TEST_CASE( "Testing the except_error_func function." )
  {
-  T var = "this";
+  std::string var = "this";
   const std::string test_string = "\033[31mfirst" + " \""s +
                                   "\033[1m" + static_cast <std::string>( var ) + 
                                   "\033[22m" + "\" "s +
                                   "second\033[39m" +
                                   "\n";
                        
-  CHECK_THROWS_AS( throw( agr::runtime_error_func( "first", var, "second" ) ), std::runtime_error );
-  CHECK_THROWS_MESSAGE( throw( agr::runtime_error_func( "first", var, "second" ) ), test_string );
+  CHECK_THROWS_AS( throw( agr::except_error_func( "first", var, "second" ) ), std::runtime_error );
+  CHECK_THROWS_AS( throw( agr::except_error_func<std::out_of_range>( "first", var, "second" ) ), std::out_of_range );
+  CHECK_THROWS_MESSAGE( throw( agr::except_error_func( "first", var, "second" ) ), test_string );
  }
 
 //====================================================
