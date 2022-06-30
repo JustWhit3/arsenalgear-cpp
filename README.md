@@ -78,14 +78,14 @@ Here you can find the list of features implemented in the current version of the
 
 ### Constants
 
-- [Null string](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a1d792d292bac3e11731eb31cac8dd46e): template variable to define the null string.
-- [empty space](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#af68907b37ef6e4abe00f6cf74778cde0): template variable to define the empty space.
+- [`null_string`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a1d792d292bac3e11731eb31cac8dd46e): template variable to define the null string.
+- [`empty_space`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#af68907b37ef6e4abe00f6cf74778cde0): template variable to define the empty space.
 
 ### Math
 
-- [roundoff](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a955159eb8ba52ef974bfb4084e1ba45f): function use to round the value a floating point variable.
-- [IsInBounds](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a1204c90fcc0baef948c5302bb127cc4a): functions used to check if a variable lies in a range.
-- [parsed_f](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/math.hpp#:~:text=*/-,template%20%3Ctypename%20T%3E,-inline%20double%20parsed_f): functions used to parse a mathematical function.
+- [`roundoff`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a955159eb8ba52ef974bfb4084e1ba45f): function use to round the value a floating point variable.
+- [`IsInBounds`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a1204c90fcc0baef948c5302bb127cc4a): functions used to check if a variable lies in a range.
+- [`parsed_f`](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/math.hpp#:~:text=*/-,template%20%3Ctypename%20T%3E,-inline%20double%20parsed_f): functions used to parse a mathematical function.
 
 ### Operators
 
@@ -93,21 +93,21 @@ Here you can find the list of features implemented in the current version of the
 
 ### Stream
 
-- [null_stream](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a86c4b2752b7974c764df413b76a4f715:~:text=%E2%97%86-,null_stream,-boost%3A%3Aiostreams%3A%3Astream): definition of the null stream.
-- [savebuf](https://justwhit3.github.io/arsenalgear-cpp/classagr_1_1savebuf.html): class used to store the output of an output stream (useful for testing).
+- [`null_stream`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a86c4b2752b7974c764df413b76a4f715:~:text=%E2%97%86-,null_stream,-boost%3A%3Aiostreams%3A%3Astream): definition of the null stream.
+- [`savebuf`](https://justwhit3.github.io/arsenalgear-cpp/classagr_1_1savebuf.html): class used to store the output of an output stream (useful for testing).
 
 ### System
 
-- [getCommandOut](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a1941ebf177b4bdb1d7f322ed3daed0bc): function used to print the output of a command in the console.
+- [`getCommandOut`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a1941ebf177b4bdb1d7f322ed3daed0bc): function used to print the output of a command in the console.
 
 ### Utils
 
-- [multi](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a523bed79d63264512bfc2a9b12027c90): function used to multiply a string for n times.
-- [split_string](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd): function used to split a string based on a certain reges.
-- [maxptr](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157): function used to find the maximum value of a generic pointer.
-- [except_error_func](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a4985365fab7e1937492277a49ee3cb2f:~:text=%E2%97%86-,except_error_func,-()): function used to throw customized exception error.
-- [isFloatingPoint](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a30f754b298e55c68819829df78d936cb): function used to check if an expression is a floating point or not.
-- [one](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a): function used to find the incremented unit of a loop.
+- [`multi`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a523bed79d63264512bfc2a9b12027c90): function used to multiply a string for n times.
+- [`split_string`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd): function used to split a string based on a certain reges.
+- [`maxptr`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157): function used to find the maximum value of a generic pointer.
+- [`except_error_func`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a4985365fab7e1937492277a49ee3cb2f:~:text=%E2%97%86-,except_error_func,-()): function used to throw customized exception error.
+- [`isFloatingPoint`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a30f754b298e55c68819829df78d936cb): function used to check if an expression is a floating point or not.
+- [`one`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a): function used to find the incremented unit of a loop.
 
 
 ## Credits
