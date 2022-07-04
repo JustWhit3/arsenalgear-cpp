@@ -68,10 +68,6 @@ arsenalgear/
 │   ├── workflows/
 │   │   ├── codeql-analysis.yml
 │   │   ├── DocGenerator.yml
-├── doc/
-│   ├── Contributing.md
-│   ├── Download-install-run.md
-│   ├── Repository-structure.md
 ├── include/
 │   ├── constants.hpp
 │   ├── math.hpp
@@ -125,8 +121,6 @@ Steps to be reproduced:
 ./script/install.sh
 ```
 
-> **NOTE**: this script supports the installation on Ubuntu, MacOS and Windows operating systems.
-
 > **NOTE**: if you are on *Cygwin64* you may get an error related to the `\r` character. To solve it run the `dos2unix` command on the script (ex: `dos2unix install.sh`) before running it.
 
 A new library *libarsenalgear.a* (or *libarsenalgear.lib* in the Windows case) will be created into the `/usr/local/lib` folder of your computer and the [*header*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include) files will be installed into `/usr/local/include`.
@@ -157,15 +151,10 @@ Optional (only for developers)
 
 In case you want to update the source code from the latest improvements of the repository, you can use the updater script, called [update.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/update.sh).
 
-From the repository folder type this command on the shell:
+From the repository folder type this commands on the shell:
 
 ```shell
 ./scripts/update.sh
-```
-
-Then, you can reinstall the cpp source code:
-
-```shell
 ./scripts/install.sh
 ```
 
@@ -214,48 +203,39 @@ and then you can run the code with:
 ```shell
 ./a.out
 ```
-> **NOTE**: executable is called `a.exe` if you are on Windows.
 
-> **NOTE**: at least c++17 standard is required to successfully access al the library features.
+> **NOTE**: executable is called `a.exe` if you are on Windows.
 
 ### Compile examples and tests
 
 The source code contains also an example code [*src/examples.cpp*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/src/examples.cpp) to show the user a simple usage of all the features supported by the library and test codes in the [**test**](https://github.com/JustWhit3/osmanip/blob/main/cpp/test) folder to test the correct functionality of the library functions and methods.
 
-To compile them I prepared a [Makefile](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/Makefile). The source code is already compiled when you install the library, but in case you don't want to install the package and explore only the library features through this examples, you can run this command on the shell:
+The source code is already compiled when you install the library, but in case you don't want to install the package and explore only the library features through this examples, you can run this command on the shell:
 
 ```shell
-make
+make main
 ```
-> **NOTE**: this Makefile is compatible with Ubuntu, MacOS and Windows operating systems.
 
-This will compile both main and test codes. An extra **obj** folder with object files and a **bin** folder with two executables, *main* and *tests*, are now created.
 >**NOTE**: compilation may be slow due to the expensive operation of the `parsed_f` function, which uses the ExprTK library.
 
-You have simply to run the former in order to run the entire example code:
+To run all examples:
 
 ```shell
-./bin/examples
+./bin/math
+./bin/operators
+./bin/stream
+./bin/system
+./bin/tests
+./bin/utils
 ```
 
 > **NOTE**: executables end with `.exe` if you are on Windows of course.
 
-or the latter in order to test the correct functionalities of the library classes methods and functions:
-
-```shell
-./bin/tests
-```
-
-If you want to compile only the main code you can simply enter:
-
-```shell
-make examples
-```
-
-if instead you want to compile only the tests code you can use the following command:
+To compile and run tests:
 
 ```shell
 make tests
+./bin/tests
 ```
 
 There is also an option to go back to the pre-compilation state of the code, to do this simply type this command:
