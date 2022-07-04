@@ -16,8 +16,13 @@
 ## Table of contents
 
 - [Introduction](#introduction)
-- [Supported operating systems](#supported-operating-systems)
-- [Documentation](#documentation)
+- [Repository structure](#repository-structure)
+- [Install and use](#install-and-use)
+  - [Install](#install)
+  - [Update](#update)
+  - [Uninstall](#uninstall)
+  - [Use in your device](#use-in-your-device)
+  - [Compile examples and tests](#compile-examples-and-tests)
 - [News from the latest release](#news-from-the-last-release)
 - [List of features](#list-of-features)
   - [Constants](#constants)
@@ -26,24 +31,25 @@
   - [Stream](#stream)
   - [System](#system)
   - [Utils](#utils)
+- [Useful scripts](#useful-scripts)
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
 
 ## Introduction
 
-This library contains a set of generic utils I developed for other projects. There are several sub-headers / modules related to the various topics (math, iostream and others). You can easily install the library using one of the installation scripts of the [scripts](https://github.com/JustWhit3/arsenalgear-cpp/tree/main/scripts) folder and run an example code.
-
-Existing tools are constantly updated and new ones are added once their development is required for other projects.
-
-Some projects in which I am using this library are, for example: [osmanip](https://github.com/JustWhit3/osmanip) and [SAFD-algorithm](https://github.com/JustWhit3/SAFD-algorithm).
+This library contains a set of generic utils I developed for other projects. There are several sub-headers / modules related to the various topics (math, iostream and others). Existing tools are constantly updated and new ones are added once their development is required for other projects. Some projects in which I am using this library are, for example: [osmanip](https://github.com/JustWhit3/osmanip) and [SAFD-algorithm](https://github.com/JustWhit3/SAFD-algorithm).
 
 If you want to use this library please cite it following [this](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/CITATION.cff) citation template.
+
+If you want to contribute to the repository, see [this](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/CONTRIBUTING.md) document before.
+
+**Code documentation** is generated using [*Doxygen*](https://www.doxygen.nl/manual/starting.html) and can be accessed [here](https://justwhit3.github.io/arsenalgear-cpp/).
 
 The software is and will stay **free**, but if you want to support me with a donation it would be really appreciated!
 
 <a href="https://www.buymeacoffee.com/JustWhit33" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-## Supported operating systems
+Supported operating systems:
 
 - **Linux**
   - *Ubuntu* (tested)
@@ -54,15 +60,209 @@ The software is and will stay **free**, but if you want to support me with a don
   - *WSL* (tested)
 - **MacOS**
 
-## Documentation
+## Repository structure
 
-General documentation:
+```txt
+arsenalgear/
+├── .github/
+│   ├── workflows/
+│   │   ├── codeql-analysis.yml
+│   │   ├── DocGenerator.yml
+├── doc/
+│   ├── Contributing.md
+│   ├── Download-install-run.md
+│   ├── Repository-structure.md
+├── include/
+│   ├── constants.hpp
+│   ├── math.hpp
+│   ├── operators.hpp
+│   ├── stream.hpp
+│   ├── utils.hpp
+│   ├── system.hpp
+├── src/
+│   ├── examples.cpp
+│   ├── operators.cpp
+│   ├── stream.cpp
+│   ├── system.cpp
+├── test/
+│   ├── tests_math.cpp
+│   ├── tests_operators.cpp
+│   ├── tests_stream.cpp
+│   ├── tests_utils.cpp
+│   ├── tests_system.cpp
+├── scripts/
+│   ├── install.sh
+│   ├── uninstall.sh
+│   ├── debug.sh
+│   ├── update.sh
+│   ├── size_of_dir.py
+├── img/
+├── Makefile
+├── Doxyfile
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── CITATION.cff
+├── .gitignore
+├── .all-contributorsrc
+├── .clang-format
+├── .valgrindrc
+```
 
-- [Contributing to the repository](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Contributing.md): a generic file containing detailed info about how to open an issue or send a pull request to contribute.
-- [Download, install and run](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Download-install-run.md): contains instructions about how to install, download and run the repository code and extra information about the scripts of the [scripts](https://github.com/JustWhit3/arsenalgear-cpp/tree/main/scripts) folder.
-- [Repository structure](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/doc/Repository-structure.md): detailed repository diagram structure.
+## Install and use
 
-**Code documentation** is generated using [*Doxygen*](https://www.doxygen.nl/manual/starting.html) and can be accessed [here](https://justwhit3.github.io/arsenalgear-cpp/).
+### Install
+
+Steps to be reproduced:
+
+**1)** Download one of the releases of the repository or clone the main branch.
+
+**2)** Unzip and enter the downloaded repository directory.
+
+**3)** Install and compile the library and its prerequisites
+
+```bash
+./script/install.sh
+```
+
+> **NOTE**: this script supports the installation on Ubuntu, MacOS and Windows operating systems.
+
+> **NOTE**: if you are on *Cygwin64* you may get an error related to the `\r` character. To solve it run the `dos2unix` command on the script (ex: `dos2unix install.sh`) before running it.
+
+A new library *libarsenalgear.a* (or *libarsenalgear.lib* in the Windows case) will be created into the `/usr/local/lib` folder of your computer and the [*header*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include) files will be installed into `/usr/local/include`.
+> **NOTE**: if you are on MacOS or Windows the paths are slightly different (looks at [install.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/install.sh)).
+
+Prerequisites list:
+
+- A `g++` compiler.
+- C++17 standard.
+- [`Boost`](https://www.boost.org/) library.
+- [`ExprTK`](http://www.partow.net/programming/exprtk/) library (no Windows).
+- [`osmanip`](https://github.com/JustWhit3/osmanip) library.
+- [`arsenalgear`](https://github.com/JustWhit3/arsenalgear) library.
+- [GNU make](https://www.opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/#:~:text=Installing%20GNU%20Make,install%20build%2Dessential.) for compilation.
+
+Optional (only for developers)
+
+- [Valgrind](https://valgrind.org/) to run the [debug.sh](#debugsh) script.
+- [Cppcheck](https://github.com/danmar/cppcheck) to run the [debug.sh](#debugsh) script.
+- [Clang formatter](https://stackoverflow.com/questions/20756924/how-can-i-install-clang-format-in-ubuntu#:~:text=16.04%2C%20simply%20do%3A-,sudo%20apt%20install%20clang%2Dformat,-Share) to format the code for pull requests.
+- [wget](https://www.techwalla.com/articles/how-to-install-wget-in-ubuntu) for the installer script.
+- [unzip](https://www.mysoftkey.com/linux/how-to-do-zip-and-unzip-file-in-ubuntu-linux/) for the installer script.
+- [doctest](https://github.com/onqtam/doctest) for testing.
+- [hurry.filesize](https://pypi.org/project/hurry.filesize/) for `size_of_dir.py` script, used in the installer script.
+- [termcolor](https://pypi.org/project/termcolor/) for `size_of_dir.py` script, used in the installer script..
+
+### Update
+
+In case you want to update the source code from the latest improvements of the repository, you can use the updater script, called [update.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/update.sh).
+
+From the repository folder type this command on the shell:
+
+```shell
+./scripts/update.sh
+```
+
+Then, you can reinstall the cpp source code:
+
+```shell
+./scripts/install.sh
+```
+
+### Uninstall
+
+In case you want to uninstall the software from your computer, you can use the uninstaller script, called [uninstall.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/uninstall.sh).
+
+From the repository folder type this command on the shell:
+
+```shell
+./scripts/uninstall.sh
+```
+
+### Use in your device
+
+Once you have installed the library you can freely use it in one of your C++ projects by including one or more of the modules:
+
+```c++
+#include <arsenalgear/module_name.hpp>
+```
+
+for example:
+
+```c++
+#include <arsenalgear/math.hpp>
+```
+
+Now you are able to access al the functions and classes of the library.
+
+You can additionally add also a namespace directive if you want:
+
+```c++
+using namespace agr;
+```
+
+Supposing you are using the library in a program called *program.cpp*, to compile it you have simply to enter this command in the shell:
+
+```shell
+g++ program.cpp -larsenalgear
+```
+
+> **NOTE**: if you are on **Windows** and didn't install the headers and libraries in a system standard path you probably need to add also the `-I\path\to\include` and `-L\path\to\lib` flags.
+
+and then you can run the code with:
+
+```shell
+./a.out
+```
+> **NOTE**: executable is called `a.exe` if you are on Windows.
+
+> **NOTE**: at least c++17 standard is required to successfully access al the library features.
+
+### Compile examples and tests
+
+The source code contains also an example code [*src/examples.cpp*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/src/examples.cpp) to show the user a simple usage of all the features supported by the library and test codes in the [**test**](https://github.com/JustWhit3/osmanip/blob/main/cpp/test) folder to test the correct functionality of the library functions and methods.
+
+To compile them I prepared a [Makefile](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/Makefile). The source code is already compiled when you install the library, but in case you don't want to install the package and explore only the library features through this examples, you can run this command on the shell:
+
+```shell
+make
+```
+> **NOTE**: this Makefile is compatible with Ubuntu, MacOS and Windows operating systems.
+
+This will compile both main and test codes. An extra **obj** folder with object files and a **bin** folder with two executables, *main* and *tests*, are now created.
+>**NOTE**: compilation may be slow due to the expensive operation of the `parsed_f` function, which uses the ExprTK library.
+
+You have simply to run the former in order to run the entire example code:
+
+```shell
+./bin/examples
+```
+
+> **NOTE**: executables end with `.exe` if you are on Windows of course.
+
+or the latter in order to test the correct functionalities of the library classes methods and functions:
+
+```shell
+./bin/tests
+```
+
+If you want to compile only the main code you can simply enter:
+
+```shell
+make examples
+```
+
+if instead you want to compile only the tests code you can use the following command:
+
+```shell
+make tests
+```
+
+There is also an option to go back to the pre-compilation state of the code, to do this simply type this command:
+
+```shell
+make clean
+```
 
 ## News from the latest release
 
@@ -109,6 +309,17 @@ Here you can find the list of features implemented in the current version of the
 - [`isFloatingPoint`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a30f754b298e55c68819829df78d936cb): function used to check if an expression is a floating point or not.
 - [`one`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a): function used to find the incremented unit of a loop.
 
+## Useful scripts
+
+Other scripts have been provided into the [**scripts**](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts) folder. After compiling the source code, they can be run from the repository home directory.
+
+The `debug_cpp.sh` script is used to run [Valgrind](https://valgrind.org/) and [Cppcheck](https://github.com/danmar/cppcheck) debugging tools on the whole code.
+
+You can run Valgrind debugging tools with a specific executable:
+
+```shell
+./scripts/debug_cpp.sh [valgrind-tool-name] [executable-name]
+```
 
 ## Credits
 
