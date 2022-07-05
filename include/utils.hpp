@@ -59,7 +59,7 @@ namespace agr
    * @return T_err The modified exception error.
    */
   template <typename T_err = std::runtime_error, typename T>
-  inline T_err except_error_func( const std::string& beg, T variable, const std::string& end )
+  inline T_err except_error_func( const std::string& beg = "", T variable = NULL, const std::string& end = "" )
    {
     static std::string error = "\033[31m" +
                                beg + " \""s + 
