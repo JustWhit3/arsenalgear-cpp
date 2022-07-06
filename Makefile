@@ -21,6 +21,7 @@ ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))
 	STREAM_EX := stream
 	UTILS_EX := utils
 	SYSTEM_EX := system
+	CONTAINERS_EX := containers
 	TEST_EX := tests
 else
 	MATH_EX := math.exe
@@ -28,6 +29,7 @@ else
 	STREAM_EX := stream.exe
 	UTILS_EX := utils.exe
 	SYSTEM_EX := system.exe
+	CONTAINERS_EX := containers.exe
 	TEST_EX := tests.exe
 endif
 LIB := libarsenalgear.a
@@ -57,6 +59,7 @@ ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))
 	SRC_STREAM := $(shell find $(SRC_DIR) -name '*.cpp') $(shell find $(EX_DIR) -name 'stream.cpp')
 	SRC_UTILS := $(shell find $(SRC_DIR) -name '*.cpp') $(shell find $(EX_DIR) -name 'utils.cpp')
 	SRC_SYSTEM := $(shell find $(SRC_DIR) -name '*.cpp') $(shell find $(EX_DIR) -name 'system.cpp')
+	SRC_CONTAINERS := $(shell find $(SRC_DIR) -name '*.cpp') $(shell find $(EX_DIR) -name 'containers.cpp')
 
 	# Other source files
 	SRC_LIB := $(shell find $(SRC_DIR) -name '*.cpp')
@@ -69,6 +72,7 @@ else
 	SRC_STREAM := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(EX_DIR)/stream.cpp)
 	SRC_UTILS := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(EX_DIR)/utils.cpp)
 	SRC_SYSTEM := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(EX_DIR)/system.cpp)
+	SRC_CONTAINERS := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(EX_DIR)/containers.cpp)
 
 	# Source files fo examples
 	SRC_LIB := $(wildcard $(SRC_DIR)/*.cpp)
@@ -85,6 +89,7 @@ OBJ_OPERATORS := $(SRC_OPERATORS:%=$(OBJ_DIR)/%.o)
 OBJ_STREAM := $(SRC_STREAM:%=$(OBJ_DIR)/%.o)
 OBJ_UTILS := $(SRC_UTILS:%=$(OBJ_DIR)/%.o)
 OBJ_SYSTEM := $(SRC_SYSTEM:%=$(OBJ_DIR)/%.o)
+OBJ_CONTAINERS := $(SRC_CONTAINERS:%=$(OBJ_DIR)/%.o)
 
 # Other source objects
 OBJ_LIB := $(SRC_LIB:%=$(OBJ_DIR)/%.o)
@@ -93,7 +98,7 @@ TEST_OBJ := $(TEST:%=$(OBJ_DIR)/%.o)
 #====================================================
 #     DEPENDENCIES AND FLAGS
 #====================================================
-DEPS := $(OBJ_MATH:.o=.d) $(OBJ_OPERATORS:.o=.d) $(OBJ_STREAM:.o=.d) $(OBJ_UTILS:.o=.d) $(OBJ_SYSTEM:.o=.d)
+DEPS := $(OBJ_MATH:.o=.d) $(OBJ_OPERATORS:.o=.d) $(OBJ_STREAM:.o=.d) $(OBJ_UTILS:.o=.d) $(OBJ_SYSTEM:.o=.d) $(OBJ_CONTAINERS:.o=.d)
 ifeq ($(O_SYSTEM),$(filter $(O_SYSTEM),MacOS Linux))
 	INC_DIR := $(shell find $(SRC_DIR) -type d)
 else
@@ -113,7 +118,7 @@ CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP $(WFLAGS)
 #====================================================
 
 #Building all:
-all: $(BUILD_DIR)/$(MATH_EX) $(BUILD_DIR)/$(OPERATORS_EX) $(BUILD_DIR)/$(STREAM_EX) $(BUILD_DIR)/$(UTILS_EX) $(BUILD_DIR)/$(SYSTEM_EX) $(BUILD_DIR)/$(TEST_EX) $(LIB_DIR)/$(LIB)
+all: $(BUILD_DIR)/$(MATH_EX) $(BUILD_DIR)/$(OPERATORS_EX) $(BUILD_DIR)/$(STREAM_EX) $(BUILD_DIR)/$(UTILS_EX) $(BUILD_DIR)/$(SYSTEM_EX) $(BUILD_DIR)/$(CONTAINERS_EX) $(BUILD_DIR)/$(TEST_EX) $(LIB_DIR)/$(LIB)
 examples: $(BUILD_DIR)/$(MATH_EX) $(BUILD_DIR)/$(OPERATORS_EX) $(BUILD_DIR)/$(STREAM_EX) $(BUILD_DIR)/$(UTILS_EX) $(BUILD_DIR)/$(SYSTEM_EX) $(LIB_DIR)/$(LIB)
 tests: $(BUILD_DIR)/$(TEST_EX)
 
@@ -145,6 +150,11 @@ $(BUILD_DIR)/$(UTILS_EX): $(OBJ_UTILS)
 $(BUILD_DIR)/$(SYSTEM_EX): $(OBJ_SYSTEM)
 	@ mkdir -p $(dir $@)
 	$(CC) $(OBJ_SYSTEM) -o $@ $(LDFLAGS)
+
+# Containers
+$(BUILD_DIR)/$(CONTAINERS_EX): $(OBJ_CONTAINERS)
+	@ mkdir -p $(dir $@)
+	$(CC) $(OBJ_CONTAINERS) -o $@ $(LDFLAGS)
 
 #====================================================
 #     Building tests
