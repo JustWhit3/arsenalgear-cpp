@@ -88,110 +88,83 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//     Namespaces</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using namespace </span>std::literals::string_literals;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">//     Functions</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">extern</span> std::string <a class="code" href="namespaceagr.html#a523bed79d63264512bfc2a9b12027c90">multi</a>( <span class="keyword">const</span> std::string&amp; element, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n_times );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">extern</span> std::vector &lt;std::string&gt; <a class="code" href="namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd">split_string</a>( <span class="keyword">const</span> std::string&amp; input, <span class="keyword">const</span> std::string&amp; regex );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">//     maxptr</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">   44</a></span>&#160;  <span class="keyword">inline</span> T <a class="code" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">maxptr</a> ( T *ptr, <span class="keywordtype">int</span> ptr_dim )</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>( ptr_dim == 1 ) <span class="keywordflow">return</span> *ptr;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> *ptr &gt; ( ptr_dim = <a class="code" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">maxptr</a>( ptr + 1, ptr_dim - 1 ) ) ? *ptr : ptr_dim;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">//     except_error_func</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// Function used to throw customized runtime error.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T_err = std::runtime_error, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4">   63</a></span>&#160;  <span class="keyword">inline</span> T_err <a class="code" href="namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4">except_error_func</a>( <span class="keyword">const</span> std::string&amp; beg = <span class="stringliteral">&quot;&quot;</span>, T variable = NULL, <span class="keyword">const</span> std::string&amp; end = <span class="stringliteral">&quot;&quot;</span> )</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;   {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> std::string error = <span class="stringliteral">&quot;\033[31m&quot;</span> +</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                               beg + <span class="stringliteral">&quot; \&quot;&quot;</span>s + </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                               <span class="stringliteral">&quot;\033[1m&quot;</span> +</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                               <span class="keyword">static_cast &lt;</span>std::string<span class="keyword">&gt;</span>( variable ) +</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                               <span class="stringliteral">&quot;\033[22m&quot;</span> + <span class="stringliteral">&quot;\&quot; &quot;</span>s + </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                               end +</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                               <span class="stringliteral">&quot;\033[39m&quot;</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> T_err( error ); </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">//     isFloatingPoint</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">   85</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a>( <span class="keyword">const</span> T&amp; )</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> std::is_floating_point &lt;T&gt;::value;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;   }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">//     one</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// Function to find the incremented unit of a loop.</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">  101</a></span>&#160;  <span class="keyword">inline</span> T <a class="code" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">one</a>( <span class="keyword">const</span> T&amp; iterating_var )</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;   {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">static</span> std::vector&lt;T&gt; counter_( 2 );</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a>( iterating_var ) )</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;     {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keywordflow">if</span>( counter_.size() &lt; 2 ) counter_.push_back( iterating_var );</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="keywordflow">if</span>( counter_.size() == 2 ) <span class="keywordflow">return</span> abs( abs( counter_.front() ) - abs( counter_.back() ) );</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast &lt;</span>T<span class="keyword">&gt;</span> ( NULL );</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;     }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;   }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//     Namespaces</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span>std::literals::string_literals;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">//     Functions</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">extern</span> std::string <a class="code" href="namespaceagr.html#a523bed79d63264512bfc2a9b12027c90">multi</a>( <span class="keyword">const</span> std::string&amp; element, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n_times );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">extern</span> std::vector &lt;std::string&gt; <a class="code" href="namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd">split_string</a>( <span class="keyword">const</span> std::string&amp; input, <span class="keyword">const</span> std::string&amp; regex );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">//     maxptr</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">   43</a></span>&#160;  <span class="keyword">inline</span> T <a class="code" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">maxptr</a> ( T *ptr, <span class="keywordtype">int</span> ptr_dim )</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span>( ptr_dim == 1 ) <span class="keywordflow">return</span> *ptr;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> *ptr &gt; ( ptr_dim = <a class="code" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">maxptr</a>( ptr + 1, ptr_dim - 1 ) ) ? *ptr : ptr_dim;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">//     except_error_func</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// Function used to throw customized runtime error.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T_err = std::runtime_error, <span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4">   62</a></span>&#160;  <span class="keyword">inline</span> T_err <a class="code" href="namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4">except_error_func</a>( <span class="keyword">const</span> std::string&amp; beg = <span class="stringliteral">&quot;&quot;</span>, T variable = NULL, <span class="keyword">const</span> std::string&amp; end = <span class="stringliteral">&quot;&quot;</span> )</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> std::string error = <span class="stringliteral">&quot;\033[31m&quot;</span> +</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                               beg + <span class="stringliteral">&quot; \&quot;&quot;</span>s + </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                               <span class="stringliteral">&quot;\033[1m&quot;</span> +</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                               <span class="keyword">static_cast &lt;</span>std::string<span class="keyword">&gt;</span>( variable ) +</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                               <span class="stringliteral">&quot;\033[22m&quot;</span> + <span class="stringliteral">&quot;\&quot; &quot;</span>s + </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                               end +</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                               <span class="stringliteral">&quot;\033[39m&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> T_err( error ); </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;   }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">//     isFloatingPoint</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">   84</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a>( <span class="keyword">const</span> T&amp; )</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;   {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> std::is_floating_point &lt;T&gt;::value;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="comment">//     one</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// Function to find the incremented unit of a loop.</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">  100</a></span>&#160;  <span class="keyword">inline</span> T <a class="code" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">one</a>( <span class="keyword">const</span> T&amp; iterating_var )</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;   {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">static</span> std::vector&lt;T&gt; counter_( 2 );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a>( iterating_var ) )</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;     {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keywordflow">if</span>( counter_.size() &lt; 2 ) counter_.push_back( iterating_var );</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keywordflow">if</span>( counter_.size() == 2 ) <span class="keywordflow">return</span> abs( abs( counter_.front() ) - abs( counter_.back() ) );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast &lt;</span>T<span class="keyword">&gt;</span> ( NULL );</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;     }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;   }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; }</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="comment">//     extract_map_keys</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TK, <span class="keyword">typename</span> TV&gt;</div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="namespaceagr.html#abe08b78ae648a1b2401c7559de314989">  126</a></span>&#160;  std::vector&lt;TK&gt; <a class="code" href="namespaceagr.html#abe08b78ae648a1b2401c7559de314989">extract_map_keys</a>( std::map&lt;TK, TV&gt; <span class="keyword">const</span>&amp; input_map ) </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;   {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    std::vector&lt;TK&gt; retval;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; element : input_map ) retval.push_back( element.first );</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;   }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="comment">//     extract_map_elem</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TK, <span class="keyword">typename</span> TV&gt;</div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="namespaceagr.html#a70373a18f780e358537a4c57b8ab81aa">  146</a></span>&#160;  std::vector&lt;TV&gt; <a class="code" href="namespaceagr.html#a70373a18f780e358537a4c57b8ab81aa">extract_map_elem</a>( std::map&lt;TK, TV&gt; <span class="keyword">const</span>&amp; input_map ) </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;   {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    std::vector&lt;TV&gt; retval;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> ( <span class="keyword">auto</span> <span class="keyword">const</span>&amp; element : input_map ) retval.push_back( element.second );</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">return</span> retval;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;   }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:17</div></div>
-<div class="ttc" id="anamespaceagr_html_a30f754b298e55c68819829df78d936cb"><div class="ttname"><a href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">agr::isFloatingPoint</a></div><div class="ttdeci">bool isFloatingPoint(const T &amp;)</div><div class="ttdoc">Function to check if an expression is a floating point or not.</div><div class="ttdef"><b>Definition:</b> utils.hpp:85</div></div>
-<div class="ttc" id="anamespaceagr_html_a400b1e2872ab3a6c7166c9fc4ecfb157"><div class="ttname"><a href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">agr::maxptr</a></div><div class="ttdeci">T maxptr(T *ptr, int ptr_dim)</div><div class="ttdoc">Function used to find the maximum value of a generic pointer containing listed values.</div><div class="ttdef"><b>Definition:</b> utils.hpp:44</div></div>
-<div class="ttc" id="anamespaceagr_html_a4cb5be05e5a1b3bfee208fc9aebb7fa4"><div class="ttname"><a href="namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4">agr::except_error_func</a></div><div class="ttdeci">T_err except_error_func(const std::string &amp;beg=&quot;&quot;, T variable=NULL, const std::string &amp;end=&quot;&quot;)</div><div class="ttdoc">Function used to throw customized stdexception error.</div><div class="ttdef"><b>Definition:</b> utils.hpp:63</div></div>
+<div class="ttc" id="anamespaceagr_html_a30f754b298e55c68819829df78d936cb"><div class="ttname"><a href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">agr::isFloatingPoint</a></div><div class="ttdeci">bool isFloatingPoint(const T &amp;)</div><div class="ttdoc">Function to check if an expression is a floating point or not.</div><div class="ttdef"><b>Definition:</b> utils.hpp:84</div></div>
+<div class="ttc" id="anamespaceagr_html_a400b1e2872ab3a6c7166c9fc4ecfb157"><div class="ttname"><a href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">agr::maxptr</a></div><div class="ttdeci">T maxptr(T *ptr, int ptr_dim)</div><div class="ttdoc">Function used to find the maximum value of a generic pointer containing listed values.</div><div class="ttdef"><b>Definition:</b> utils.hpp:43</div></div>
+<div class="ttc" id="anamespaceagr_html_a4cb5be05e5a1b3bfee208fc9aebb7fa4"><div class="ttname"><a href="namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4">agr::except_error_func</a></div><div class="ttdeci">T_err except_error_func(const std::string &amp;beg=&quot;&quot;, T variable=NULL, const std::string &amp;end=&quot;&quot;)</div><div class="ttdoc">Function used to throw customized stdexception error.</div><div class="ttdef"><b>Definition:</b> utils.hpp:62</div></div>
 <div class="ttc" id="anamespaceagr_html_a523bed79d63264512bfc2a9b12027c90"><div class="ttname"><a href="namespaceagr.html#a523bed79d63264512bfc2a9b12027c90">agr::multi</a></div><div class="ttdeci">std::string multi(const std::string &amp;element, const int &amp;n_times)</div><div class="ttdoc">Function used to multiply a string for n times.</div><div class="ttdef"><b>Definition:</b> utils.cpp:24</div></div>
-<div class="ttc" id="anamespaceagr_html_a70373a18f780e358537a4c57b8ab81aa"><div class="ttname"><a href="namespaceagr.html#a70373a18f780e358537a4c57b8ab81aa">agr::extract_map_elem</a></div><div class="ttdeci">std::vector&lt; TV &gt; extract_map_elem(std::map&lt; TK, TV &gt; const &amp;input_map)</div><div class="ttdoc">Function used to extract a vector of elements from a map.</div><div class="ttdef"><b>Definition:</b> utils.hpp:146</div></div>
-<div class="ttc" id="anamespaceagr_html_a79c1d16a030bfa822fcf06fcfd56db5a"><div class="ttname"><a href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">agr::one</a></div><div class="ttdeci">T one(const T &amp;iterating_var)</div><div class="ttdoc">Function to find the incremented unit of a loop.</div><div class="ttdef"><b>Definition:</b> utils.hpp:101</div></div>
-<div class="ttc" id="anamespaceagr_html_abe08b78ae648a1b2401c7559de314989"><div class="ttname"><a href="namespaceagr.html#abe08b78ae648a1b2401c7559de314989">agr::extract_map_keys</a></div><div class="ttdeci">std::vector&lt; TK &gt; extract_map_keys(std::map&lt; TK, TV &gt; const &amp;input_map)</div><div class="ttdoc">Function used to extract a vector of keys from a map.</div><div class="ttdef"><b>Definition:</b> utils.hpp:126</div></div>
+<div class="ttc" id="anamespaceagr_html_a79c1d16a030bfa822fcf06fcfd56db5a"><div class="ttname"><a href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">agr::one</a></div><div class="ttdeci">T one(const T &amp;iterating_var)</div><div class="ttdoc">Function to find the incremented unit of a loop.</div><div class="ttdef"><b>Definition:</b> utils.hpp:100</div></div>
 <div class="ttc" id="anamespaceagr_html_aeccaa1589b9a22ee3ad2bc2ac798dbcd"><div class="ttname"><a href="namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd">agr::split_string</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split_string(const std::string &amp;input, const std::string &amp;regex)</div><div class="ttdoc">Function used to split a string based on a certain reges.</div><div class="ttdef"><b>Definition:</b> utils.cpp:42</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
