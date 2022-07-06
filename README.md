@@ -19,8 +19,6 @@
 - [Repository structure](#repository-structure)
 - [Install and use](#install-and-use)
   - [Install](#install)
-  - [Update](#update)
-  - [Uninstall](#uninstall)
   - [Use in your device](#use-in-your-device)
   - [Compile examples and tests](#compile-examples-and-tests)
 - [News from the latest release](#news-from-the-last-release)
@@ -111,7 +109,7 @@ arsenalgear/
 
 Steps to be reproduced:
 
-**1)** Download one of the releases of the repository or clone the main branch.
+**1)** Download one of the releases of the repository.
 
 **2)** Unzip and enter the downloaded repository directory.
 
@@ -133,7 +131,6 @@ Prerequisites list:
 - [`Boost`](https://www.boost.org/) library.
 - [`ExprTK`](http://www.partow.net/programming/exprtk/) library (no Windows).
 - [`osmanip`](https://github.com/JustWhit3/osmanip) library.
-- [`arsenalgear`](https://github.com/JustWhit3/arsenalgear) library.
 - [GNU make](https://www.opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/#:~:text=Installing%20GNU%20Make,install%20build%2Dessential.) for compilation.
 
 Optional (only for developers)
@@ -147,22 +144,14 @@ Optional (only for developers)
 - [hurry.filesize](https://pypi.org/project/hurry.filesize/) for `size_of_dir.py` script, used in the installer script.
 - [termcolor](https://pypi.org/project/termcolor/) for `size_of_dir.py` script, used in the installer script..
 
-### Update
-
-In case you want to update the source code from the latest improvements of the repository, you can use the updater script, called [update.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/update.sh).
-
-From the repository folder type this commands on the shell:
+**4)** EXTRA: update the repository if needed
 
 ```shell
 ./scripts/update.sh
 ./scripts/install.sh
 ```
 
-### Uninstall
-
-In case you want to uninstall the software from your computer, you can use the uninstaller script, called [uninstall.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/uninstall.sh).
-
-From the repository folder type this command on the shell:
+**5)** EXTRA: uninstall the repository if needed
 
 ```shell
 ./scripts/uninstall.sh
@@ -176,41 +165,13 @@ Once you have installed the library you can freely use it in one of your C++ pro
 #include <arsenalgear/module_name.hpp>
 ```
 
-for example:
-
-```c++
-#include <arsenalgear/math.hpp>
-```
-
-Now you are able to access al the functions and classes of the library.
-
-You can additionally add also a namespace directive if you want:
-
-```c++
-using namespace agr;
-```
-
-Supposing you are using the library in a program called *program.cpp*, to compile it you have simply to enter this command in the shell:
-
-```shell
-g++ program.cpp -larsenalgear
-```
+To compile it you have simply add the `-larsenalgear` compilation flag.
 
 > **NOTE**: if you are on **Windows** and didn't install the headers and libraries in a system standard path you probably need to add also the `-I\path\to\include` and `-L\path\to\lib` flags.
 
-and then you can run the code with:
-
-```shell
-./a.out
-```
-
-> **NOTE**: executable is called `a.exe` if you are on Windows.
-
 ### Compile examples and tests
 
-The source code contains also an example code [*src/examples.cpp*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/src/examples.cpp) to show the user a simple usage of all the features supported by the library and test codes in the [**test**](https://github.com/JustWhit3/osmanip/blob/main/cpp/test) folder to test the correct functionality of the library functions and methods.
-
-The source code is already compiled when you install the library, but in case you don't want to install the package and explore only the library features through this examples, you can run this command on the shell:
+To compile examples
 
 ```shell
 make main
@@ -231,10 +192,15 @@ To run all examples:
 
 > **NOTE**: executables end with `.exe` if you are on Windows of course.
 
-To compile and run tests:
+To compile tests:
 
 ```shell
 make tests
+```
+
+To run tests:
+
+```shell
 ./bin/tests
 ```
 
