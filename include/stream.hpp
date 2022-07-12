@@ -21,7 +21,10 @@ namespace agr
   //====================================================
   //     Objects
   //====================================================
-  extern boost::iostreams::stream<boost::iostreams::null_sink> null_stream;
+  extern boost::iostreams::stream<boost::iostreams::null_sink> null_stream 
+   {
+    boost::iostreams::null_sink{} 
+   };
 
   //====================================================
   //     savebuf class
