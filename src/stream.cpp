@@ -5,25 +5,12 @@
 //My headers
 #include "../include/stream.hpp"
 
-//Extra headers
-#include <boost/iostreams/stream.hpp>
-#include <boost/iostreams/device/null.hpp>
-
 //STD headers
 #include <streambuf>
 #include <string>
 
 namespace agr
  {
-  //====================================================
-  //     null_stream
-  //====================================================
-  /**
-   * @brief The null_stream is a stream that does nothing.
-   * 
-   */
-  
-
   //====================================================
   //     savebuf::savebuf
   //====================================================
