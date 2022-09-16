@@ -16,12 +16,10 @@
 ## Table of contents
 
 - [Introduction](#introduction)
-- [Repository structure](#repository-structure)
 - [Install and use](#install-and-use)
   - [Install](#install)
   - [Use in your device](#use-in-your-device)
   - [Compile examples and tests](#compile-examples-and-tests)
-- [News from the latest release](#news-from-the-last-release)
 - [List of features](#list-of-features)
   - [Constants](#constants)
   - [Math](#math)
@@ -58,54 +56,6 @@ Supported operating systems:
   - *MinGW* (tested)
   - *WSL* (tested)
 - **MacOS**
-
-## Repository structure
-
-```txt
-arsenalgear/
-├── .github/
-│   ├── workflows/
-│   │   ├── codeql-analysis.yml
-│   │   ├── DocGenerator.yml
-├── include/
-│   ├── constants.hpp
-│   ├── math.hpp
-│   ├── operators.hpp
-│   ├── stream.hpp
-│   ├── utils.hpp
-│   ├── system.hpp
-│   ├── containers.hpp
-├── src/
-│   ├── examples.cpp
-│   ├── operators.cpp
-│   ├── stream.cpp
-│   ├── system.cpp
-│   ├── containers.cpp
-├── test/
-│   ├── tests_math.cpp
-│   ├── tests_operators.cpp
-│   ├── tests_stream.cpp
-│   ├── tests_utils.cpp
-│   ├── tests_system.cpp
-│   ├── tests_containers.hpp
-├── scripts/
-│   ├── install.sh
-│   ├── uninstall.sh
-│   ├── debug.sh
-│   ├── update.sh
-│   ├── size_of_dir.py
-├── img/
-├── Makefile
-├── Doxyfile
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── CITATION.cff
-├── .gitignore
-├── .all-contributorsrc
-├── .clang-format
-├── .valgrindrc
-```
 
 ## Install and use
 
@@ -214,17 +164,7 @@ There is also an option to go back to the pre-compilation state of the code, to 
 make clean
 ```
 
-## News from the latest release
-
-- Added a new [stream](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/stream.hpp) class.
-- Added [system](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include/system.hpp) utils.
-- Added full support to Windows operating systems.
-- Added full support to MacOS operating systems.
-- Added Doxygen documentation.
-
 ## List of features
-
-Here you can find the list of features implemented in the current version of the library:
 
 ### Constants
 
@@ -239,7 +179,7 @@ Here you can find the list of features implemented in the current version of the
 
 ### Operators
 
-- [Operator * redefinition](https://justwhit3.github.io/arsenalgear-cpp/operators_8hpp.html#aa21cb9291ed5e17a8b54f4538e72aa33) to multiply a string by an object (and vice-versa), in the sense that the string is repeated n-times.
+- [`Operator *` (`int` and string-like object)](https://justwhit3.github.io/arsenalgear-cpp/operators_8hpp.html#aa21cb9291ed5e17a8b54f4538e72aa33) to multiply a string by an integer (and vice-versa), in the sense that the string is repeated n-times.
 
 ### Stream
 
