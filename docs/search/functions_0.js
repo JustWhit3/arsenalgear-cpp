@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['boost_5fpp_5fseq_5ffor_5feach_46',['BOOST_PP_SEQ_FOR_EACH',['../operators_8cpp.html#ad1d63434dd1630ef7d65a8c9f81592e6',1,'BOOST_PP_SEQ_FOR_EACH(PROD_1, _, ARGS(std::string, std::string_view)):&#160;operators.cpp'],['../operators_8cpp.html#aa00f503875b52cb8ed11c16719a6c331',1,'BOOST_PP_SEQ_FOR_EACH(PROD_2, _, ARGS(std::string, std::string_view)):&#160;operators.cpp']]]
+  ['except_5ferror_5ffunc_40',['except_error_func',['../namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4',1,'agr']]],
+  ['extract_5fmap_5felem_41',['extract_map_elem',['../namespaceagr.html#a70373a18f780e358537a4c57b8ab81aa',1,'agr']]],
+  ['extract_5fmap_5fkeys_42',['extract_map_keys',['../namespaceagr.html#abe08b78ae648a1b2401c7559de314989',1,'agr']]]
 ];
