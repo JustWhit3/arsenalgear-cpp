@@ -28,6 +28,7 @@
   - [System](#system)
   - [Utils](#utils)
   - [Containers](#containers)
+  - [Type](#type)
 - [Useful scripts](#useful-scripts)
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
@@ -203,6 +204,11 @@ make clean
 
 - [`extract_map_elem`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a70373a18f780e358537a4c57b8ab81aa): function used to extract a vector of elements from a map.
 - [`extract_map_keys`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#abe08b78ae648a1b2401c7559de314989): function used to extract a vector of keys from a map.
+
+### Type
+
+- [`is_pointer_to_const_char`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a): function used to check if a string is a pointer to const char.
+- [`is_str`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a8cedbda93e6317c38b992056458ba03c): function used to check if a string is an `std::string` object.
 
 ## Useful scripts
 
