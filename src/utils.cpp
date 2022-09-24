@@ -35,7 +35,7 @@ namespace agr
    {
     std::string container = "";
 
-    for( int i = 0; i < n_times; i++ ) container.append( element );
+    for( unsigned int i = 0; i < n_times; i++ ) container.append( element );
     return container;
    }
   
