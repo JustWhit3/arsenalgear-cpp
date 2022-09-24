@@ -8,28 +8,12 @@
 //     Headers
 //====================================================
 
-//Extra headers
-#include <boost/iostreams/stream.hpp>
-#include <boost/iostreams/device/null.hpp>
-
 //STD headers
 #include <string>
 #include <streambuf>
 
 namespace agr
  {
-  //====================================================
-  //     null_stream
-  //====================================================
-  /**
-   * @brief The null_stream is a stream that does nothing.
-   * 
-   */
-  inline boost::iostreams::stream<boost::iostreams::null_sink> null_stream 
-   {
-    boost::iostreams::null_sink{} 
-   };
-
   //====================================================
   //     savebuf class
   //====================================================

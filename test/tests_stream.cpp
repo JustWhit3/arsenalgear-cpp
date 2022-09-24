@@ -18,21 +18,6 @@
 #include <streambuf>
 
 //============================================
-//     null_stream
-//============================================
-TEST_CASE( "Testing the null_stream." )
- {
-  auto v = []( std::ostream& os = agr::null_stream )
-   {
-    if( &os != &agr::null_stream ) return 10;
-    return 5;
-   };
-
-  CHECK_EQ( v(), 5 );
-  CHECK_EQ( v( std::cout ), 10 );
- }
-
-//============================================
 //     savebuf class
 //============================================
 TEST_CASE( "Testing the savebuf class." )

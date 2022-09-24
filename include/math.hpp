@@ -8,11 +8,6 @@
 //     Headers
 //====================================================
 
-// Extra headers
-#if defined( __linux__ ) || defined( __APPLE__ )
-#include <exprtk.hpp>
-#endif
-
 // STD headers
 #include <cmath>
 
@@ -54,41 +49,6 @@ namespace agr
    {
     return !( value < low ) && ( value < high );
    } 
-
-  //====================================================
-  //     parsed_f
-  //====================================================
-  /**
-   * @brief Function to parse a mathematical expression f(x,y) (Only for Linux and MacOS).
-   * 
-   * @tparam T The Type of the expression to be parsed.
-   * @param expr The mathematical expression to be parsed.
-   * @param x The x variable.
-   * @param y The y variable.
-   * @return double The parsed expression.
-   */
-  #if defined( __linux__ ) || defined( __APPLE__ )
-  template <typename T>
-  inline double parsed_f( const T& expr, double x, double y )
-   {
-    exprtk::rtl::io::file::package<double> fileio_package;
-
-    static exprtk::symbol_table<double> symbol_table;
-    symbol_table.add_variable( "x", x );
-    symbol_table.add_variable( "y", y );
-
-    static exprtk::expression<double> expression;
-    expression.register_symbol_table( symbol_table );
-
-    static exprtk::parser<double> parser;
-    if ( ! parser.compile( expr, expression ) )
-     {
-      throw std::runtime_error( "Error in the inserted expression!" );
-     }
-
-    return expression.value();
-   }
-  #endif
  }
 
 #endif
