@@ -1,6 +1,17 @@
 //====================================================
+//     File data
+//====================================================
+/**
+ * @file math.hpp
+ * @author Gianluca Bianco (biancogianluca9@gmail.com)
+ * @date 2022-06-09
+ * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
+ */
+
+//====================================================
 //     Preprocessor settings
 //====================================================
+#pragma once
 #ifndef MATH_HPP
 #define MATH_HPP
 
@@ -25,7 +36,7 @@ namespace agr
    * @return T The rounded variable.
    */
   template <typename T>
-  inline T roundoff( const T& value, const unsigned char prec )
+  inline T roundoff( T value, unsigned char prec )
    {
     T pow_10 = pow( 10.0f, static_cast<T> ( prec ) );
 
@@ -45,7 +56,7 @@ namespace agr
    * @return bool True if the variable lies in the bound, false otherwise.
    */
   template <typename T>
-  inline bool IsInBounds( const T& value, const T& low, const T& high )
+  inline bool IsInBounds( T value, T low, T high )
    {
     return !( value < low ) && ( value < high );
    } 

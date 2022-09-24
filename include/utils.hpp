@@ -1,6 +1,17 @@
 //====================================================
+//     File data
+//====================================================
+/**
+ * @file utils.hpp
+ * @author Gianluca Bianco (biancogianluca9@gmail.com)
+ * @date 2022-06-06
+ * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
+ */
+
+//====================================================
 //     Preprocessor settings
 //====================================================
+#pragma once
 #ifndef UTILS_HPP
 #define UTILS_HPP
 
@@ -26,7 +37,7 @@ namespace agr
   //====================================================
   //     Functions
   //====================================================
-  extern std::string multi( const std::string& element, const int& n_times );
+  extern std::string multi( const std::string& element, unsigned int n_times );
   extern std::vector <std::string> split_string( const std::string& input, const std::string& regex );
   
   //====================================================

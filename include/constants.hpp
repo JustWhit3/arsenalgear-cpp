@@ -1,6 +1,16 @@
 //====================================================
+//     File data
+//====================================================
+/**
+ * @file constants.hpp
+ * @author Gianluca Bianco (biancogianluca9@gmail.com)
+ * @date 2022-06-09
+ * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
+ */
+//====================================================
 //     Preprocessor settings
 //====================================================
+#pragma once
 #ifndef CONSTANTS_HPP
 #define CONSTANTS_HPP
 

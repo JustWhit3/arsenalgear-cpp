@@ -1,6 +1,17 @@
 //====================================================
+//     File data
+//====================================================
+/**
+ * @file containers.hpp
+ * @author Gianluca Bianco (biancogianluca9@gmail.com)
+ * @date 2022-06-06
+ * @copyright Copyright (c) 2022 Gianluca Bianco under the MIT license.
+ */
+
+//====================================================
 //     Preprocessor settings
 //====================================================
+#pragma once
 #ifndef CONTAINERS_HPP
 #define CONTAINERS_HPP
 
@@ -26,11 +37,13 @@ namespace agr
    * @return std::vector<TK> The vector of keys.
    */
   template <typename TK, typename TV>
-  std::vector<TK> extract_map_keys( std::map<TK, TV> const& input_map ) 
+  inline const std::vector<TK> extract_map_keys( std::map<TK, TV> const& input_map ) 
    {
-    std::vector<TK> retval;
-    for ( auto const& element : input_map ) retval.push_back( element.first );
+    static std::vector<TK> retval;
+    retval.clear();
 
+    for ( auto const& element : input_map ) retval.push_back( element.first );
+    
     return retval;
    }
 
@@ -46,9 +59,11 @@ namespace agr
    * @return std::vector<TV> The vector of elements.
    */
   template <typename TK, typename TV>
-  std::vector<TV> extract_map_elem( std::map<TK, TV> const& input_map ) 
+  inline const std::vector<TV> extract_map_elem( std::map<TK, TV> const& input_map ) 
    {
-    std::vector<TV> retval;
+    static std::vector<TV> retval;
+    retval.clear();
+
     for ( auto const& element : input_map ) retval.push_back( element.second );
 
     return retval;
