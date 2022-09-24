@@ -81,59 +81,46 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//     Headers</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//====================================================</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//Extra headers</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;boost/iostreams/stream.hpp&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;boost/iostreams/device/null.hpp&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//STD headers</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;streambuf&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//STD headers</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;streambuf&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">//     null_stream</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespaceagr.html#a1dca2b5fa809c24e6778346bc6c17e50">   28</a></span>&#160;<span class="comment"></span>  <span class="keyword">inline</span> boost::iostreams::stream&lt;boost::iostreams::null_sink&gt; <a class="code" href="namespaceagr.html#a1dca2b5fa809c24e6778346bc6c17e50">null_stream</a> </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    boost::iostreams::null_sink{} </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;   };</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">//     savebuf class</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classagr_1_1savebuf.html">   40</a></span>&#160;<span class="comment"></span>  <span class="keyword">class </span><a class="code" href="classagr_1_1savebuf.html">savebuf</a>: <span class="keyword">public</span> std::streambuf </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="comment">//     savebuf class</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classagr_1_1savebuf.html">   24</a></span>&#160;<span class="comment"></span>  <span class="keyword">class </span><a class="code" href="classagr_1_1savebuf.html">savebuf</a>: <span class="keyword">public</span> std::streambuf </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//     Public methods</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classagr_1_1savebuf.html#a06d15ec453d2e97fb24bfe72e9b96630">savebuf</a>( std::streambuf* sbuf );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::string <a class="code" href="classagr_1_1savebuf.html#aea87b126d50a1565fda4fae17bd74688">str</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//     Private methods</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> overflow( <span class="keywordtype">int</span> c );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> sync();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//     Private attributes</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//     Public methods</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classagr_1_1savebuf.html#a06d15ec453d2e97fb24bfe72e9b96630">savebuf</a>( std::streambuf* sbuf );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::string <a class="code" href="classagr_1_1savebuf.html#aea87b126d50a1565fda4fae17bd74688">str</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::streambuf* sbuf;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::string     save;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;   };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//     Private methods</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">int</span> overflow( <span class="keywordtype">int</span> c );</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> sync();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//     Private attributes</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::streambuf* sbuf;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::string     save;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;   };</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassagr_1_1savebuf_html"><div class="ttname"><a href="classagr_1_1savebuf.html">agr::savebuf</a></div><div class="ttdoc">Class used to store the output sent to an output stream.</div><div class="ttdef"><b>Definition:</b> stream.hpp:41</div></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassagr_1_1savebuf_html"><div class="ttname"><a href="classagr_1_1savebuf.html">agr::savebuf</a></div><div class="ttdoc">Class used to store the output sent to an output stream.</div><div class="ttdef"><b>Definition:</b> stream.hpp:25</div></div>
 <div class="ttc" id="aclassagr_1_1savebuf_html_a06d15ec453d2e97fb24bfe72e9b96630"><div class="ttname"><a href="classagr_1_1savebuf.html#a06d15ec453d2e97fb24bfe72e9b96630">agr::savebuf::savebuf</a></div><div class="ttdeci">savebuf(std::streambuf *sbuf)</div><div class="ttdoc">Construct a new savebuf object.</div><div class="ttdef"><b>Definition:</b> stream.cpp:22</div></div>
 <div class="ttc" id="aclassagr_1_1savebuf_html_aea87b126d50a1565fda4fae17bd74688"><div class="ttname"><a href="classagr_1_1savebuf.html#aea87b126d50a1565fda4fae17bd74688">agr::savebuf::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdoc">Method to return the string stored by the output stream.</div><div class="ttdef"><b>Definition:</b> stream.cpp:34</div></div>
 <div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:13</div></div>
-<div class="ttc" id="anamespaceagr_html_a1dca2b5fa809c24e6778346bc6c17e50"><div class="ttname"><a href="namespaceagr.html#a1dca2b5fa809c24e6778346bc6c17e50">agr::null_stream</a></div><div class="ttdeci">boost::iostreams::stream&lt; boost::iostreams::null_sink &gt; null_stream</div><div class="ttdoc">The null_stream is a stream that does nothing.</div><div class="ttdef"><b>Definition:</b> stream.hpp:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
