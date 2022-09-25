@@ -83,21 +83,7 @@ Prerequisites list:
 
 - A `g++` compiler.
 - C++17 standard.
-- [`Boost`](https://www.boost.org/) library.
-- [`ExprTK`](http://www.partow.net/programming/exprtk/) library (no Windows).
-- [`osmanip`](https://github.com/JustWhit3/osmanip) library.
 - [GNU make](https://www.opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/#:~:text=Installing%20GNU%20Make,install%20build%2Dessential.) for compilation.
-
-Optional (only for developers)
-
-- [Valgrind](https://valgrind.org/) to run the [debug.sh](#debugsh) script.
-- [Cppcheck](https://github.com/danmar/cppcheck) to run the [debug.sh](#debugsh) script.
-- [Clang formatter](https://stackoverflow.com/questions/20756924/how-can-i-install-clang-format-in-ubuntu#:~:text=16.04%2C%20simply%20do%3A-,sudo%20apt%20install%20clang%2Dformat,-Share) to format the code for pull requests.
-- [wget](https://www.techwalla.com/articles/how-to-install-wget-in-ubuntu) for the installer script.
-- [unzip](https://www.mysoftkey.com/linux/how-to-do-zip-and-unzip-file-in-ubuntu-linux/) for the installer script.
-- [doctest](https://github.com/onqtam/doctest) for testing.
-- [hurry.filesize](https://pypi.org/project/hurry.filesize/) for `size_of_dir.py` script, used in the installer script.
-- [termcolor](https://pypi.org/project/termcolor/) for `size_of_dir.py` script, used in the installer script..
 
 **4)** EXTRA: update the repository if needed
 
@@ -143,6 +129,8 @@ To run all examples:
 ./bin/system
 ./bin/tests
 ./bin/utils
+./bin/containers
+./bin/type
 ```
 
 > **NOTE**: executables end with `.exe` if you are on Windows of course.
