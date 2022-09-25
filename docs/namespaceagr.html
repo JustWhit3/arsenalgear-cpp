@@ -121,6 +121,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a8cedbda93e6317c38b992056458ba03c"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a8cedbda93e6317c38b992056458ba03c">is_str</a> (const T &amp;obj)</td></tr>
 <tr class="memdesc:a8cedbda93e6317c38b992056458ba03c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to check if a variable is a string object (std::string, const char*, etc...).  <a href="namespaceagr.html#a8cedbda93e6317c38b992056458ba03c">More...</a><br /></td></tr>
 <tr class="separator:a8cedbda93e6317c38b992056458ba03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a962b9e5500ec34ba186b3ad88114a677"><td class="memTemplParams" colspan="2">template&lt;typename Kind , typename... Kinds&gt; </td></tr>
+<tr class="memitem:a962b9e5500ec34ba186b3ad88114a677"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a962b9e5500ec34ba186b3ad88114a677">is_any</a> ()</td></tr>
+<tr class="memdesc:a962b9e5500ec34ba186b3ad88114a677"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to check if a type is in a list or not.  <a href="namespaceagr.html#a962b9e5500ec34ba186b3ad88114a677">More...</a><br /></td></tr>
+<tr class="separator:a962b9e5500ec34ba186b3ad88114a677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">maxptr</a> (T *ptr, int ptr_dim)</td></tr>
 <tr class="memdesc:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to find the maximum value of a generic pointer containing listed values.  <a href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">More...</a><br /></td></tr>
@@ -323,6 +327,37 @@ template&lt;typename TK , typename TV &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string The output of the command variable. </dd></dl>
+
+</div>
+</div>
+<a id="a962b9e5500ec34ba186b3ad88114a677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a962b9e5500ec34ba186b3ad88114a677">&#9670;&nbsp;</a></span>is_any()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Kind , typename... Kinds&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool agr::is_any </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function used to check if a type is in a list or not. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Kind</td><td>The type to be checked. </td></tr>
+    <tr><td class="paramname">Kinds</td><td>The types to which the type is compared. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the type is in a list. </dd>
+<dd>
+false Otherwise. </dd></dl>
 
 </div>
 </div>
