@@ -36,5 +36,6 @@ If you find any bug or something you think doesn't work correctly in the code, y
 
 1) If this issue is due to download, compilation or installation of the library, be sure to have read the installation and compilation documentation, in which all the passages are explained in detail.
 2) If this issue is due to a code feature, be sure to have run the examples and the tests executables before, in order to see if your machine has all the necessary prerequisites installed.
+3) See the [issue template](https://github.com/JustWhit3/arsenalgear-cpp/tree/main/.github/ISSUE_TEMPLATE).
 
 Once the issue is received, I will analyze it and once is solved I will respond asking confirmation about my fixing. In this case, if any answer is received in 7 days, the issue will be automatically closed.
