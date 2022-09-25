@@ -23,9 +23,30 @@
 #include <type_traits>
 #include <string>
 #include <string_view>
+#include <iostream>
+#include <typeinfo>
 
 namespace agr
  {
+  //====================================================
+  //     Structs
+  //====================================================
+
+  // is_streamable
+  /**
+   * @brief Struct used to check if a type is a streamable or not, i.e. it has operator << overload or not.
+   * 
+   * @tparam S The type of the stream object which should stream the input object.
+   * @tparam T The type of the input object.
+   * @tparam typename 
+   */
+  template<typename S, typename T, typename = void>
+  struct is_streamable: std::false_type {};
+
+  // is_streamable specialization
+  template<typename S, typename T>
+  struct is_streamable <S, T, std::void_t<decltype( std::declval <S&>() <<std::declval<T>() ) > >: std::true_type {};
+
   //====================================================
   //     Functions
   //====================================================

@@ -16,6 +16,7 @@
 #include <doctest/doctest.h>
 
 // STD headers
+#include <string>
 
 //====================================================
 //     is_pointer_to_const_char
@@ -35,4 +36,14 @@ TEST_CASE( "Testing is_str function." )
   CHECK( agr::is_str( "hey" ) );
   std::string str = "hey";
   CHECK( agr::is_str( str ) );
+ }
+
+//====================================================
+//     is_streamable
+//==================================================== 
+TEST_CASE( "Function used to check if a type is streamable to a certain stream." )
+ {
+  CHECK( agr::is_streamable<std::ostream, int>::value );
+  CHECK( ! agr::is_streamable<std::ostream, std::ostream>::value );
+  CHECK( agr::is_streamable<std::ostream, std::string>::value );
  }

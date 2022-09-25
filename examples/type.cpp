@@ -20,13 +20,12 @@ void type()
 
                       << "\n";
 
-  //is_pointer_to_const_char
-  const char * c_str = "Is this string a pointer to const char? ";
-  std::cout << c_str << agr::is_pointer_to_const_char( c_str ) << "\n";
-
-  //is_pointer_to_const_char
+  // is_str
   std::string str = "Is this string an std::string? ";
-  std::cout << str << agr::is_pointer_to_const_char( str ) << "\n";
+  std::cout << str << agr::is_str( str ) << "\n";
+
+  // is_streamable
+  std::cout << "Is a string streamable? " << agr::is_streamable <std::ostream, std::string>::value << "\n";
  }
 
 //====================================================
