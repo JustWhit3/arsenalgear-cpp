@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['null_5fstr_21',['null_str',['../namespaceagr.html#a1d792d292bac3e11731eb31cac8dd46e',1,'agr']]]
+  ['math_2ehpp_20',['math.hpp',['../math_8hpp.html',1,'']]],
+  ['math_5fhpp_21',['MATH_HPP',['../math_8hpp.html#aa61a13cb215799ac868ff115732081ac',1,'math.hpp']]],
+  ['maxptr_22',['maxptr',['../namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157',1,'agr']]],
+  ['multi_23',['multi',['../namespaceagr.html#a26849e3e5a1662f89d1267093f8eb158',1,'agr']]]
 ];
