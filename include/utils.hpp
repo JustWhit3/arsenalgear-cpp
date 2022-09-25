@@ -26,6 +26,8 @@
 #include <vector>
 #include <string>
 #include <stdexcept>
+#include <codecvt>
+#include <locale>
 
 //====================================================
 //     Namespaces
@@ -119,6 +121,51 @@ namespace agr
       return static_cast <T> ( NULL );
      }
     return 1;
+   }
+
+  // StringConverter
+  /**
+   * @brief Function used to convert an std::string into other string types (std::wstring etc...). If the argument is an std::string it will be returned without any modification.
+   * 
+   * @tparam CharT The char type (char, wchar_t...) to which the string is converted..
+   * @param input_str The input std::string object.
+   * @return std::conditional_t<std::is_same_v<CharT, char>, const std::basic_string<CharT>&, std::basic_string<CharT>> The converted string object.
+   */
+  template <class CharT>
+  std::conditional_t<std::is_same_v<CharT, char>, const std::basic_string<CharT>&, std::basic_string<CharT>>
+  StringConverter( const std::string& input_str )
+   {
+    if constexpr( std::is_same_v <CharT, char> ) 
+     {
+      return input_str;
+     }
+    else if constexpr( std::is_same_v <CharT, wchar_t> )
+     {
+      static std::wstring_convert <std::codecvt_utf8_utf16 <wchar_t>> converter_wchar_t;
+      return converter_wchar_t.from_bytes( input_str );
+     }
+    #ifndef __APPLE__
+    #if ( __cplusplus >= 202002L )
+    else if constexpr( std::is_same_v <CharT, char8_t> )
+     {
+      return reinterpret_cast <const char8_t*>( input_str.c_str() );
+     }
+    #endif
+    else if constexpr( std::is_same_v <CharT, char16_t> )
+     {
+      static std::wstring_convert <std::codecvt_utf8_utf16 <char16_t>, char16_t> converter_16_t;
+      return converter_16_t.from_bytes( input_str );
+     } 
+    else if constexpr( std::is_same_v <CharT, char32_t> )
+     {
+      static std::wstring_convert <std::codecvt_utf8_utf16 <char32_t>, char32_t> converter_32_t;
+      return converter_32_t.from_bytes( input_str );
+     }
+    #endif
+    else 
+     {
+      return StringConverter<CharT>( "" );
+     }
    }
  }
 

@@ -104,3 +104,36 @@ TEST_CASE( "Testing the split_string function." )
   CHECK_EQ( agr::split_string( "aa bb cc", " " )[1], "bb" );
   CHECK_EQ( agr::split_string( "aaqfq dddd ff", " " ).back(), "ff" );
  }
+
+//====================================================
+//     StringConverter
+//==================================================== 
+TEST_CASE( "Testing StringConverter function." )
+ {
+  // char
+  CHECK_EQ( agr::StringConverter<char>( "Hello" ), "Hello" );
+  CHECK_EQ( agr::StringConverter<char>( "Test a long string" ), "Test a long string" );
+  CHECK_EQ( agr::StringConverter<char>( "" ), "" ); 
+
+  // wchar_t
+  CHECK_EQ( agr::StringConverter<wchar_t>( "Hello" ), L"Hello" );
+  CHECK_EQ( agr::StringConverter<wchar_t>( "Test a long string" ), L"Test a long string" );
+  CHECK_EQ( agr::StringConverter<wchar_t>( "" ), L"" ); 
+  // char16_t
+
+  CHECK_EQ( agr::StringConverter<char16_t>( "Hello" ), u"Hello" );
+  CHECK_EQ( agr::StringConverter<char16_t>( "Test a long string" ), u"Test a long string" );
+  CHECK_EQ( agr::StringConverter<char16_t>( "" ), u"" ); 
+
+  // char32_t
+  CHECK_EQ( agr::StringConverter<char32_t>( "Hello" ), U"Hello" );
+  CHECK_EQ( agr::StringConverter<char32_t>( "Test a long string" ), U"Test a long string" );
+  CHECK_EQ( agr::StringConverter<char32_t>( "" ), U"" ); 
+
+  // char8_t
+  #if ( __cplusplus >= 202002L )
+  CHECK_EQ( agr::StringConverter<char8_t>( "Hello" ), u8"Hello" );
+  CHECK_EQ( agr::StringConverter<char8_t>( "Test a long string" ), u8"Test a long string" );
+  CHECK_EQ( agr::StringConverter<char8_t>( "" ), u8"" );
+  #endif
+ }
