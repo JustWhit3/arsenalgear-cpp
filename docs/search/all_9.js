@@ -6,7 +6,8 @@ var searchData=
   ['stream_2ecpp_30',['stream.cpp',['../stream_8cpp.html',1,'']]],
   ['stream_2ehpp_31',['stream.hpp',['../stream_8hpp.html',1,'']]],
   ['stream_5fhpp_32',['STREAM_HPP',['../stream_8hpp.html#a025ba348c42be064dd66503033f5a68c',1,'stream.hpp']]],
-  ['system_2ecpp_33',['system.cpp',['../system_8cpp.html',1,'']]],
-  ['system_2ehpp_34',['system.hpp',['../system_8hpp.html',1,'']]],
-  ['system_5fhpp_35',['SYSTEM_HPP',['../system_8hpp.html#a51fb9bacf75f85c51ef6faae815d281e',1,'system.hpp']]]
+  ['stringconverter_33',['StringConverter',['../namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47',1,'agr']]],
+  ['system_2ecpp_34',['system.cpp',['../system_8cpp.html',1,'']]],
+  ['system_2ehpp_35',['system.hpp',['../system_8hpp.html',1,'']]],
+  ['system_5fhpp_36',['SYSTEM_HPP',['../system_8hpp.html#a51fb9bacf75f85c51ef6faae815d281e',1,'system.hpp']]]
 ];

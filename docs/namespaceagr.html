@@ -141,6 +141,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">one</a> (const T &amp;iterating_var)</td></tr>
 <tr class="memdesc:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to find the incremented unit of a loop.  <a href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">More...</a><br /></td></tr>
 <tr class="separator:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="memTemplParams" colspan="2">template&lt;class CharT &gt; </td></tr>
+<tr class="memitem:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="memTemplItemLeft" align="right" valign="top">std::conditional_t&lt; std::is_same_v&lt; CharT, char &gt;, const std::basic_string&lt; CharT &gt; &amp;, std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">StringConverter</a> (const std::string &amp;input_str)</td></tr>
+<tr class="memdesc:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to convert an std::string into other string types (std::wstring etc...). If the argument is an std::string it will be returned without any modification.  <a href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">More...</a><br /></td></tr>
+<tr class="separator:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -796,6 +800,41 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; The collection of string elements splitted by the regex. </dd></dl>
+
+</div>
+</div>
+<a id="a1d3019dd5d7deec3df2a2c4e01b89f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d3019dd5d7deec3df2a2c4e01b89f47">&#9670;&nbsp;</a></span>StringConverter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::conditional_t&lt;std::is_same_v&lt;CharT, char&gt;, const std::basic_string&lt;CharT&gt;&amp;, std::basic_string&lt;CharT&gt; &gt; agr::StringConverter </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>input_str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function used to convert an std::string into other string types (std::wstring etc...). If the argument is an std::string it will be returned without any modification. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">CharT</td><td>The char type (char, wchar_t...) to which the string is converted.. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input_str</td><td>The input std::string object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::conditional_t&lt;std::is_same_v&lt;CharT, char&gt;, const std::basic_string&lt;CharT&gt;&amp;, std::basic_string&lt;CharT&gt;&gt; The converted string object. </dd></dl>
 
 </div>
 </div>

@@ -80,17 +80,21 @@ $(function() {
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;codecvt&gt;</code><br />
+<code>#include &lt;locale&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for utils.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="utils_8hpp__incl.png" border="0" usemap="#ainclude_2utils_8hpp" alt=""/></div>
 <map name="ainclude_2utils_8hpp" id="ainclude_2utils_8hpp">
-<area shape="rect" title=" " alt="" coords="195,5,310,32"/>
+<area shape="rect" title=" " alt="" coords="290,5,405,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,84,107"/>
 <area shape="rect" title=" " alt="" coords="108,80,187,107"/>
 <area shape="rect" title=" " alt="" coords="211,80,294,107"/>
 <area shape="rect" title=" " alt="" coords="318,80,377,107"/>
 <area shape="rect" title=" " alt="" coords="401,80,456,107"/>
+<area shape="rect" title=" " alt="" coords="480,80,548,107"/>
+<area shape="rect" title=" " alt="" coords="573,80,629,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -139,6 +143,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">agr::one</a> (const T &amp;iterating_var)</td></tr>
 <tr class="memdesc:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to find the incremented unit of a loop.  <a href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">More...</a><br /></td></tr>
 <tr class="separator:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="memTemplParams" colspan="2">template&lt;class CharT &gt; </td></tr>
+<tr class="memitem:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="memTemplItemLeft" align="right" valign="top">std::conditional_t&lt; std::is_same_v&lt; CharT, char &gt;, const std::basic_string&lt; CharT &gt; &amp;, std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">agr::StringConverter</a> (const std::string &amp;input_str)</td></tr>
+<tr class="memdesc:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to convert an std::string into other string types (std::wstring etc...). If the argument is an std::string it will be returned without any modification.  <a href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">More...</a><br /></td></tr>
+<tr class="separator:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Gianluca Bianco (<a href="#" onclick="location.href='mai'+'lto:'+'bia'+'nc'+'ogi'+'an'+'luc'+'a9'+'@gm'+'ai'+'l.c'+'om'; return false;">bianc<span style="display: none;">.nosp@m.</span>ogia<span style="display: none;">.nosp@m.</span>nluca<span style="display: none;">.nosp@m.</span>9@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a>) </dd></dl>
