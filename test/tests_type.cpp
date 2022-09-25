@@ -41,9 +41,18 @@ TEST_CASE( "Testing is_str function." )
 //====================================================
 //     is_streamable
 //==================================================== 
-TEST_CASE( "Function used to check if a type is streamable to a certain stream." )
+TEST_CASE( "Testing is_streamable." )
  {
   CHECK( agr::is_streamable<std::ostream, int>::value );
   CHECK( ! agr::is_streamable<std::ostream, std::ostream>::value );
   CHECK( agr::is_streamable<std::ostream, std::string>::value );
+ }
+
+//====================================================
+//     is_any
+//==================================================== 
+TEST_CASE( "Testing is_any." )
+ {
+  CHECK( agr::is_any<int, int, double, float>() );
+  CHECK( ! agr::is_any<int, char, double, float>() );
  }

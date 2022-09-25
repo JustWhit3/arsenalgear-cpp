@@ -26,6 +26,9 @@ void type()
 
   // is_streamable
   std::cout << "Is a string streamable? " << agr::is_streamable <std::ostream, std::string>::value << "\n";
+
+  // is_any
+  std::cout << "Check if int is in the list (int, double, float): " << agr::is_any<int, double, float>() << "\n";
  }
 
 //====================================================

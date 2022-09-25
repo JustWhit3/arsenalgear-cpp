@@ -87,6 +87,25 @@ namespace agr
    {
     return is_pointer_to_const_char( obj ) || std::is_same_v<T, std::string> || std::is_same_v<T, std::string_view>;
    }
+
+  // is_any
+  /**
+   * @brief Function used to check if a type is in a list or not.
+   * 
+   * @tparam Kind The type to be checked.
+   * @tparam Kinds The types to which the type is compared.
+   * @return true If the type is in a list.
+   * @return false Otherwise.
+   */
+  template <typename Kind, typename... Kinds>
+  bool is_any()
+   {
+    if constexpr ( ( std::is_same_v <Kind, Kinds> || ... ) )
+     {
+      return true;
+     } 
+    return false;
+   }
  }
 
 #endif
