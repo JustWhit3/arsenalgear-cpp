@@ -137,3 +137,13 @@ TEST_CASE( "Testing StringConverter function." )
   CHECK_EQ( agr::StringConverter<char8_t>( "" ), u8"" );
   #endif
  }
+
+//====================================================
+//     is_escape
+//==================================================== 
+TEST_CASE( "Testing is_escape function." )
+ {
+  CHECK( ! agr::is_escape( "aaa", agr::ANSI::first ) );
+  CHECK( agr::is_escape( "\033[30m", agr::ANSI::first ) );
+  CHECK( agr::is_escape( "aaa\033[30m", agr::ANSI::generic ) );
+ }

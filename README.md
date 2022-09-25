@@ -187,6 +187,7 @@ make clean
 - [`except_error_func`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a4985365fab7e1937492277a49ee3cb2f:~:text=%E2%97%86-,except_error_func,-()): function used to throw customized exception error.
 - [`isFloatingPoint`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a30f754b298e55c68819829df78d936cb): function used to check if an expression is a floating point or not.
 - [`one`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a): function used to find the incremented unit of a loop.
+- [`StringConverter`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47): function used to convert a `char` string into other char types (`wchar_t`, `char16_t`, etc...).
 
 ### Containers
 

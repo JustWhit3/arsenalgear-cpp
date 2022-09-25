@@ -37,6 +37,11 @@ using namespace std::literals::string_literals;
 namespace agr
  {
   //====================================================
+  //     Enum classes
+  //====================================================
+  enum class ANSI { first, generic };
+
+  //====================================================
   //     Functions
   //====================================================
   extern std::string multi( const std::string& element, unsigned int n_times );
@@ -166,6 +171,36 @@ namespace agr
      {
       return StringConverter<CharT>( "" );
      }
+   }
+
+  // is_escape
+  /**
+   * @brief This method is used to check if an input variable is an ANSI escape sequency or not.
+   * 
+   * @tparam T Template type of the input variable.
+   * @param str The input variable.
+   * @param flag A flag which let to return different things with respect to its value. If flag = ANSI::first the ANSI is searched as the first substring of the str argument, otherwise, if flag = ANSI::generic the ANSI is searched as a substring inside the str argument.
+   * @return true If the input variable is an ANSI escape sequency.
+   * @return false Otherwise.
+   */
+  template <typename T>
+  static constexpr bool is_escape( const T& str, const ANSI& flag )
+   {
+    if constexpr( std::is_convertible_v <T, std::ostream> && ! std::is_same_v<T, std::nullptr_t> )
+     {
+      switch( flag )
+       {
+        case( ANSI::first ): 
+         {
+          return ( std::string_view( str ).length() < 7 ) && ( str[0] == '\033' );
+         }
+        case( ANSI::generic ):
+         {
+          return ( std::string_view( str ).find( '\033' ) != std::string_view::npos );
+         }
+       }
+     }
+    return false;
    }
  }
 
