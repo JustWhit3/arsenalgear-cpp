@@ -209,6 +209,7 @@ make clean
 
 - [`is_pointer_to_const_char`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a): function used to check if a string is a pointer to const char.
 - [`is_str`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a8cedbda93e6317c38b992056458ba03c): function used to check if a string is an `std::string` object.
+- [`is_streamable`](https://justwhit3.github.io/arsenalgear-cpp/structagr_1_1is__streamable.html): struct used to check if a type is streamable to a stream or not.
 
 ## Useful scripts
 
