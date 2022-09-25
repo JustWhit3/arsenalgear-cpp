@@ -1,0 +1,4 @@
+<map id="agr::is_streamable&lt; S, T, typename &gt;" name="agr::is_streamable&lt; S, T, typename &gt;">
+<area shape="rect" id="node1" title="Struct used to check if a type is a streamable or not, i.e. it has operator &lt;&lt; overload or not." alt="" coords="5,80,136,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="18,5,123,32"/>
+</map>

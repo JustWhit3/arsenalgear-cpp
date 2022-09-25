@@ -89,39 +89,52 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">//     Functions</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// is_pointer_to_const_char</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, std::<span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a">   43</a></span>&#160;  constexpr <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a">is_pointer_to_const_char</a>( T(&amp;)[N] ) </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   { </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> std::is_same_v &lt;const char, T&gt;;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// is_pointer_to_const_char specialization</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="namespaceagr.html#a967afc81c623b378f2bf66e6d5d0956b">   50</a></span>&#160;  constexpr <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a">is_pointer_to_const_char</a>( T&amp;&amp; ) </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;   { </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> std::is_same_v &lt;const char *, T&gt;;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;   }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// is_str</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="namespaceagr.html#a8cedbda93e6317c38b992056458ba03c">   65</a></span>&#160;  constexpr <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a8cedbda93e6317c38b992056458ba03c">is_str</a>( <span class="keyword">const</span> T&amp; obj )</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;   {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a">is_pointer_to_const_char</a>( obj ) || std::is_same_v&lt;T, std::string&gt; || std::is_same_v&lt;T, std::string_view&gt;;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;   }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">//     Structs</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// is_streamable</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structagr_1_1is__streamable.html">   44</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structagr_1_1is__streamable.html">is_streamable</a>: std::false_type {};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// is_streamable specialization</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structagr_1_1is__streamable_3_01S_00_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01S252d6b4b863bfebff04c4afd70f5394a.html">   48</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structagr_1_1is__streamable.html">is_streamable</a> &lt;S, T, std::void_t&lt;decltype( std::declval &lt;S&amp;&gt;() &lt;&lt;std::declval&lt;T&gt;() ) &gt; &gt;: std::true_type {};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">//     Functions</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// is_pointer_to_const_char</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"></span>  template &lt;typename T, std::size_t N&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a">   64</a></span>&#160;  constexpr bool is_pointer_to_const_char( T(&amp;)[N] ) </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   { </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    return std::is_same_v &lt;const char, T&gt;;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// is_pointer_to_const_char specialization</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  template&lt;typename T&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="namespaceagr.html#a967afc81c623b378f2bf66e6d5d0956b">   71</a></span>&#160;  constexpr bool is_pointer_to_const_char( T&amp;&amp; ) </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;   { </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    return std::is_same_v &lt;const char *, T&gt;;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;   }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">// is_str</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"></span>  template &lt;class T&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="namespaceagr.html#a8cedbda93e6317c38b992056458ba03c">   86</a></span>&#160;  constexpr bool is_str( const T&amp; obj )</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;   {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    return is_pointer_to_const_char( obj ) || std::is_same_v&lt;T, std::string&gt; || std::is_same_v&lt;T, std::string_view&gt;;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;   }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;#endif</div>
 <div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:23</div></div>
-<div class="ttc" id="anamespaceagr_html_a7c5ec6c4708748caba50bd7444a8707a"><div class="ttname"><a href="namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a">agr::is_pointer_to_const_char</a></div><div class="ttdeci">constexpr bool is_pointer_to_const_char(T(&amp;)[N])</div><div class="ttdoc">Function used to check if a pointer is a pointer to const char.</div><div class="ttdef"><b>Definition:</b> type.hpp:43</div></div>
-<div class="ttc" id="anamespaceagr_html_a8cedbda93e6317c38b992056458ba03c"><div class="ttname"><a href="namespaceagr.html#a8cedbda93e6317c38b992056458ba03c">agr::is_str</a></div><div class="ttdeci">constexpr bool is_str(const T &amp;obj)</div><div class="ttdoc">Function used to check if a variable is a string object (std::string, const char*,...</div><div class="ttdef"><b>Definition:</b> type.hpp:65</div></div>
+<div class="ttc" id="astructagr_1_1is__streamable_html"><div class="ttname"><a href="structagr_1_1is__streamable.html">agr::is_streamable</a></div><div class="ttdoc">Struct used to check if a type is a streamable or not, i.e. it has operator &lt;&lt; overload or not.</div><div class="ttdef"><b>Definition:</b> type.hpp:44</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
