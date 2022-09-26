@@ -29,7 +29,6 @@
   - [Utils](#utils)
   - [Containers](#containers)
   - [Type](#type)
-- [Useful scripts](#useful-scripts)
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
 
@@ -203,18 +202,6 @@ make clean
 - [`is_str`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a8cedbda93e6317c38b992056458ba03c): function used to check if a string is an `std::string` object.
 - [`is_streamable`](https://justwhit3.github.io/arsenalgear-cpp/structagr_1_1is__streamable.html): struct used to check if a type is streamable to a stream or not.
 - [`is_any`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a962b9e5500ec34ba186b3ad88114a677): function used to check if a type is in a list or not. Very useful to perform this operation with parameter packs.
-
-## Useful scripts
-
-Other scripts have been provided into the [**scripts**](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts) folder. After compiling the source code, they can be run from the repository home directory.
-
-The `debug_cpp.sh` script is used to run [Valgrind](https://valgrind.org/) and [Cppcheck](https://github.com/danmar/cppcheck) debugging tools on the whole code.
-
-You can run Valgrind debugging tools with a specific executable:
-
-```shell
-./scripts/debug_cpp.sh [valgrind-tool-name] [executable-name]
-```
 
 ## Credits
 

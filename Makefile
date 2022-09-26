@@ -35,7 +35,7 @@ else
 	TEST_EX := tests.exe
 endif
 LIB := libarsenalgear.a
-CC := g++
+CXX := g++
 
 #====================================================
 #     DIRECTORIES
@@ -48,8 +48,8 @@ LIB_DIR := lib
 
 # Source dirs
 SRC_DIR := src
-EX_DIR := examples
-TEST_DIR := test
+EX_DIR := test/system_tests
+TEST_DIR := test/unit_tests
 
 #====================================================
 #     SOURCE FILES
@@ -111,7 +111,8 @@ else
 endif
 INC_FLAGS := $(addprefix -I,$(INC_DIR))
 WFLAGS := -Wall -Wextra -Wno-reorder
-CPPFLAGS := -std=c++17 -g $(INC_FLAGS) -MMD -MP $(WFLAGS) 
+CXXFLAGS := -std=c++17
+CPPFLAGS := $(CXXFLAGS) -g $(INC_FLAGS) -MMD -MP $(WFLAGS) 
 
 #====================================================
 #     ALIASES
@@ -134,44 +135,44 @@ tests: $(BUILD_DIR)/$(TEST_EX)
 # Math
 $(BUILD_DIR)/$(MATH_EX): $(OBJ_MATH)
 	@ mkdir -p $(dir $@)
-	$(CC) $(OBJ_MATH) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJ_MATH) -o $@ $(LDFLAGS)
 
 # Operators
 $(BUILD_DIR)/$(OPERATORS_EX): $(OBJ_OPERATORS)
 	@ mkdir -p $(dir $@)
-	$(CC) $(OBJ_OPERATORS) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJ_OPERATORS) -o $@ $(LDFLAGS)
 
 # Stream
 $(BUILD_DIR)/$(STREAM_EX): $(OBJ_STREAM)
 	@ mkdir -p $(dir $@)
-	$(CC) $(OBJ_STREAM) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJ_STREAM) -o $@ $(LDFLAGS)
 
 # Utils
 $(BUILD_DIR)/$(UTILS_EX): $(OBJ_UTILS)
 	@ mkdir -p $(dir $@)
-	$(CC) $(OBJ_UTILS) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJ_UTILS) -o $@ $(LDFLAGS)
 
 # System
 $(BUILD_DIR)/$(SYSTEM_EX): $(OBJ_SYSTEM)
 	@ mkdir -p $(dir $@)
-	$(CC) $(OBJ_SYSTEM) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJ_SYSTEM) -o $@ $(LDFLAGS)
 
 # Type
 $(BUILD_DIR)/$(TYPE_EX): $(OBJ_TYPE)
 	@ mkdir -p $(dir $@)
-	$(CC) $(OBJ_TYPE) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJ_TYPE) -o $@ $(LDFLAGS)
 
 # Containers
 $(BUILD_DIR)/$(CONTAINERS_EX): $(OBJ_CONTAINERS)
 	@ mkdir -p $(dir $@)
-	$(CC) $(OBJ_CONTAINERS) -o $@ $(LDFLAGS)
+	$(CXX) $(OBJ_CONTAINERS) -o $@ $(LDFLAGS)
 
 #====================================================
 #     Building tests
 #====================================================
 $(BUILD_DIR)/$(TEST_EX): $(TEST_OBJ)
 	@ mkdir -p $(dir $@)
-	$(CC) $(TEST_OBJ) -o $@ $(LDFLAGS)
+	$(CXX) $(TEST_OBJ) -o $@ $(LDFLAGS)
 
 #====================================================
 #     Reordering objects
