@@ -21,7 +21,7 @@ services:
         volumes:
             - .:/proj
         container_name: build
-        command: 'bash -c "cd /proj && ls"'
+        command: 'bash -c "cd /proj && make bin/containers bin/math bin/operators bin/stream bin/system bin/type bin/utils CXX=g++"'
 
     # gcc 9
     build_gcc_9:
