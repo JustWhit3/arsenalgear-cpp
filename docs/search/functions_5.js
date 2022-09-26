@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['roundoff_75',['roundoff',['../namespaceagr.html#ab632f9e8e52e8cad544fb1c01fdddc16',1,'agr']]]
+  ['one_81',['one',['../namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a',1,'agr']]],
+  ['operator_2a_82',['operator*',['../operators_8hpp.html#aa21cb9291ed5e17a8b54f4538e72aa33',1,'operator*(const T &amp;generic_string, unsigned int integer):&#160;operators.hpp'],['../operators_8hpp.html#aa7679c32f6fc69c7c2c031e0a8fec67d',1,'operator*(unsigned int integer, const T &amp;generic_string):&#160;operators.hpp']]]
 ];

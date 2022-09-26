@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['savebuf_76',['savebuf',['../classagr_1_1savebuf.html#a06d15ec453d2e97fb24bfe72e9b96630',1,'agr::savebuf']]],
-  ['split_5fstring_77',['split_string',['../namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd',1,'agr']]],
-  ['str_78',['str',['../classagr_1_1savebuf.html#aea87b126d50a1565fda4fae17bd74688',1,'agr::savebuf']]],
-  ['stringconverter_79',['StringConverter',['../namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47',1,'agr']]]
+  ['roundoff_83',['roundoff',['../namespaceagr.html#ab632f9e8e52e8cad544fb1c01fdddc16',1,'agr']]]
 ];

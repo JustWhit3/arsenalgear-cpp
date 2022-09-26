@@ -75,16 +75,18 @@ $(function() {
 <div class="title">stream.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;streambuf&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for stream.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="stream_8hpp__incl.png" border="0" usemap="#ainclude_2stream_8hpp" alt=""/></div>
 <map name="ainclude_2stream_8hpp" id="ainclude_2stream_8hpp">
-<area shape="rect" title=" " alt="" coords="13,5,143,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,60,107"/>
-<area shape="rect" title=" " alt="" coords="85,80,165,107"/>
+<area shape="rect" title=" " alt="" coords="64,5,195,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,77,107"/>
+<area shape="rect" title=" " alt="" coords="102,80,157,107"/>
+<area shape="rect" title=" " alt="" coords="181,80,261,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -103,6 +105,12 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classagr_1_1savebuf.html">agr::savebuf</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class used to store the output sent to an output stream.  <a href="classagr_1_1savebuf.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structagr_1_1select__cout.html">agr::select_cout&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct used to define a way to template the choice of the "std::cout" object in order to be "std::cout" for "char" type or "std::wcout" for "wchar_t" type.  <a href="structagr_1_1select__cout.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structagr_1_1select__cin.html">agr::select_cin&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct used to define a way to template the choice of the "std::cin" object in order to be "std::cin" for "char" type or "std::wcin" for "wchar_t" type.  <a href="structagr_1_1select__cin.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>

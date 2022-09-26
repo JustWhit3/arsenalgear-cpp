@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['except_5ferror_5ffunc_61',['except_error_func',['../namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4',1,'agr']]],
-  ['extract_5fmap_5felem_62',['extract_map_elem',['../namespaceagr.html#ad0bee30c8e7936e855a7266c52f159ab',1,'agr']]],
-  ['extract_5fmap_5fkeys_63',['extract_map_keys',['../namespaceagr.html#a9fe9787aa77cc6c41ee5932f140462af',1,'agr']]]
+  ['cin_67',['cin',['../structagr_1_1select__cin.html#a4b611d200bfb58602c263f9832e5193c',1,'agr::select_cin::cin'],['../structagr_1_1select__cin.html#a7c1810c4ae543f5f460bdb0ce64b4f11',1,'agr::select_cin::cin']]],
+  ['cout_68',['cout',['../structagr_1_1select__cout.html#a93923ea98973ade38c11e8fec1cebcd0',1,'agr::select_cout::cout'],['../structagr_1_1select__cout.html#a93fc2e8cc129ee599504828284aa0a57',1,'agr::select_cout::cout']]]
 ];
