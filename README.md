@@ -16,10 +16,13 @@
 ## Table of contents
 
 - [Introduction](#introduction)
+- [Architectures support](#architectures-support)
+  - [Operating systems](#operating-systems)
+  - [Compilers](#compilers)
 - [Install and use](#install-and-use)
   - [Install](#install)
   - [Use in your device](#use-in-your-device)
-  - [Compile examples and tests](#compile-examples-and-tests)
+- [Tests](#tests)
 - [List of features](#list-of-features)
   - [Constants](#constants)
   - [Math](#math)
@@ -36,6 +39,8 @@
 
 This library contains a set of generic utils I developed for other projects. There are several sub-headers / modules related to the various topics (math, iostream and others). Existing tools are constantly updated and new ones are added once their development is required for other projects. Some projects in which I am using this library are, for example: [osmanip](https://github.com/JustWhit3/osmanip) and [SAFD-algorithm](https://github.com/JustWhit3/SAFD-algorithm).
 
+This library is fully *type-safe* with *automatic memory management*, with minimal and indispensable [dependencies](#install-and-use).
+
 If you want to use this library please cite it following [this](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/CITATION.cff) citation template.
 
 If you want to contribute to the repository, see [this](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/CONTRIBUTING.md) document before.
@@ -46,7 +51,9 @@ The software is and will stay **free**, but if you want to support me with a don
 
 <a href="https://www.buymeacoffee.com/JustWhit33" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-Supported operating systems:
+## Architectures support
+
+## Operating systems
 
 - **Linux**
   - *Ubuntu* (tested)
@@ -56,6 +63,18 @@ Supported operating systems:
   - *MinGW* (tested)
   - *WSL* (tested)
 - **MacOS**
+
+## Compilers
+
+- **gcc**:
+  - *C++17*: 7/8/9/10/11/12
+  - *C++20*: 10/11/12
+- **clang**:
+  - *C++17*: 5/6/7/8/9/10/11/12/13/14/15
+  - *C++20*: 9/10/11/12/13/14/15
+- **MSVC**:
+  - *C++17*: 19 (only this one tested)
+  - *C++20*: //
 
 ## Install and use
 
@@ -109,47 +128,24 @@ To compile it you have simply add the `-larsenalgear` compilation flag.
 
 > **NOTE**: if you are on **Windows** and didn't install the headers and libraries in a system standard path you probably need to add also the `-I\path\to\include` and `-L\path\to\lib` flags.
 
-### Compile examples and tests
+## Tests
 
-To compile examples
+Tests are produced using `-Wall -Wextra -pedantic` flags. To check them you need some prerequisites:
 
-```shell
-make main
+- [Valgrind](https://valgrind.org/) for profiling.
+- [doctest](https://github.com/onqtam/doctest) for testing.
+- [cppcheck](https://cppcheck.sourceforge.io/) for testing.
+
+They are installed in the second step of the installation through the `install.sh` script. Before running test codes you need to compile them:
+
+```txt
+make
 ```
 
->**NOTE**: compilation may be slow due to the expensive operation of the `parsed_f` function, which uses the ExprTK library.
+To launch all tests simultaneously:
 
-To run all examples:
-
-```shell
-./bin/math
-./bin/operators
-./bin/stream
-./bin/system
-./bin/tests
-./bin/utils
-./bin/containers
-./bin/type
-```
-
-> **NOTE**: executables end with `.exe` if you are on Windows of course.
-
-To compile tests:
-
-```shell
-make tests
-```
-
-To run tests:
-
-```shell
-./bin/tests
-```
-
-There is also an option to go back to the pre-compilation state of the code, to do this simply type this command:
-
-```shell
-make clean
+```txt
+./test/all_tests.sh
 ```
 
 ## List of features
