@@ -184,9 +184,9 @@ namespace agr
    * @return false Otherwise.
    */
   template <typename T>
-  static constexpr bool is_escape( const T& str, const ANSI& flag )
+  bool is_escape( const T& str, const ANSI& flag )
    {
-    if constexpr( std::is_convertible_v <T, std::ostream> && ! std::is_same_v<T, std::nullptr_t> )
+    if constexpr( std::is_convertible_v <T, std::string_view> && ! std::is_same_v<T, std::nullptr_t> )
      {
       switch( flag )
        {
