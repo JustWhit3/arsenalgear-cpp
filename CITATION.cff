@@ -4,7 +4,7 @@ authors:
 - family-names: "Gianluca"
   given-names: "Bianco"
 title: "osmanip"
-version: 1.2.3
+version: 2.0.0
 doi: https://zenodo.org/badge/latestdoi/501553690
 date-released: 2022-06-09
 url: "https://github.com/JustWhit3/arsenalgear-cpp"
