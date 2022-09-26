@@ -174,6 +174,8 @@ make clean
 
 - [`null_stream`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a86c4b2752b7974c764df413b76a4f715:~:text=%E2%97%86-,null_stream,-boost%3A%3Aiostreams%3A%3Astream): definition of the null stream.
 - [`savebuf`](https://justwhit3.github.io/arsenalgear-cpp/classagr_1_1savebuf.html): class used to store the output of an output stream (useful for testing).
+- [`select_cout`](https://justwhit3.github.io/arsenalgear-cpp/structagr_1_1select__cout.html): struct used to define an object which can be a different `std::cout` objects based on its `char` type.
+- [`select_cin`](https://justwhit3.github.io/arsenalgear-cpp/structagr_1_1select__cin.html): struct used to define an object which can be a different `std::cin` objects based on its `char` type.
 
 ### System
 
