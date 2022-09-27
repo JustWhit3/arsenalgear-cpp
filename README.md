@@ -4,7 +4,7 @@
 <p align="center">
   <img title="v2.0" alt="v2.0" src="https://img.shields.io/badge/version-v2.0-informational?style=flat-square">
   <img title="MIT License" alt="license" src="https://img.shields.io/badge/license-MIT-informational?style=flat-square">
-	<img title="C++17" alt="C++17" src="https://img.shields.io/badge/c++-17-informational?style=flat-square"></br>
+	<img title="C++17/20" alt="C++17/20" src="https://img.shields.io/badge/c++-17/20-informational?style=flat-square"></br>
 	<img title="Code size" alt="code size" src="https://img.shields.io/github/languages/code-size/JustWhit3/arsenalgear-cpp?color=red">
 	<img title="Repo size" alt="repo size" src="https://img.shields.io/github/repo-size/JustWhit3/arsenalgear-cpp?color=red">
 	<img title="Lines of code" alt="total lines" src="https://img.shields.io/tokei/lines/github/JustWhit3/arsenalgear-cpp?color=red"></br>
@@ -37,7 +37,7 @@
 
 ## Introduction
 
-This library contains a set of generic utils I developed for other projects. There are several sub-headers / modules related to the various topics (math, iostream and others). Existing tools are constantly updated and new ones are added once their development is required for other projects. Some projects in which I am using this library are, for example: [osmanip](https://github.com/JustWhit3/osmanip) and [SAFD-algorithm](https://github.com/JustWhit3/SAFD-algorithm).
+This is a C++17/20 library containing a set of generic utils I developed for other projects. There are several sub-headers / modules related to the various topics (math, iostream and others). Existing tools are constantly updated and new ones are added once their development is required for other projects. Some projects in which I am using this library are, for example: [osmanip](https://github.com/JustWhit3/osmanip) and [SAFD-algorithm](https://github.com/JustWhit3/SAFD-algorithm).
 
 This library is fully *type-safe* with *automatic memory management*, with minimal and indispensable [dependencies](#install-and-use).
 
