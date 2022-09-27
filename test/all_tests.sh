@@ -73,4 +73,4 @@ echo "======================================================"
 echo "     CPPCHECK TESTS"
 echo "======================================================"
 echo ""
-cppcheck include/* src*
+cppcheck include/* src/*
