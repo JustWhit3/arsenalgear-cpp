@@ -12,8 +12,8 @@
 //     Preprocessor settings
 //====================================================
 #pragma once
-#ifndef CONTAINERS_HPP
-#define CONTAINERS_HPP
+#ifndef ARSENALGEAR_CONTAINERS_HPP
+#define ARSENALGEAR_CONTAINERS_HPP
 
 //====================================================
 //     Headers

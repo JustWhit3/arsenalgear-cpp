@@ -11,8 +11,8 @@
 //     Preprocessor settings
 //====================================================
 #pragma once
-#ifndef CONSTANTS_HPP
-#define CONSTANTS_HPP
+#ifndef ARSENALGEAR_CONSTANTS_HPP
+#define ARSENALGEAR_CONSTANTS_HPP
 
 namespace agr
  {

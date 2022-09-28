@@ -12,8 +12,8 @@
 //     Preprocessor settings
 //====================================================
 #pragma once
-#ifndef UTILS_HPP
-#define UTILS_HPP
+#ifndef ARSENALGEAR_UTILS_HPP
+#define ARSENALGEAR_UTILS_HPP
 
 //====================================================
 //     Headers
@@ -21,11 +21,9 @@
 
 // STD headers
 #include <stdexcept>
-#include <functional>
 #include <type_traits>
 #include <vector>
 #include <string>
-#include <stdexcept>
 #include <codecvt>
 #include <locale>
 #include <sstream>

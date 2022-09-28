@@ -12,8 +12,8 @@
 //     Preprocessor settings
 //====================================================
 #pragma once
-#ifndef MATH_HPP
-#define MATH_HPP
+#ifndef ARSENALGEAR_MATH_HPP
+#define ARSENALGEAR_MATH_HPP
 
 //====================================================
 //     Headers

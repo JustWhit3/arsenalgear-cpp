@@ -12,8 +12,8 @@
 //     Preprocessor settings
 //====================================================
 #pragma once
-#ifndef TYPE_HPP
-#define TYPE_HPP
+#ifndef ARSENALGEAR_TYPE_HPP
+#define ARSENALGEAR_TYPE_HPP
 
 //====================================================
 //     Headers

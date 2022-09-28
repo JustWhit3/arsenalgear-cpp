@@ -34,7 +34,7 @@ namespace agr
    * @param command The command which output is required.
    * @return std::string The output of the command variable.
    */
-  extern std::string getCommandOut( const char* command ) 
+  std::string getCommandOut( const char* command ) 
    {
     std::array<char, 128> buffer;
     std::string result;

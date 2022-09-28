@@ -12,8 +12,8 @@
 //     Preprocessor settings
 //====================================================
 #pragma once
-#ifndef STREAM_HPP
-#define STREAM_HPP
+#ifndef ARSENALGEAR_STREAM_HPP
+#define ARSENALGEAR_STREAM_HPP
 
 //====================================================
 //     Headers
