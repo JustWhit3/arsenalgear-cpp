@@ -26,8 +26,10 @@
 namespace agr
  {
   //====================================================
-  //     extract_map_keys
+  //     Functions
   //====================================================
+
+  // extract_map_keys
   /**
    * @brief Function used to extract a vector of keys from a map.
    * 
@@ -47,9 +49,7 @@ namespace agr
     return retval;
    }
 
-  //====================================================
-  //     extract_map_elem
-  //====================================================
+  // extract_map_elem
   /**
    * @brief Function used to extract a vector of elements from a map.
    * 

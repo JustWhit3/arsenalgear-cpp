@@ -23,8 +23,10 @@
 #include <string>
 
 //====================================================
-//     std::string * int
+//     String operators
 //====================================================
+
+// std::string * int
 /**
  * @brief Function to multiply a string by an integer.
  * 
@@ -46,9 +48,7 @@ inline std::string operator *( const T& generic_string, unsigned int integer )
   return output;
  }
 
-//====================================================
-//     int * std::string
-//====================================================
+// int * std::string
 /**
  * @brief Function to multiply an integer by a string.
  * 

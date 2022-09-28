@@ -37,7 +37,7 @@ namespace agr
   enum class ANSI { first, generic };
 
   //====================================================
-  //     Functions
+  //     Functions declaration
   //====================================================
   extern std::string multi( const std::string& element, unsigned int n_times );
   extern std::vector <std::string> split_string( const std::string& input, const std::string& regex );

@@ -26,8 +26,10 @@
 namespace agr
  {
   //====================================================
-  //     getCommandOut
+  //     Functions
   //====================================================
+
+  // getCommandOut
   /**
    * @brief Function used to get the output of a shell command.
    * 

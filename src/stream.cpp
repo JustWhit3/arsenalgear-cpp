@@ -22,8 +22,10 @@
 namespace agr
  {
   //====================================================
-  //     savebuf::savebuf
+  //     savebuf class methods
   //====================================================
+
+  // Parametric constructor
   /**
    * @brief Construct a new savebuf object.
    * 
@@ -33,9 +35,7 @@ namespace agr
    sbuf( sbuf ) 
    {}
 
-  //====================================================
-  //     savebuf::savebuf
-  //====================================================
+  // str
   /**
    * @brief Method to return the string stored by the output stream.
    * 
@@ -46,9 +46,7 @@ namespace agr
     return save; 
    }
 
-  //====================================================
-  //     savebuf::overflow
-  //====================================================
+  // overflow
   /**
    * @brief 
    * 
@@ -68,9 +66,7 @@ namespace agr
      }
    } 
 
-  //====================================================
-  //     savebuf::sync
-  //====================================================
+  // sync
   /**
    * @brief 
    * 

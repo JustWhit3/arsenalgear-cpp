@@ -25,8 +25,10 @@
 namespace agr
  {
   //====================================================
-  //     roundoff
+  //     Functions
   //====================================================
+
+  // roundoff
   /**
    * @brief Function to round a floating point to n-th decimal place after comma.
    * 
@@ -43,9 +45,7 @@ namespace agr
     return round( value * pow_10 ) / pow_10;
    }
 
-  //====================================================
-  //     IsInBounds
-  //====================================================
+  // IsInBounds
   /**
    * @brief Function to check if a number lies in a certain bound or not.
    * 

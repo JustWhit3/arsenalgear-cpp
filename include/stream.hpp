@@ -40,7 +40,7 @@ namespace agr
     public:
 
     //====================================================
-    //     Public methods
+    //     Public methods declaration
     //====================================================
     savebuf( std::streambuf* sbuf );
     std::string str() const;
@@ -48,7 +48,7 @@ namespace agr
     private:
 
     //====================================================
-    //     Private methods
+    //     Private methods declaration
     //====================================================
     int overflow( int c );
     int sync();

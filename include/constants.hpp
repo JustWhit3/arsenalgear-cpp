@@ -17,8 +17,10 @@
 namespace agr
  {
   //==================================================== 
-  //     null_str
+  //     String constants
   //====================================================
+
+  // null_str
   /**
    * @brief The string used to represent the null value.
    * 
@@ -26,9 +28,7 @@ namespace agr
   template <typename T>
   inline const T null_str = "";
 
-  //==================================================== 
-  //     empty_space
-  //====================================================
+  // empty_space
   /**
    * @brief The string used to represent the empty space.
    * 

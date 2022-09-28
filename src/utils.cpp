@@ -23,8 +23,10 @@
 namespace agr
  {
   //====================================================
-  //     multi
+  //     Functions
   //====================================================
+
+  // multi
   /**
    * @brief Function used to multiply a string for n times.
    * @param element The string to be multiplied.
@@ -40,9 +42,7 @@ namespace agr
     return container;
    }
   
-  //====================================================
-  //     split_string
-  //====================================================
+  // split_string
   /**
    * @brief Function used to split a string based on a certain reges.
    * 

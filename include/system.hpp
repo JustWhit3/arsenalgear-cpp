@@ -25,7 +25,7 @@
 namespace agr
  {
   //====================================================
-  //     Functions
+  //     Functions declaration
   //====================================================
   extern std::string getCommandOut( const char* command );
  }
