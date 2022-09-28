@@ -21,16 +21,6 @@ void utils()
                     << "======================================================" << "\n"
                     << "\n";
 
-  // maxptr
-  int *ptr = new int[5];
-  std::cout << "Finding max value of this pointer: { ";
-  for( int i = 0; i < 5; i++ ) 
-   {
-    ptr[i] = i;
-    std::cout << ptr[i] << agr::empty_space<std::string>;
-   }
-  std::cout << "} -> " << agr::maxptr( ptr, 5 ) << "." << "\n\n";
-
   // runtime_error_func
   // commented since it quit the program. Uncomment to try it:
   // std::cout << "Runtime error function example: ";

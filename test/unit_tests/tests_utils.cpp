@@ -26,21 +26,6 @@
 using namespace std::string_literals;
 
 //====================================================
-//     maxptr
-//====================================================
-TEST_CASE( "Testing the maxptr function." )
- {
-  int *p = new int[5];
-  double *t = new double[2];
-
-  for( int i = 0; i < 5; i++ ) p[i] = i;
-  for( int i = 0; i < 2; i++ ) t[i] = ( i + 50 ) / 10;
-
-  CHECK_EQ( agr::maxptr( p, 5 ), 4 );
-  CHECK_EQ( agr::maxptr( t, 2 ), 5 );
- }
-
-//====================================================
 //     isFloatingPoint
 //====================================================
 TEST_CASE_TEMPLATE( "Testing the isFLoatingPoint function.", T, double, float, long double )

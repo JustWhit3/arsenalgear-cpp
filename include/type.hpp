@@ -51,13 +51,13 @@ namespace agr
   //     Functions
   //====================================================
 
-  // is_pointer_to_const_char
+  // is_pointer_to_const_char (first overload)
   /**
-   * @brief Function used to check if a pointer is a pointer to const char.
+   * @brief Function used to check if an input array is a pointer to const char.
    * 
-   * @tparam T The input pointer to be check.
-   * @tparam N The dimension of the pointer.
-   * @return true If the pointer is a pointer to const char.
+   * @tparam T The input array to be check.
+   * @tparam N The dimension of the array.
+   * @return true If the array is a pointer to const char.
    * @return false Otherwise.
    */
   template <typename T, std::size_t N>
@@ -66,7 +66,14 @@ namespace agr
     return std::is_same_v <const char, T>;
    }
   
-  // is_pointer_to_const_char specialization
+  // is_pointer_to_const_char (second overload)
+  /**
+   * @brief Function used to check if an input variable is a pointer to const char.
+   * 
+   * @tparam T The input variable to be check.
+   * @return true If the variable is a pointer to const char.
+   * @return false Otherwise.
+   */
   template<typename T>
   constexpr bool is_pointer_to_const_char( T&& ) 
    { 

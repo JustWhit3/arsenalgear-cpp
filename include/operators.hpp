@@ -35,7 +35,8 @@
 template <typename T>
 inline std::string operator *( const T& generic_string, unsigned int integer ) 
  {
-  std::string output = "";
+  std::string output;
+  output.reserve( integer * generic_string.size() );
 
   while( integer -- ) 
    {

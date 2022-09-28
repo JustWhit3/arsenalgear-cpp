@@ -33,7 +33,8 @@ namespace agr
    */
   std::string multi( const std::string& element, unsigned int n_times )
    {
-    std::string container = "";
+    std::string container;
+    container.reserve( n_times * element.size() );
 
     for( unsigned int i = 0; i < n_times; i++ ) container.append( element );
     return container;

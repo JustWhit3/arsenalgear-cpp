@@ -180,7 +180,6 @@ To launch all tests simultaneously:
 
 - [`multi`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a523bed79d63264512bfc2a9b12027c90): function used to multiply a string for n times.
 - [`split_string`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd): function used to split a string based on a certain reges.
-- [`maxptr`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157): function used to find the maximum value of a generic pointer.
 - [`except_error_func`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a4985365fab7e1937492277a49ee3cb2f:~:text=%E2%97%86-,except_error_func,-()): function used to throw customized exception error.
 - [`isFloatingPoint`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a30f754b298e55c68819829df78d936cb): function used to check if an expression is a floating point or not.
 - [`one`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a): function used to find the incremented unit of a loop.

@@ -28,11 +28,8 @@
 #include <stdexcept>
 #include <codecvt>
 #include <locale>
-
-//====================================================
-//     Namespaces
-//====================================================
-using namespace std::literals::string_literals;
+#include <sstream>
+#include <array>
 
 namespace agr
  {
@@ -48,53 +45,34 @@ namespace agr
   extern std::vector <std::string> split_string( const std::string& input, const std::string& regex );
   
   //====================================================
-  //     maxptr
+  //     Functions definition
   //====================================================
-  /**
-   * @brief Function used to find the maximum value of a generic pointer containing listed values.
-   * @tparam T The type of the pointer.
-   * @param ptr The given pointer.
-   * @param dim The pointer dimension.
-   * @return T The maximum value of the pointer elements.
-   */
-  template <typename T>
-  inline T maxptr ( T *ptr, int ptr_dim )
-   {
-    if( ptr_dim == 1 ) return *ptr;
-    return *ptr > ( ptr_dim = maxptr( ptr + 1, ptr_dim - 1 ) ) ? *ptr : ptr_dim;
-   }
 
-  //====================================================
-  //     except_error_func
-  //====================================================
-  // Function used to throw customized runtime error.
+  // except_error_func
   /**
-   * @brief Function used to throw customized stdexception error.
+   * @brief Function used to throw customized stdexception error. This function is extremely specific to my purposes and you can find examples usages in other my projects lik "osmanip" or "SAFD-algorithm".
    * @tparam T_err The type of the exception error.
    * @param beg The first part of the error message.
-   * @param variable The variable to be inserted in the error message.
+   * @param var The variable to be inserted in the error message.
    * @param end The last part of the error message.
    * @return T_err The modified exception error.
    */
-  template <typename T_err = std::runtime_error, typename T>
-  inline T_err except_error_func( const std::string& beg = "", T variable = NULL, const std::string& end = "" )
+  template <typename T_err = std::runtime_error>
+  inline T_err except_error_func( const std::string& beg = "", std::string var = nullptr, const std::string& end = "" )
    {
-    static std::string error = "\033[31m" +
-                               beg + " \""s + 
-                               "\033[1m" +
-                               static_cast <std::string>( variable ) +
-                               "\033[22m" + "\" "s + 
-                               end +
-                               "\033[39m";
+    using namespace std::literals::string_literals;
 
-    return T_err( error ); 
+    static std::ostringstream oss;
+    oss.str( "" );
+    oss.clear();
+    oss << "\033[31m" << beg << " \""s << "\033[1m" << var << "\033[22m" << "\" "s << end << "\033[39m";
+
+    return T_err( oss.str() ); 
    }
 
-  //====================================================
-  //     isFloatingPoint
-  //====================================================
+  // isFloatingPoint
   /**
-   * @brief Function to check if an expression is a floating point or not.
+   * @brief Function to check if an expression (not a type) is a floating point or not. I know this function is almost useless, but it has been created for lazy purposes and since it is used in other projects it cannot be eliminated now in order to not break backward compatibility.
    * @tparam T The type of the expression.
    * @return bool True if the expression is a floating point, false otherwise.
    */
@@ -104,12 +82,9 @@ namespace agr
     return std::is_floating_point <T>::value;
    }
 
-  //====================================================
-  //     one
-  //====================================================
-  // Function to find the incremented unit of a loop.
+  // one
   /**
-   * @brief Function to find the incremented unit of a loop.
+   * @brief Function to find the incremented unit of a loop. Not easy to understand its purpose without context, but it is used to get the loop incremented unit in case of loops with floating-point indexes. See example usage in "osmanip" in progress bars "update" method.
    * @tparam T The type of the iterating variable of the loop.
    * @param iterating_var The iterating variable of the loop.
    * @return T The incremented unit of the loop.
@@ -117,7 +92,7 @@ namespace agr
   template <typename T>
   inline T one( const T& iterating_var )
    {
-    static std::vector<T> counter_( 2 );
+    std::vector<T> counter_;
 
     if( isFloatingPoint( iterating_var ) )
      {
@@ -125,6 +100,8 @@ namespace agr
       if( counter_.size() == 2 ) return abs( abs( counter_.front() ) - abs( counter_.back() ) );
       return static_cast <T> ( NULL );
      }
+
+    counter_.clear();
     return 1;
    }
 
