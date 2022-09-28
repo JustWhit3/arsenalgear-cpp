@@ -83,12 +83,14 @@ $(function() {
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;codecvt&gt;</code><br />
 <code>#include &lt;locale&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for utils.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="utils_8hpp__incl.png" border="0" usemap="#ainclude_2utils_8hpp" alt=""/></div>
 <map name="ainclude_2utils_8hpp" id="ainclude_2utils_8hpp">
-<area shape="rect" title=" " alt="" coords="290,5,405,32"/>
+<area shape="rect" title=" " alt="" coords="371,5,486,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,84,107"/>
 <area shape="rect" title=" " alt="" coords="108,80,187,107"/>
 <area shape="rect" title=" " alt="" coords="211,80,294,107"/>
@@ -96,6 +98,8 @@ Include dependency graph for utils.hpp:</div>
 <area shape="rect" title=" " alt="" coords="401,80,456,107"/>
 <area shape="rect" title=" " alt="" coords="480,80,548,107"/>
 <area shape="rect" title=" " alt="" coords="573,80,629,107"/>
+<area shape="rect" title=" " alt="" coords="653,80,722,107"/>
+<area shape="rect" title=" " alt="" coords="746,80,797,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -135,21 +139,17 @@ Functions</h2></td></tr>
 <tr class="memitem:aeccaa1589b9a22ee3ad2bc2ac798dbcd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd">agr::split_string</a> (const std::string &amp;input, const std::string &amp;regex)</td></tr>
 <tr class="memdesc:aeccaa1589b9a22ee3ad2bc2ac798dbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to split a string based on a certain reges.  <a href="namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd">More...</a><br /></td></tr>
 <tr class="separator:aeccaa1589b9a22ee3ad2bc2ac798dbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">agr::maxptr</a> (T *ptr, int ptr_dim)</td></tr>
-<tr class="memdesc:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to find the maximum value of a generic pointer containing listed values.  <a href="namespaceagr.html#a400b1e2872ab3a6c7166c9fc4ecfb157">More...</a><br /></td></tr>
-<tr class="separator:a400b1e2872ab3a6c7166c9fc4ecfb157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cb5be05e5a1b3bfee208fc9aebb7fa4"><td class="memTemplParams" colspan="2">template&lt;typename T_err  = std::runtime_error, typename T &gt; </td></tr>
-<tr class="memitem:a4cb5be05e5a1b3bfee208fc9aebb7fa4"><td class="memTemplItemLeft" align="right" valign="top">T_err&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4">agr::except_error_func</a> (const std::string &amp;beg=&quot;&quot;, T variable=NULL, const std::string &amp;end=&quot;&quot;)</td></tr>
-<tr class="memdesc:a4cb5be05e5a1b3bfee208fc9aebb7fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to throw customized stdexception error.  <a href="namespaceagr.html#a4cb5be05e5a1b3bfee208fc9aebb7fa4">More...</a><br /></td></tr>
-<tr class="separator:a4cb5be05e5a1b3bfee208fc9aebb7fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60bb5e1fbefa30c3e0f6e24a80d463b8"><td class="memTemplParams" colspan="2">template&lt;typename T_err  = std::runtime_error&gt; </td></tr>
+<tr class="memitem:a60bb5e1fbefa30c3e0f6e24a80d463b8"><td class="memTemplItemLeft" align="right" valign="top">T_err&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a60bb5e1fbefa30c3e0f6e24a80d463b8">agr::except_error_func</a> (const std::string &amp;beg=&quot;&quot;, std::string var=nullptr, const std::string &amp;end=&quot;&quot;)</td></tr>
+<tr class="memdesc:a60bb5e1fbefa30c3e0f6e24a80d463b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function used to throw customized stdexception error. This function is extremely specific to my purposes and you can find examples usages in other my projects lik "osmanip" or "SAFD-algorithm".  <a href="namespaceagr.html#a60bb5e1fbefa30c3e0f6e24a80d463b8">More...</a><br /></td></tr>
+<tr class="separator:a60bb5e1fbefa30c3e0f6e24a80d463b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30f754b298e55c68819829df78d936cb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a30f754b298e55c68819829df78d936cb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">agr::isFloatingPoint</a> (const T &amp;)</td></tr>
-<tr class="memdesc:a30f754b298e55c68819829df78d936cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check if an expression is a floating point or not.  <a href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">More...</a><br /></td></tr>
+<tr class="memdesc:a30f754b298e55c68819829df78d936cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to check if an expression (not a type) is a floating point or not. I know this function is almost useless, but it has been created for lazy purposes and since it is used in other projects it cannot be eliminated now in order to not break backward compatibility.  <a href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">More...</a><br /></td></tr>
 <tr class="separator:a30f754b298e55c68819829df78d936cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">agr::one</a> (const T &amp;iterating_var)</td></tr>
-<tr class="memdesc:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to find the incremented unit of a loop.  <a href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">More...</a><br /></td></tr>
+<tr class="memdesc:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to find the incremented unit of a loop. Not easy to understand its purpose without context, but it is used to get the loop incremented unit in case of loops with floating-point indexes. See example usage in "osmanip" in progress bars "update" method.  <a href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">More...</a><br /></td></tr>
 <tr class="separator:a79c1d16a030bfa822fcf06fcfd56db5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="memTemplParams" colspan="2">template&lt;class CharT &gt; </td></tr>
 <tr class="memitem:a1d3019dd5d7deec3df2a2c4e01b89f47"><td class="memTemplItemLeft" align="right" valign="top">std::conditional_t&lt; std::is_same_v&lt; CharT, char &gt;, const std::basic_string&lt; CharT &gt; &amp;, std::basic_string&lt; CharT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">agr::StringConverter</a> (const std::string &amp;input_str)</td></tr>
