@@ -91,19 +91,19 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">//     roundoff</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="comment">//     Functions</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespaceagr.html#ab632f9e8e52e8cad544fb1c01fdddc16">   39</a></span>&#160;  <span class="keyword">inline</span> T <a class="code" href="namespaceagr.html#ab632f9e8e52e8cad544fb1c01fdddc16">roundoff</a>( T value, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> prec )</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    T pow_10 = pow( 10.0f, <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> ( prec ) );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> round( value * pow_10 ) / pow_10;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">//     IsInBounds</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// roundoff</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="namespaceagr.html#ab632f9e8e52e8cad544fb1c01fdddc16">   41</a></span>&#160;  <span class="keyword">inline</span> T <a class="code" href="namespaceagr.html#ab632f9e8e52e8cad544fb1c01fdddc16">roundoff</a>( T value, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> prec )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;   {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    T pow_10 = pow( 10.0f, <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span> ( prec ) );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> round( value * pow_10 ) / pow_10;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// IsInBounds</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespaceagr.html#ae892e70efaebcc7c3886969a03b2e264">   59</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#ae892e70efaebcc7c3886969a03b2e264">IsInBounds</a>( T value, T low, T high )</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   {</div>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:23</div></div>
-<div class="ttc" id="anamespaceagr_html_ab632f9e8e52e8cad544fb1c01fdddc16"><div class="ttname"><a href="namespaceagr.html#ab632f9e8e52e8cad544fb1c01fdddc16">agr::roundoff</a></div><div class="ttdeci">T roundoff(T value, unsigned char prec)</div><div class="ttdoc">Function to round a floating point to n-th decimal place after comma.</div><div class="ttdef"><b>Definition:</b> math.hpp:39</div></div>
+<div class="ttc" id="anamespaceagr_html_ab632f9e8e52e8cad544fb1c01fdddc16"><div class="ttname"><a href="namespaceagr.html#ab632f9e8e52e8cad544fb1c01fdddc16">agr::roundoff</a></div><div class="ttdeci">T roundoff(T value, unsigned char prec)</div><div class="ttdoc">Function to round a floating point to n-th decimal place after comma.</div><div class="ttdef"><b>Definition:</b> math.hpp:41</div></div>
 <div class="ttc" id="anamespaceagr_html_ae892e70efaebcc7c3886969a03b2e264"><div class="ttname"><a href="namespaceagr.html#ae892e70efaebcc7c3886969a03b2e264">agr::IsInBounds</a></div><div class="ttdeci">bool IsInBounds(T value, T low, T high)</div><div class="ttdoc">Function to check if a number lies in a certain bound or not.</div><div class="ttdef"><b>Definition:</b> math.hpp:59</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
