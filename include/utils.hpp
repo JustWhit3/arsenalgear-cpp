@@ -96,7 +96,7 @@ namespace agr
      {
       if( counter_.size() < 2 ) counter_.push_back( iterating_var );
       if( counter_.size() == 2 ) return abs( abs( counter_.front() ) - abs( counter_.back() ) );
-      return static_cast <T> ( NULL );
+      return static_cast <T> ( 0 );
      }
 
     counter_.clear();
