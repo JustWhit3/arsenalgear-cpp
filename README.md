@@ -34,6 +34,7 @@
   - [Type](#type)
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
+  - [Other Contributors(#other-contributors)
 
 ## Introduction
 
@@ -207,6 +208,8 @@ To launch all tests simultaneously:
     <td align="center"><a href="https://justwhit3.github.io/"><img src="https://avatars.githubusercontent.com/u/48323961?v=4" width="100px;" alt=""/><br /><sub><b>Gianluca Bianco</b></sub></a></td>
   </tr>
 </table>
+
+### Other Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
