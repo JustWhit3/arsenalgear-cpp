@@ -209,5 +209,17 @@ To launch all tests simultaneously:
 </table>
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/ohz10"><img src="https://avatars.githubusercontent.com/u/250468?v=4" width="100px;" alt=""/><br /><sub><b>oz_10</b></sub></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
