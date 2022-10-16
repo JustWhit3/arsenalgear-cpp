@@ -32,6 +32,7 @@
   - [Utils](#utils)
   - [Containers](#containers)
   - [Type](#type)
+- [List of known projects which use this library](#list-of-known-projects-which-use-this-library)
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
   - [Other Contributors(#other-contributors)
@@ -45,6 +46,8 @@ This library is fully *type-safe* with *automatic memory management*, with minim
 If you want to use this library please cite it following [this](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/CITATION.cff) citation template.
 
 If you want to contribute to the repository, see [this](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/CONTRIBUTING.md) document before.
+
+If you plan to use this library please tell me so I can add your project to the [list of known projects which use this library](#list-of-known-projects-which-use-this-library)
 
 **Code documentation** is generated using [*Doxygen*](https://www.doxygen.nl/manual/starting.html) and can be accessed [here](https://justwhit3.github.io/arsenalgear-cpp/).
 
@@ -198,6 +201,11 @@ To launch all tests simultaneously:
 - [`is_str`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a8cedbda93e6317c38b992056458ba03c): function used to check if a string is an `std::string` object.
 - [`is_streamable`](https://justwhit3.github.io/arsenalgear-cpp/structagr_1_1is__streamable.html): struct used to check if a type is streamable to a stream or not.
 - [`is_any`](https://justwhit3.github.io/arsenalgear-cpp/namespaceagr.html#a962b9e5500ec34ba186b3ad88114a677): function used to check if a type is in a list or not. Very useful to perform this operation with parameter packs.
+
+## List of known projects which use this library
+
+- [osmanip](https://github.com/JustWhit3/osmanip)
+- [SAFD-algorithm](https://github.com/JustWhit3/SAFD-algorithm)
 
 ## Credits
 

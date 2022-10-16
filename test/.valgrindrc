@@ -3,4 +3,3 @@
 --memcheck:gen-suppressions=yes
 --memcheck:track-origins=yes
 --callgrind:show-perc=yes
---suppressions=valgrind_suppressions.supp
