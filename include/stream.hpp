@@ -22,7 +22,6 @@
 // STD headers
 #include <iostream>
 #include <string>
-#include <streambuf>
 
 namespace agr
  {

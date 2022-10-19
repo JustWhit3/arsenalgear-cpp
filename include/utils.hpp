@@ -27,7 +27,9 @@
 #include <codecvt>
 #include <locale>
 #include <sstream>
-#include <array>
+#include <stdlib.h>
+#include <string_view>
+#include <bits/std_abs.h>
 
 namespace agr
  {

@@ -20,7 +20,6 @@
 #include <string>
 #include <array>
 #include <memory>
-#include <cstdlib>
 #include <cstdio>
 
 namespace agr

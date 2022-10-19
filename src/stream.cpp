@@ -16,7 +16,6 @@
 #include "../include/stream.hpp"
 
 //STD headers
-#include <streambuf>
 #include <string>
 
 namespace agr

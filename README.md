@@ -152,6 +152,12 @@ To launch all tests simultaneously:
 ./test/all_tests.sh
 ```
 
+**EXTRA**: to check that only the needed headers are include use this script:
+
+```txt
+./IWYU.sh
+```
+
 ## List of features
 
 ### Constants
