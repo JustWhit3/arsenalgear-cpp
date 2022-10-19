@@ -29,7 +29,7 @@
 #include <sstream>
 #include <stdlib.h>
 #include <string_view>
-#include <bits/std_abs.h>
+#include <cmath>
 
 namespace agr
  {
