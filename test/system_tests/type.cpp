@@ -3,7 +3,7 @@
 //====================================================
 
 // My headers
-#include "../include/type.hpp"
+#include <include/type.hpp>
 
 // STD headers
 #include <iostream>

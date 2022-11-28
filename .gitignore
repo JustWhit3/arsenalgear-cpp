@@ -5,6 +5,7 @@ obj
 lib
 bin
 a.out
+**/build
 
 #====================================================
 #     PERSONAL FILES

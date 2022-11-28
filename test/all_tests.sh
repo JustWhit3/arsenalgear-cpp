@@ -6,29 +6,30 @@ echo "======================================================"
 echo "     Compiling"
 echo "======================================================"
 echo ""
-make
+cmake -B build
+cmake --build build
 
 # System tests
 echo ""
-./bin/containers
-./bin/math
-./bin/operators
-./bin/stream
-./bin/system
-./bin/type
-./bin/utils
+./build/test/system_tests/containers
+./build/test/system_tests/math
+./build/test/system_tests/operators
+./build/test/system_tests/stream
+./build/test/system_tests/system
+./build/test/system_tests/type
+./build/test/system_tests/utils
 
 # Memory tests
 echo ""
 echo "======================================================"
 echo "     MEMORY TESTS"
 echo "======================================================"
-./test/profiling.sh memcheck ./bin/containers
-./test/profiling.sh memcheck ./bin/math
-./test/profiling.sh memcheck ./bin/operators
-./test/profiling.sh memcheck ./bin/stream
-./test/profiling.sh memcheck ./bin/system
-./test/profiling.sh memcheck ./bin/type
+./test/profiling.sh memcheck ./build/test/system_tests/containers
+./test/profiling.sh memcheck ./build/test/system_tests/math
+./test/profiling.sh memcheck ./build/test/system_tests/operators
+./test/profiling.sh memcheck ./build/test/system_tests/stream
+./test/profiling.sh memcheck ./build/test/system_tests/system
+./test/profiling.sh memcheck ./build/test/system_tests/type
 
 # Threading tests
 echo ""
@@ -36,13 +37,13 @@ echo "======================================================"
 echo "     THREADING TESTS"
 echo "======================================================"
 echo ""
-./test/profiling.sh helgrind ./bin/containers
-./test/profiling.sh helgrind ./bin/math
-./test/profiling.sh helgrind ./bin/operators
-./test/profiling.sh helgrind ./bin/stream
-./test/profiling.sh helgrind ./bin/system
-./test/profiling.sh helgrind ./bin/type
-./test/profiling.sh helgrind ./bin/utils
+./test/profiling.sh helgrind ./build/test/system_tests/containers
+./test/profiling.sh helgrind ./build/test/system_tests/math
+./test/profiling.sh helgrind ./build/test/system_tests/operators
+./test/profiling.sh helgrind ./build/test/system_tests/stream
+./test/profiling.sh helgrind ./build/test/system_tests/system
+./test/profiling.sh helgrind ./build/test/system_tests/type
+./test/profiling.sh helgrind ./build/test/system_tests/utils
 
 # Unit tests
 echo ""
@@ -50,7 +51,7 @@ echo "======================================================"
 echo "     UNIT TESTS"
 echo "======================================================"
 echo ""
-./bin/tests
+./bin/test/unit_tests/unit_tests
 
 # Include tests
 echo ""

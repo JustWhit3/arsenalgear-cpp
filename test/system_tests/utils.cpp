@@ -3,8 +3,8 @@
 //====================================================
 
 // My headers
-#include "../include/utils.hpp"
-#include "../include/constants.hpp"
+#include <include/utils.hpp>
+#include <include/constants.hpp>
 
 // STD headers
 #include <iostream>

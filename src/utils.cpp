@@ -13,7 +13,7 @@
 //====================================================
 
 // My headers
-#include "../include/utils.hpp"
+#include <include/utils.hpp>
 
 // STD headers
 #include <string>

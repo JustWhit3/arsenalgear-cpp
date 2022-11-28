@@ -2,11 +2,11 @@
 //     Headers
 //====================================================
 
+// My headers
+#include <include/system.hpp>
+
 // STD headers
 #include <iostream>
-
-// My headers
-#include "../include/system.hpp"
 
 //====================================================
 //     stream

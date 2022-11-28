@@ -36,6 +36,7 @@
 - [Credits](#credits)
   - [Project leaders](#project-leaders)
   - [Other Contributors(#other-contributors)
+- [Stargazers over time](#stargazers-over-time)
 
 ## Introduction
 
@@ -90,35 +91,35 @@ Steps to be reproduced:
 
 **2)** Unzip and enter the downloaded repository directory.
 
-**3)** Install and compile the library and its prerequisites
+**3)** Install into the system with these command:
+
+Set the building directory:
 
 ```bash
-./script/install.sh
+cmake -B build
 ```
 
-> **NOTE**: if you are on *Cygwin64* you may get an error related to the `\r` character. To solve it run the `dos2unix` command on the script (ex: `dos2unix install.sh`) before running it.
+> :warning: If you are on Windows previous command becomes:
+>
+> ```bash
+> cmake -B build -D WIN_INSTALLATION_INCLUDE=path/to/installation/include -D WIN_INSTALLATION_LIB=path/to/installation/lib
+> ```
+> 
+> Where `path/to/installation/include` is the path in which you want to install the header files, while `path/to/installation/lib` is the one for libraries.
 
-A new library *libarsenalgear.a* (or *libarsenalgear.lib* in the Windows case) will be created into the `/usr/local/lib` folder of your computer and the [*header*](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/include) files will be installed into `/usr/local/include`.
-> **NOTE**: if you are on MacOS or Windows the paths are slightly different (looks at [install.sh](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/scripts/install.sh)).
+Install:
 
-Prerequisites list:
-
-- A `g++` compiler.
-- C++17 standard.
-- [GNU make](https://www.opensourceforu.com/2012/06/gnu-make-in-detail-for-beginners/#:~:text=Installing%20GNU%20Make,install%20build%2Dessential.) for compilation.
-
-**4)** EXTRA: update the repository if needed
-
-```shell
-./scripts/update.sh
-./scripts/install.sh
+```bash
+sudo cmake --build build --target install
 ```
 
-**5)** EXTRA: uninstall the repository if needed
+> :warning: `sudo` is not required on Windows.
 
-```shell
-./scripts/uninstall.sh
-```
+Prerequisites are minimal:
+
+- g++ (like *gcc*, *clang* or *MSVC*) compiler.
+- C++17 standard at least.
+- CMake (v 3.15 at least).
 
 ### Use in your device
 
@@ -140,10 +141,11 @@ Tests are produced using `-Wall -Wextra -pedantic` flags. To check them you need
 - [doctest](https://github.com/onqtam/doctest) for testing.
 - [cppcheck](https://cppcheck.sourceforge.io/) for testing.
 
-They are installed in the second step of the installation through the `install.sh` script. Before running test codes you need to compile them:
+Before running test codes you need to compile them:
 
 ```txt
-make
+cmake -B build
+cmake --build build
 ```
 
 To launch all tests simultaneously:
@@ -155,7 +157,7 @@ To launch all tests simultaneously:
 **EXTRA**: to check that only the needed headers are include use this script:
 
 ```txt
-./IWYU.sh
+./test/IWYU.sh
 ```
 
 ## List of features
@@ -240,3 +242,7 @@ To launch all tests simultaneously:
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/JustWhit3/arsenalgear-cpp.svg)](https://starchart.cc/JustWhit3/arsenalgear-cpp)

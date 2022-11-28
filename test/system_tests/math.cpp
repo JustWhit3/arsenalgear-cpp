@@ -10,7 +10,7 @@
 //====================================================
 
 // My headers
-#include "../include/math.hpp"
+#include <include/math.hpp>
 
 // STD headers
 #include <iostream>

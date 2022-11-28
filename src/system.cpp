@@ -13,7 +13,7 @@
 //====================================================
 
 //My headers
-#include "../include/system.hpp"
+#include <include/system.hpp>
 
 //STD headers
 #include <stdexcept>
