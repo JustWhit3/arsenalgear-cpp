@@ -1,0 +1,60 @@
+# CMake project settings
+cmake_minimum_required( VERSION 3.15 )
+
+project( arsenalgear-cpp-system-tests
+    VERSION 1.0
+    DESCRIPTION "Build system for arsenalgear-cpp system tests."
+    LANGUAGES CXX
+)
+
+# Error if building out of a build directory
+file( TO_CMAKE_PATH "${PROJECT_BINARY_DIR}/CMakeLists.txt" LOC_PATH )
+if( EXISTS "${LOC_PATH}" )
+    message( FATAL_ERROR "You cannot build in a source directory (or any directory with "
+                         "CMakeLists.txt file). Please make a build subdirectory. Feel free to "
+                         "remove CMakeCache.txt and CMakeFiles." )
+endif()
+
+# Set compiler options
+set( CMAKE_CXX_STANDARD 17 )
+set( CMAKE_CXX_STANDARD_REQUIRED ON )
+set( CMAKE_CXX_EXTENSIONS OFF )
+set( CMAKE_CXX_COMPILER g++ )
+
+# Other settings for paths
+include_directories( ../.. )
+
+# Declare executables vars
+if( WIN32 )
+    set( CMAKE_EXECUTABLE_SUFFIX ".exe" )
+endif()
+
+set( CONTAINERS "containers" )
+set( MATH "math" )
+set( OPERATORS "operators" )
+set( STREAM "stream" )
+set( SYSTEM "system" )
+set( TYPE "type" )
+set( UTILS "utils" )
+
+# Create executables
+add_executable( ${CONTAINERS} containers.cpp )
+add_executable( ${MATH} math.cpp )
+add_executable( ${OPERATORS} operators.cpp )
+add_executable( ${TYPE} type.cpp )
+add_executable( ${STREAM} stream.cpp )
+add_executable( ${SYSTEM} system.cpp )
+add_executable( ${UTILS} utils.cpp )
+
+# Adding specific compiler flags
+if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
+    set( COMPILE_FLAGS "/Wall /Yd" )
+else()
+    set( COMPILE_FLAGS "-Wall -Wextra -pedantic" )
+endif()
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
+
+# Adding specific linker flags
+target_link_libraries( ${STREAM} PUBLIC arsenalgear::arsenalgear )
+target_link_libraries( ${SYSTEM} PUBLIC arsenalgear::arsenalgear )
+target_link_libraries( ${UTILS} PUBLIC arsenalgear::arsenalgear )

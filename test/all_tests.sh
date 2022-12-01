@@ -51,7 +51,7 @@ echo "======================================================"
 echo "     UNIT TESTS"
 echo "======================================================"
 echo ""
-./bin/test/unit_tests/unit_tests
+./build/test/unit_tests/unit_tests
 
 # Include tests
 echo ""
