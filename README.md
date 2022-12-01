@@ -22,6 +22,7 @@
 - [Install and use](#install-and-use)
   - [Install](#install)
   - [Use in your device](#use-in-your-device)
+  - [Use with CMake](#use-with-cmake)
 - [Tests](#tests)
 - [List of features](#list-of-features)
   - [Constants](#constants)
@@ -132,6 +133,20 @@ Once you have installed the library you can freely use it in one of your C++ pro
 To compile it you have simply add the `-larsenalgear` compilation flag.
 
 > **NOTE**: if you are on **Windows** and didn't install the headers and libraries in a system standard path you probably need to add also the `-I\path\to\include` and `-L\path\to\lib` flags.
+
+### Use with CMake
+
+To get an installed version of the library:
+
+```cmake
+find_package( arsenalgear )
+```
+
+then, to link it to a target:
+
+```cmake
+target_link_libraries( ${TARGET} arsenalgear::arsenalgear )
+```
 
 ## Tests
 
