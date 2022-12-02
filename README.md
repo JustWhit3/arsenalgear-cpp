@@ -103,7 +103,7 @@ cmake -B build
 > :warning: If you are on Windows previous command becomes:
 >
 > ```bash
-> cmake -B build -D WIN_INSTALLATION_INCLUDE=path/to/installation/include -D WIN_INSTALLATION_LIB=path/to/installation/lib
+> cmake -B build -D WIN_INSTALLATION_DIR_INCLUDE=path/to/installation/include -D WIN_INSTALLATION_DIR_LIB=path/to/installation/lib
 > ```
 > 
 > Where `path/to/installation/include` is the path in which you want to install the header files, while `path/to/installation/lib` is the one for libraries.

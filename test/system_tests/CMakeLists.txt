@@ -19,23 +19,28 @@ endif()
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
 set( CMAKE_CXX_EXTENSIONS OFF )
-set( CMAKE_CXX_COMPILER g++ )
 
 # Other settings for paths
 include_directories( ../.. )
 
 # Declare executables vars
 if( WIN32 )
-    set( CMAKE_EXECUTABLE_SUFFIX ".exe" )
+    set( CONTAINERS "containers.exe" )
+    set( MATH "math.exe" )
+    set( OPERATORS "operators.exe" )
+    set( STREAM "stream.exe" )
+    set( SYSTEM "system.exe" )
+    set( TYPE "type.exe" )
+    set( UTILS "utils.exe" )
+else()
+    set( CONTAINERS "containers" )
+    set( MATH "math" )
+    set( OPERATORS "operators" )
+    set( STREAM "stream" )
+    set( SYSTEM "system" )
+    set( TYPE "type" )
+    set( UTILS "utils" )
 endif()
-
-set( CONTAINERS "containers" )
-set( MATH "math" )
-set( OPERATORS "operators" )
-set( STREAM "stream" )
-set( SYSTEM "system" )
-set( TYPE "type" )
-set( UTILS "utils" )
 
 # Create executables
 add_executable( ${CONTAINERS} containers.cpp )

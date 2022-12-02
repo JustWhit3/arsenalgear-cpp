@@ -19,16 +19,16 @@ endif()
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
 set( CMAKE_CXX_EXTENSIONS OFF )
-set( CMAKE_CXX_COMPILER g++ )
 
 # Other settings for paths
 include_directories( ../.. )
 
 # Declare executables vars
 if( WIN32 )
-    set( CMAKE_EXECUTABLE_SUFFIX ".exe" )
+    set( UNIT "unit_tests.exe" )
+else()
+    set( UNIT "unit_tests" )
 endif()
-set( UNIT "unit_tests" )
 
 # Create executables
 file( GLOB source_tests *cpp )
