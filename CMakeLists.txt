@@ -36,8 +36,9 @@ elseif( WIN32 )
     set( INSTALLATION_DIR_INCLUDE ${WIN_INSTALLATION_DIR_INCLUDE} )
 endif()
 
+file( GLOB INCLUDE_FILES include/*.hpp )
 INSTALL(
-    FILES include/containers.hpp include/math.hpp include/operators.hpp include/system.hpp include/stream.hpp include/type.hpp include/constants.hpp include/utils.hpp
+    FILES ${INCLUDE_FILES}
     DESTINATION ${INSTALLATION_DIR_INCLUDE}/arsenalgear
 )
 
