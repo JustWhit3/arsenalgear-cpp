@@ -58,4 +58,4 @@ endif()
 
 # Linking to libraries
 target_link_libraries( ${UNIT} PRIVATE doctest::doctest )
-target_link_libraries( ${UNIT} PRIVATE arsenalgear::arsenalgear )
+target_link_libraries( ${UNIT} arsenalgear::arsenalgear )
