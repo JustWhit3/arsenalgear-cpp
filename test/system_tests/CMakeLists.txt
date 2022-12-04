@@ -60,6 +60,7 @@ endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
 
 # Adding specific linker flags
+find_package( arsenalgear )
 target_link_libraries( ${STREAM} PRIVATE arsenalgear::arsenalgear )
 target_link_libraries( ${SYSTEM} PRIVATE arsenalgear::arsenalgear )
 target_link_libraries( ${UTILS} PRIVATE arsenalgear::arsenalgear )
