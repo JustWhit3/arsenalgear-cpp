@@ -23,52 +23,38 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 # Include directories
 include_directories( . )
 
-# Compile tests
-add_subdirectory( test )
-
 # Create static library
 file( GLOB source src/*cpp )
 add_library( arsenalgear STATIC ${source} )
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
-# Installing headers
-if( UNIX )
-    set( INSTALLATION_DIR_INCLUDE /usr/include )
-elseif( APPLE )
-    set( INSTALLATION_DIR_INCLUDE /usr/local/include )
-elseif( WIN32 )
-    set( WIN_INSTALLATION_DIR_INCLUDE "" CACHE STRING "Installation directory for Windows OSs." )
-    set( INSTALLATION_DIR_INCLUDE ${WIN_INSTALLATION_DIR_INCLUDE} )
-endif()
+# Compile tests
+add_subdirectory( test )
+
+# Setting installation paths
+target_include_directories( arsenalgear INTERFACE
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<INSTALL_INTERFACE:include>
+)
 
 file( GLOB INCLUDE_FILES include/*.hpp )
 INSTALL(
     FILES ${INCLUDE_FILES}
-    DESTINATION ${INSTALLATION_DIR_INCLUDE}/arsenalgear
+    DESTINATION include/arsenalgear
 )
-
-# Installing libraries
-if( UNIX )
-    set( INSTALLATION_DIR_LIB /usr/lib )
-elseif( APPLE )
-    set( INSTALLATION_DIR_LIB /usr/local/lib )
-elseif( WIN32 )
-    set( WIN_INSTALLATION_DIR_LIB "" CACHE STRING "Installation directory for Windows OSs." )
-    set( INSTALLATION_DIR_LIB ${WIN_INSTALLATION_DIR_LIB} )
-endif()
 
 # Creating the package files
 install( 
     TARGETS arsenalgear
     EXPORT arsenalgearTargets
-    DESTINATION ${INSTALLATION_DIR_LIB}
+    DESTINATION lib
 )
 
 install(
     EXPORT arsenalgearTargets
     FILE arsenalgearTargets.cmake
     NAMESPACE arsenalgear::
-    DESTINATION ${INSTALLATION_DIR_LIB}/cmake/arsenalgear
+    DESTINATION lib/cmake/arsenalgear
 )
 
 # Configure package files
@@ -77,7 +63,7 @@ include( CMakePackageConfigHelpers )
 configure_package_config_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in
     "${CMAKE_CURRENT_BINARY_DIR}/arsenalgearConfig.cmake"
-    INSTALL_DESTINATION "${INSTALLATION_DIR_LIB}/cmake/arsenalgear"
+    INSTALL_DESTINATION "lib/cmake/arsenalgear"
     NO_SET_AND_CHECK_MACRO
     NO_CHECK_REQUIRED_COMPONENTS_MACRO
 )
@@ -91,7 +77,7 @@ write_basic_package_version_file(
 install( FILES
     ${CMAKE_CURRENT_BINARY_DIR}/arsenalgearConfig.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/arsenalgearConfigVersion.cmake
-    DESTINATION ${INSTALLATION_DIR_LIB}/cmake/arsenalgear
+    DESTINATION lib/cmake/arsenalgear
 )
 
 export( EXPORT arsenalgearTargets
