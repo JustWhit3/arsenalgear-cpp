@@ -40,7 +40,7 @@ namespace agr
     std::array<char, 128> buffer;
     std::string result;
     #ifdef _WIN32
-      std::unique_ptr<FILE, decltype( & _pclose )> pipe( popen( command, "r" ), _pclose );
+      std::unique_ptr<FILE, decltype( & _pclose )> pipe( _popen( command, "r" ), _pclose );
     #else
       std::unique_ptr<FILE, decltype( & pclose )> pipe( popen( command, "r" ), pclose );
     #endif
