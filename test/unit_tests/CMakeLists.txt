@@ -25,7 +25,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../.. )
 
 # Declare executables vars
 if( WIN32 )
-    set( UNIT "unit_tests_exe" )
+    set( UNIT "unit_tests.exe" )
 else()
     set( UNIT "unit_tests" )
 endif()
