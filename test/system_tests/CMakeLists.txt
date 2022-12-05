@@ -59,6 +59,13 @@ else()
 endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
 
+# Settings for Windows
+if( WIN32 )
+    set_target_properties( ${STREAM} PROPERTIES COMPILE_DEFINITIONS BUILDER_STATIC_DEFINE )
+    set_target_properties( ${SYSTEM} PROPERTIES COMPILE_DEFINITIONS BUILDER_STATIC_DEFINE )
+    set_target_properties( ${UTILS} PROPERTIES COMPILE_DEFINITIONS BUILDER_STATIC_DEFINE )
+endif()
+
 # Adding specific linker flags
 target_link_libraries( ${STREAM} PRIVATE arsenalgear::arsenalgear )
 target_link_libraries( ${SYSTEM} PRIVATE arsenalgear::arsenalgear )
