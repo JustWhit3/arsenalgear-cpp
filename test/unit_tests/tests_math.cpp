@@ -43,6 +43,7 @@ TEST_CASE_TEMPLATE( "Testing the IsInBounds function", T, double )
  {
   T var_1 = 3;
   T var_2 = 0.2;
+  
   CHECK( agr::IsInBounds( var_1, 2.9, 3.1 ) );
   CHECK( agr::IsInBounds( var_2, 0.1, 0.21 ) );
  }

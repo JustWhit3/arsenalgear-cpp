@@ -117,9 +117,9 @@ TEST_CASE( "Testing StringConverter function." )
 
   // char8_t
   #if ( __cplusplus >= 202002L )
-  CHECK_EQ( agr::StringConverter<char8_t>( "Hello" ), u8"Hello" );
-  CHECK_EQ( agr::StringConverter<char8_t>( "Test a long string" ), u8"Test a long string" );
-  CHECK_EQ( agr::StringConverter<char8_t>( "" ), u8"" );
+    CHECK_EQ( agr::StringConverter<char8_t>( "Hello" ), u8"Hello" );
+    CHECK_EQ( agr::StringConverter<char8_t>( "Test a long string" ), u8"Test a long string" );
+    CHECK_EQ( agr::StringConverter<char8_t>( "" ), u8"" );
   #endif
  }
 
