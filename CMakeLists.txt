@@ -26,6 +26,9 @@ file( GLOB source src/*cpp )
 add_library( arsenalgear STATIC ${source} )
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
+# Compiling with the right standard
+set_property( TARGET ${UNIT} PROPERTY CXX_STANDARD 17 )
+
 # Installing headers
 if( UNIX )
     set( INSTALLATION_DIR_INCLUDE /usr/include )

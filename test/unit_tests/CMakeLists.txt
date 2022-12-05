@@ -53,6 +53,8 @@ endif()
 
 # Compiling with the right standard
 set_property( TARGET ${UNIT} PROPERTY CXX_STANDARD 17 )
+set_property( TARGET ${UNIT} PROPERTY CXX_STANDARD_REQUIRED ON )
+set_property( TARGET ${UNIT} PROPERTY CXX_EXTENSIONS OFF )
 
 # Linking to libraries
 target_link_libraries( ${UNIT} PUBLIC doctest::doctest )
