@@ -31,7 +31,7 @@ else()
 endif()
 
 # Create executables
-file( GLOB source_tests *cpp )
+file( GLOB source_tests ${CMAKE_CURRENT_SOURCE_DIR}/*cpp )
 add_executable( ${UNIT} ${source_tests} )
 
 # Adding specific compiler flags
