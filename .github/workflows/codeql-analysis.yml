@@ -50,13 +50,7 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: |
        cmake -B build
-       cmake --build build --target containers
-       cmake --build build --target math
-       cmake --build build --target operators
-       cmake --build build --target stream
-       cmake --build build --target system
-       cmake --build build --target type
-       cmake --build build --target utils
+       cmake --build build
        cmake --build build --target install
 
     - name: Perform CodeQL Analysis

@@ -49,20 +49,7 @@ else()
 endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
 
-# Fetching doctest
-find_package( doctest )
-
-if( NOT doctest_FOUND )
-    include(FetchContent)
-    FetchContent_Declare(
-      doctest
-      GIT_REPOSITORY "https://github.com/doctest/doctest"
-      GIT_TAG master
-    )
-    message( STATUS "Fetching doctest..." )
-    FetchContent_MakeAvailable( doctest )
-endif()
-
 # Linking to libraries
+find_package( doctest )
 target_link_libraries( ${UNIT} PRIVATE doctest::doctest )
 target_link_libraries( ${UNIT} PRIVATE arsenalgear::arsenalgear )
