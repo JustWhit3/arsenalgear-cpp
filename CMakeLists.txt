@@ -24,13 +24,12 @@ add_subdirectory( test )
 # Create static library
 file( GLOB source src/*cpp )
 add_library( arsenalgear STATIC ${source} )
-set_property( TARGET arsenalgear PROPERTY CXX_STANDARD 17 )
-set_property( TARGET arsenalgear PROPERTY CXX_STANDARD_REQUIRED ON )
-set_property( TARGET arsenalgear PROPERTY CXX_EXTENSIONS OFF )
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
 # Compiling with the right standard
-
+set_property( TARGET arsenalgear PROPERTY CXX_STANDARD 17 )
+set_property( TARGET arsenalgear PROPERTY CXX_STANDARD_REQUIRED ON )
+set_property( TARGET arsenalgear PROPERTY CXX_EXTENSIONS OFF )
 
 # Installing headers
 if( UNIX )
