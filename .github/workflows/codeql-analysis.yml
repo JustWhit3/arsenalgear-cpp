@@ -51,7 +51,7 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: |
        choco install cmake
-       cmake -B build -D WIN_INSTALLATION_DIR_INCLUDE . -D WIN_INSTALLATION_DIR_LIB .
+       cmake -B build
        cmake --build build
        cmake --build build --target install
 
