@@ -23,13 +23,13 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 # Include directories
 include_directories( . )
 
+# Compile tests
+add_subdirectory( test )
+
 # Create static library
 file( GLOB source src/*cpp )
 add_library( arsenalgear STATIC ${source} )
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
-
-# Compile tests
-add_subdirectory( test )
 
 # Installing headers
 if( UNIX )
