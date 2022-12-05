@@ -15,9 +15,6 @@ if( EXISTS "${LOC_PATH}" )
                          "remove CMakeCache.txt and CMakeFiles." )
 endif()
 
-# Other settings for paths
-include_directories( . )
-
 # Compile tests
 add_subdirectory( test )
 
