@@ -27,8 +27,11 @@ add_subdirectory( deps )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
 
 # Create static library
-file( GLOB source src/*cpp )
-add_library( arsenalgear STATIC ${source} )
+add_library( arsenalgear STATIC
+    src/stream.cpp
+    src/system.cpp
+    src/utils.cpp
+)
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
 # Compile tests
