@@ -50,7 +50,7 @@ jobs:
       run: |
        choco install cmake
        cmake -B build
-       cmake --build build
+       cmake --build build --target type.exe
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
