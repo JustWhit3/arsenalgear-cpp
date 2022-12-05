@@ -15,6 +15,11 @@ if( EXISTS "${LOC_PATH}" )
                          "remove CMakeCache.txt and CMakeFiles." )
 endif()
 
+# Set c++ standard options
+set( CMAKE_CXX_STANDARD 17 )
+set( CMAKE_CXX_STANDARD_REQUIRED ON )
+set( CMAKE_CXX_EXTENSIONS OFF )
+
 # Other settings for paths
 include_directories( ../.. )
 
@@ -50,10 +55,6 @@ if( NOT doctest_FOUND )
     message( STATUS "Fetching doctest..." )
     FetchContent_MakeAvailable( doctest )
 endif()
-
-# Compiling with the right standard
-set_property( TARGET ${UNIT} PROPERTY CXX_STANDARD 17 )
-set_property( TARGET ${UNIT} PROPERTY CXX_STANDARD_REQUIRED ON )
 
 # Linking to libraries
 target_link_libraries( ${UNIT} PUBLIC doctest::doctest )
