@@ -15,11 +15,6 @@ if( EXISTS "${LOC_PATH}" )
                          "remove CMakeCache.txt and CMakeFiles." )
 endif()
 
-# Set compiler options
-set( CMAKE_CXX_STANDARD 17 )
-set( CMAKE_CXX_STANDARD_REQUIRED ON )
-set( CMAKE_CXX_EXTENSIONS OFF )
-
 # Other settings for paths
 include_directories( ../.. )
 
@@ -58,6 +53,11 @@ else()
     set( COMPILE_FLAGS "-Wall -Wextra -pedantic" )
 endif()
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
+
+# Compiling with the right standard
+set_property( TARGET ${STREAM} PROPERTY CXX_STANDARD 17 )
+set_property( TARGET ${SYSTEM} PROPERTY CXX_STANDARD 17 )
+set_property( TARGET ${UTILS} PROPERTY CXX_STANDARD 17 )
 
 # Adding specific linker flags
 target_link_libraries( ${STREAM} PRIVATE arsenalgear::arsenalgear )
