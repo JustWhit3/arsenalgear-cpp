@@ -40,7 +40,7 @@ add_subdirectory( test )
 # Setting installation paths
 target_include_directories( arsenalgear INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-    $<INSTALL_INTERFACE:include>
+    $<INSTALL_INTERFACE:include/arsenalgear>
 )
 
 install(
