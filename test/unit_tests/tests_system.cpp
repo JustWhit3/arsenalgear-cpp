@@ -8,8 +8,8 @@
 //====================================================
 
 // My headers
-#include <include/system.hpp>
-#include <include/utils.hpp>
+#include <arsenalgear/system.hpp>
+#include <arsenalgear/utils.hpp>
 
 // Extra headers
 #include <doctest/doctest.h>

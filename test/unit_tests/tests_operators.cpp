@@ -8,7 +8,7 @@
 //====================================================
 
 // My headers
-#include <include/operators.hpp>
+#include <arsenalgear/operators.hpp>
 
 // Extra headers
 #include <doctest/doctest.h>

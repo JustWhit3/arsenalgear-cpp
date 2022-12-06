@@ -3,7 +3,7 @@
 //====================================================
 
 // My headers
-#include <include/type.hpp>
+#include <arsenalgear/type.hpp>
 
 // STD headers
 #include <iostream>

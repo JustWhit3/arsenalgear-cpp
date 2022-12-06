@@ -9,8 +9,8 @@
 //====================================================
 
 // My headers
-#include <include/utils.hpp>
-#include <include/constants.hpp>
+#include <arsenalgear/utils.hpp>
+#include <arsenalgear/constants.hpp>
 
 // Extra headers
 #include <doctest/doctest.h>

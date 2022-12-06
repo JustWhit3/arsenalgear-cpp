@@ -10,7 +10,7 @@
 //====================================================
 
 // My headers
-#include <include/math.hpp>
+#include <arsenalgear/math.hpp>
 
 // STD headers
 #include <iostream>

@@ -13,7 +13,7 @@
 //====================================================
 
 //My headers
-#include <include/stream.hpp>
+#include <arsenalgear/stream.hpp>
 
 //STD headers
 #include <string>

@@ -15,7 +15,7 @@
 //====================================================
 
 // My headers
-#include <include/math.hpp>
+#include <arsenalgear/math.hpp>
 
 //Extra headers
 #include <doctest/doctest.h>

@@ -8,7 +8,7 @@
 //====================================================
 
 // My headers
-#include <include/stream.hpp>
+#include <arsenalgear/stream.hpp>
 
 // Extra headers
 #include <doctest/doctest.h>
