@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['split_5fstring_3',['split_string',['../namespaceagr.html#a18e81adfa184466f655fa97ff66fc3cb',1,'agr']]],
-  ['stream_2ecpp_4',['stream.cpp',['../stream_8cpp.html',1,'']]],
-  ['system_2ecpp_5',['system.cpp',['../system_8cpp.html',1,'']]]
+  ['first_18',['first',['../namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea8b04d5e3775d298e78455efc5ca404d5',1,'agr']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['split_5fstring_13',['split_string',['../namespaceagr.html#a18e81adfa184466f655fa97ff66fc3cb',1,'agr']]]
+  ['getcommandout_71',['getCommandOut',['../namespaceagr.html#a1941ebf177b4bdb1d7f322ed3daed0bc',1,'agr']]]
 ];
