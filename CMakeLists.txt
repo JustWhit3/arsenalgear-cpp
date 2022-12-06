@@ -44,8 +44,8 @@ target_include_directories( arsenalgear INTERFACE
 )
 
 install(
-    FILES arsenalgear/containers.hpp arsenalgear/math.hpp arsenalgear/operators.hpp arsenalgear/system.hpp arsenalgear/stream.hpp arsenalgear/type.hpp arsenalgear/constants.hpp arsenalgear/utils.hpp
-    DESTINATION include/arsenalgear
+    DIRECTORY include/arsenalgear
+    DESTINATION include
 )
 
 # Creating the package files
