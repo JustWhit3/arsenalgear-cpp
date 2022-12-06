@@ -43,7 +43,7 @@ target_include_directories( arsenalgear INTERFACE
     $<INSTALL_INTERFACE:include>
 )
 
-INSTALL(
+install(
     FILES include/containers.hpp include/math.hpp include/operators.hpp include/system.hpp include/stream.hpp include/type.hpp include/constants.hpp include/utils.hpp
     DESTINATION include/arsenalgear
 )
