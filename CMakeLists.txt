@@ -30,6 +30,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/include )
 add_library( arsenalgear STATIC
     src/stream.cpp
     src/system.cpp
+    src/utils.cpp
 )
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
