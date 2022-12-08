@@ -35,7 +35,7 @@ add_library( arsenalgear STATIC
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
 # Compile tests
-add_subdirectory( test )
+#add_subdirectory( test )
 
 # Setting installation paths
 target_include_directories( arsenalgear INTERFACE
