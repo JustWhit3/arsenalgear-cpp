@@ -31,7 +31,7 @@ if( WIN32 )
     set( STREAM "stream.exe" )
     set( SYSTEM "system.exe" )
     set( TYPE "type.exe" )
-    set( UTILS "utils.exe" )
+    #set( UTILS "utils.exe" )
 else()
     set( CONTAINERS "containers" )
     set( MATH "math" )
@@ -61,5 +61,5 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}")
 
 # Adding specific linker flags
 target_link_libraries( ${STREAM} PRIVATE arsenalgear::arsenalgear )
-target_link_libraries( ${SYSTEM} PRIVATE arsenalgear::arsenalgear )
-target_link_libraries( ${UTILS} PRIVATE arsenalgear::arsenalgear )
+target_link_libraries( ${SYSTEM} PRIVATE arsenalgear::arsenalgear )#
+#target_link_libraries( ${UTILS} PRIVATE arsenalgear::arsenalgear )
