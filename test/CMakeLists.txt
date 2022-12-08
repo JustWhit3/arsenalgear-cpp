@@ -17,4 +17,4 @@ endif()
 
 # Launch system and unit tests
 add_subdirectory( system_tests )
-add_subdirectory( unit_tests )
+#add_subdirectory( unit_tests )
