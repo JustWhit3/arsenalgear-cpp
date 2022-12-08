@@ -49,7 +49,7 @@ add_executable( ${OPERATORS} operators.cpp )
 add_executable( ${TYPE} type.cpp )
 add_executable( ${STREAM} stream.cpp )
 add_executable( ${SYSTEM} system.cpp )
-add_executable( ${UTILS} utils.cpp )
+#add_executable( ${UTILS} utils.cpp )
 
 # Adding specific compiler flags
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
