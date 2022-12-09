@@ -35,7 +35,7 @@ add_library( arsenalgear STATIC
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
 # Compile tests
-set( ARSENALGEAR_TESTS ON CACHE STRING "Enable / disable tests." )
+option( ARSENALGEAR_TESTS "Enable / disable tests." ON )
 if( ${ARSENALGEAR_TESTS} STREQUAL OFF )
     message( STATUS "Skipping tests." )
 elseif( ${ARSENALGEAR_TESTS} STREQUAL ON )
