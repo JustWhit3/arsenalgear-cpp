@@ -31,25 +31,15 @@ else()
 endif()
 
 # Create executables
-#add_executable( ${UNIT} 
-#    tests_containers.cpp 
-#    tests_operators.cpp 
-#    tests_type.cpp 
-#    tests_math.cpp 
-#    tests_utils.cpp 
-#    tests_stream.cpp 
-#    tests_system.cpp
-#)
 add_executable( ${UNIT} 
-    tests_containers.cpp
+    tests_containers.cpp 
+    tests_operators.cpp 
     tests_type.cpp 
-    tests_math.cpp
-    tests_utils.cpp
-    tests_stream.cpp
+    tests_math.cpp 
+    tests_utils.cpp 
+    tests_stream.cpp 
     tests_system.cpp
 )
-
-# tests_operators.cpp
 
 # Adding specific compiler flags
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )

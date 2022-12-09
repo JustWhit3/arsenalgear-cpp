@@ -56,10 +56,10 @@ inline std::string operator *( const T& generic_string, unsigned int integer )
  * @param n The integer to be multiplied.
  * @return std::string The multiplied string.
  */
-template <typename T>
+/*template <typename T>
 inline std::string operator *( unsigned int integer, const T& generic_string ) 
  {
   return generic_string * integer;
- }
+ }*/
 
 #endif
