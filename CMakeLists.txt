@@ -35,7 +35,12 @@ add_library( arsenalgear STATIC
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
 # Compile tests
-add_subdirectory( test )
+set( ARSENALGEAR_TESTS ON CACHE STRING "Enable / disable tests." )
+if( ${ARSENALGEAR_TESTS} STREQUAL OFF )
+    message( STATUS "Skipping tests." )
+elseif( ${ARSENALGEAR_TESTS} STREQUAL ON )
+    add_subdirectory( test )
+endif()
 
 # Setting installation paths
 target_include_directories( arsenalgear INTERFACE
