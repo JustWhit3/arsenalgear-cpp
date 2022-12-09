@@ -36,10 +36,10 @@ add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
 # Compile tests
 option( ARSENALGEAR_TESTS "Enable / disable tests." ON )
-if( ${ARSENALGEAR_TESTS} STREQUAL OFF )
-    message( STATUS "Skipping tests." )
-elseif( ${ARSENALGEAR_TESTS} STREQUAL ON )
+if( ARSENALGEAR_TESTS )
     add_subdirectory( test )
+else()
+    message( STATUS "Skipping tests." )
 endif()
 
 # Setting installation paths
