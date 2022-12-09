@@ -42,8 +42,10 @@ endif()
 #)
 add_executable( ${UNIT} 
     tests_containers.cpp
-    tests_operators.cpp
+    tests_type.cpp 
 )
+
+# tests_operators.cpp
 
 # Adding specific compiler flags
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
