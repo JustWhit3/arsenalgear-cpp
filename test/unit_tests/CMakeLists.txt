@@ -43,6 +43,7 @@ endif()
 add_executable( ${UNIT} 
     tests_containers.cpp
     tests_type.cpp 
+    tests_math.cpp
 )
 
 # tests_operators.cpp
