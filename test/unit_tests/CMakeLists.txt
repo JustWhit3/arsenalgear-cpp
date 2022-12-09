@@ -41,7 +41,8 @@ endif()
 #    tests_system.cpp
 #)
 add_executable( ${UNIT} 
-    tests_containers.cpp 
+    tests_containers.cpp
+    tests_operators.cpp
 )
 
 # Adding specific compiler flags
