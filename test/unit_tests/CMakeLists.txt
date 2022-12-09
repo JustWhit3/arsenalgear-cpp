@@ -31,13 +31,17 @@ else()
 endif()
 
 # Create executables
+#add_executable( ${UNIT} 
+#    tests_containers.cpp 
+#    tests_operators.cpp 
+#    tests_type.cpp 
+#    tests_math.cpp 
+#    tests_utils.cpp 
+#    tests_stream.cpp 
+#    tests_system.cpp
+#)
 add_executable( ${UNIT} 
     tests_containers.cpp 
-    tests_operators.cpp 
-    tests_type.cpp 
-    tests_math.cpp 
-    tests_stream.cpp 
-    tests_system.cpp
 )
 
 # Adding specific compiler flags
