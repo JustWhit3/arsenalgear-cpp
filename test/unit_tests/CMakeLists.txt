@@ -46,6 +46,7 @@ add_executable( ${UNIT}
     tests_math.cpp
     tests_utils.cpp
     tests_stream.cpp
+    tests_system.cpp
 )
 
 # tests_operators.cpp
