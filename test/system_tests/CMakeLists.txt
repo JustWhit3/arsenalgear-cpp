@@ -24,15 +24,6 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../../include )
 
 # Declare executables vars
-if( WIN32 )
-    set( CONTAINERS "containers.exe" )
-    set( MATH "math.exe" )
-    set( OPERATORS "operators.exe" )
-    set( STREAM "stream.exe" )
-    set( SYSTEM "system.exe" )
-    set( TYPE "type.exe" )
-    set( UTILS "utils.exe" )
-else()
     set( CONTAINERS "containers" )
     set( MATH "math" )
     set( OPERATORS "operators" )
@@ -40,7 +31,6 @@ else()
     set( SYSTEM "system" )
     set( TYPE "type" )
     set( UTILS "utils" )
-endif()
 
 # Create executables
 add_executable( ${CONTAINERS} containers.cpp )

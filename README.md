@@ -140,6 +140,13 @@ then, to link it to a target:
 target_link_libraries( ${TARGET} arsenalgear::arsenalgear )
 ```
 
+To avoid tests compilation:
+
+```cmake
+set( ARSENALGEAR_TESTS OFF )
+```
+
+
 ## Tests
 
 Tests are produced using `-Wall -Wextra -pedantic` flags. To check them you need some prerequisites:
