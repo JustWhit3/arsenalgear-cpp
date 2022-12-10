@@ -11,25 +11,25 @@ cmake --build build
 
 # System tests
 echo ""
-./build/test/system_tests/containers
-./build/test/system_tests/math
-./build/test/system_tests/operators
-./build/test/system_tests/stream
-./build/test/system_tests/system
-./build/test/system_tests/type
-./build/test/system_tests/utils
+./build/test/system_tests/arsenalgear_containers
+./build/test/system_tests/arsenalgear_math
+./build/test/system_tests/arsenalgear_operators
+./build/test/system_tests/arsenalgear_stream
+./build/test/system_tests/arsenalgear_system
+./build/test/system_tests/arsenalgear_type
+./build/test/system_tests/arsenalgear_utils
 
 # Memory tests
 echo ""
 echo "======================================================"
 echo "     MEMORY TESTS"
 echo "======================================================"
-./test/profiling.sh memcheck ./build/test/system_tests/containers
-./test/profiling.sh memcheck ./build/test/system_tests/math
-./test/profiling.sh memcheck ./build/test/system_tests/operators
-./test/profiling.sh memcheck ./build/test/system_tests/stream
-./test/profiling.sh memcheck ./build/test/system_tests/system
-./test/profiling.sh memcheck ./build/test/system_tests/type
+./test/profiling.sh memcheck ./build/test/system_tests/arsenalgear_containers
+./test/profiling.sh memcheck ./build/test/system_tests/arsenalgear_math
+./test/profiling.sh memcheck ./build/test/system_tests/arsenalgear_operators
+./test/profiling.sh memcheck ./build/test/system_tests/arsenalgear_stream
+./test/profiling.sh memcheck ./build/test/system_tests/arsenalgear_system
+./test/profiling.sh memcheck ./build/test/system_tests/arsenalgear_type
 
 # Threading tests
 echo ""
@@ -37,13 +37,13 @@ echo "======================================================"
 echo "     THREADING TESTS"
 echo "======================================================"
 echo ""
-./test/profiling.sh helgrind ./build/test/system_tests/containers
-./test/profiling.sh helgrind ./build/test/system_tests/math
-./test/profiling.sh helgrind ./build/test/system_tests/operators
-./test/profiling.sh helgrind ./build/test/system_tests/stream
-./test/profiling.sh helgrind ./build/test/system_tests/system
-./test/profiling.sh helgrind ./build/test/system_tests/type
-./test/profiling.sh helgrind ./build/test/system_tests/utils
+./test/profiling.sh helgrind ./build/test/system_tests/arsenalgear_containers
+./test/profiling.sh helgrind ./build/test/system_tests/arsenalgear_math
+./test/profiling.sh helgrind ./build/test/system_tests/arsenalgear_operators
+./test/profiling.sh helgrind ./build/test/system_tests/arsenalgear_stream
+./test/profiling.sh helgrind ./build/test/system_tests/arsenalgear_system
+./test/profiling.sh helgrind ./build/test/system_tests/arsenalgear_type
+./test/profiling.sh helgrind ./build/test/system_tests/arsenalgear_utils
 
 # Unit tests
 echo ""
@@ -51,7 +51,7 @@ echo "======================================================"
 echo "     UNIT TESTS"
 echo "======================================================"
 echo ""
-./build/test/unit_tests/unit_tests
+./build/test/unit_tests/arsenalgear_unit_tests
 
 # Include tests
 echo ""

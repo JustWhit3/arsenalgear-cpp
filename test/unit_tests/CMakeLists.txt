@@ -23,14 +23,8 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 # Other settings for paths
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../../include )
 
-# Declare executables vars
-if( WIN32 )
-    set( UNIT "unit_tests.exe" )
-else()
-    set( UNIT "unit_tests" )
-endif()
-
 # Create executables
+set( UNIT "arsenalgear_unit_tests" )
 add_executable( ${UNIT} 
     tests_containers.cpp 
     tests_operators.cpp 

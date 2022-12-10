@@ -24,13 +24,13 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../../include )
 
 # Declare executables vars
-    set( CONTAINERS "containers" )
-    set( MATH "math" )
-    set( OPERATORS "operators" )
-    set( STREAM "stream" )
-    set( SYSTEM "system" )
-    set( TYPE "type" )
-    set( UTILS "utils" )
+set( CONTAINERS "arsenalgear_containers" )
+set( MATH "arsenalgear_math" )
+set( OPERATORS "arsenalgear_operators" )
+set( STREAM "arsenalgear_stream" )
+set( SYSTEM "arsenalgear_system" )
+set( TYPE "arsenalgear_type" )
+set( UTILS "arsenalgear_utils" )
 
 # Create executables
 add_executable( ${CONTAINERS} containers.cpp )
