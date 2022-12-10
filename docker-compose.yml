@@ -5,19 +5,6 @@ services:
     #      GCC
     ##########################################
 
-    # gcc 7
-    build_gcc_7:
-        image: ghcr.io/rikorose/gcc-cmake:gcc-7
-        network_mode: bridge
-        volumes:
-            - .:/proj
-        container_name: build
-        command: >
-            bash -c "cd /proj
-            && rm -rf build
-            && cmake -B build
-            && cmake --build build"
-
     # gcc 8
     build_gcc_8:
         image: ghcr.io/rikorose/gcc-cmake:gcc-8
