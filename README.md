@@ -23,6 +23,7 @@
   - [Install](#install)
   - [Use in your device](#use-in-your-device)
   - [Use with CMake](#use-with-cmake)
+  - [Package managers](#package-managers)
 - [Tests](#tests)
 - [List of features](#list-of-features)
   - [Constants](#constants)
@@ -44,6 +45,8 @@
 This is a C++17/20 library containing a set of generic utils I developed for other projects. There are several sub-headers / modules related to the various topics (math, iostream and others). Existing tools are constantly updated and new ones are added once their development is required for other projects. Some projects in which I am using this library are, for example: [osmanip](https://github.com/JustWhit3/osmanip) and [SAFD-algorithm](https://github.com/JustWhit3/SAFD-algorithm).
 
 This library is fully *type-safe* with *automatic memory management*, with minimal and indispensable [dependencies](#install-and-use).
+
+It can be installed from source or via `vcpkg`. See [this](#install-and-use) section for further details.
 
 If you want to use this library please cite it following [this](https://github.com/JustWhit3/arsenalgear-cpp/blob/main/CITATION.cff) citation template.
 
@@ -146,6 +149,11 @@ To avoid tests compilation:
 set( ARSENALGEAR_TESTS OFF )
 ```
 
+### Package managers
+
+This is the list of available package managers for `arsenalgear`:
+
+- [vcpkg](https://vcpkg.io/en/index.html).
 
 ## Tests
 
