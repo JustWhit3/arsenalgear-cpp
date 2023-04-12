@@ -13,7 +13,7 @@ jobs:
 
     steps:
       # checkout myBranch
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # generate the C++ doxygen files
       - name: Doxygen Action C++
@@ -24,7 +24,7 @@ jobs:
 
       # store the doc files
       - name: Upload Output Directory
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: doc-files
           path: docs
@@ -38,13 +38,13 @@ jobs:
     steps:
 
       # checkout the gh-pages branch
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: gh-pages
 
       # download the doc files, most of which are generated above
       - name: Download Output Directory
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: doc-files
           path: docs

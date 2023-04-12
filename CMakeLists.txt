@@ -34,6 +34,24 @@ add_library( arsenalgear STATIC
 )
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
+# Adding specific compiler flags
+if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
+    set( COMPILE_FLAGS "/Wall /Yd" )
+else()
+    if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+        set( COMPILE_FLAGS "-Wall -Wextra -pedantic -Wno-reorder -g" )
+    else()
+        set( COMPILE_FLAGS "-Wall -Wextra -pedantic -Wno-reorder" )
+    endif()
+endif()
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COMPILE_FLAGS}" )
+
+# Adding cppcheck properties
+if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+    set( cppcheck cppcheck "--enable=warning" "--inconclusive" "--force" "--inline-suppr" )
+    set_target_properties( arsenalgear PROPERTIES CXX_CPPCHECK ${cppcheck})
+endif()
+
 # Compile tests
 option( ARSENALGEAR_TESTS "Enable / disable tests." ON )
 if( ARSENALGEAR_TESTS )
