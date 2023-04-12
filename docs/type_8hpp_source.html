@@ -86,66 +86,60 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//====================================================</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// STD headers</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">//     Structs</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// is_streamable</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structagr_1_1is__streamable.html">   44</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structagr_1_1is__streamable.html">is_streamable</a>: std::false_type {};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// is_streamable specialization</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structagr_1_1is__streamable_3_01S_00_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01S252d6b4b863bfebff04c4afd70f5394a.html">   48</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="structagr_1_1is__streamable.html">is_streamable</a> &lt;S, T, std::void_t&lt;decltype( std::declval &lt;S&amp;&gt;() &lt;&lt;std::declval&lt;T&gt;() ) &gt; &gt;: std::true_type {};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">//     Functions</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// is_pointer_to_const_char (first overload)</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"></span>  template &lt;typename T, std::size_t N&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a">   64</a></span>&#160;  constexpr bool is_pointer_to_const_char( T(&amp;)[N] ) </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;   { </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    return std::is_same_v &lt;const char, T&gt;;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;   }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// is_pointer_to_const_char (second overload)</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span>  template&lt;typename T&gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="namespaceagr.html#a967afc81c623b378f2bf66e6d5d0956b">   78</a></span>&#160;  constexpr bool is_pointer_to_const_char( T&amp;&amp; ) </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;   { </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    return std::is_same_v &lt;const char *, T&gt;;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// is_str</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"></span>  template &lt;class T&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="namespaceagr.html#a8cedbda93e6317c38b992056458ba03c">   93</a></span>&#160;  constexpr bool is_str( const T&amp; obj )</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;   {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    return is_pointer_to_const_char( obj ) || std::is_same_v&lt;T, std::string&gt; || std::is_same_v&lt;T, std::string_view&gt;;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;   }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="comment">// is_any</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"></span>  template &lt;typename Kind, typename... Kinds&gt;</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="namespaceagr.html#a962b9e5500ec34ba186b3ad88114a677">  108</a></span>&#160;  bool is_any()</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    if constexpr ( ( std::is_same_v &lt;Kind, Kinds&gt; || ... ) )</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;     {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      return true;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;     } </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    return false;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;   }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;#endif</div>
-<div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:22</div></div>
-<div class="ttc" id="astructagr_1_1is__streamable_html"><div class="ttname"><a href="structagr_1_1is__streamable.html">agr::is_streamable</a></div><div class="ttdoc">Struct used to check if a type is a streamable or not, i.e. it has operator &lt;&lt; overload or not.</div><div class="ttdef"><b>Definition:</b> type.hpp:44</div></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">//     Structs</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// is_streamable</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structagr_1_1is__streamable.html">   43</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structagr_1_1is__streamable.html">is_streamable</a> : std::false_type { };</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// is_streamable specialization</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> S, <span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structagr_1_1is__streamable_3_01S_00_01T_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_01S07be0fae6b13f93697c0fcdbe88a7bf8.html">   47</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structagr_1_1is__streamable.html">is_streamable</a>&lt;S, T, std::void_t&lt;decltype( std::declval&lt;S&amp;&gt;() &lt;&lt; std::declval&lt;T&gt;() )&gt;&gt; : std::true_type { };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//     Functions</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// is_pointer_to_const_char (first overload)</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>    template&lt;typename T, std::size_t N&gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="namespaceagr.html#a7c5ec6c4708748caba50bd7444a8707a">   63</a></span>&#160;    constexpr bool is_pointer_to_const_char( T ( &amp; )[N] ) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        return std::is_same_v&lt;const char, T&gt;;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// is_pointer_to_const_char (second overload)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span>    template&lt;typename T&gt;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="namespaceagr.html#a967afc81c623b378f2bf66e6d5d0956b">   76</a></span>&#160;    constexpr bool is_pointer_to_const_char( T&amp;&amp; ) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        return std::is_same_v&lt;const char*, T&gt;;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// is_str</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"></span>    template&lt;class T&gt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="namespaceagr.html#a8cedbda93e6317c38b992056458ba03c">   90</a></span>&#160;    constexpr bool is_str( const T&amp; obj ) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        return is_pointer_to_const_char( obj ) || std::is_same_v&lt;T, std::string&gt; || std::is_same_v&lt;T, std::string_view&gt;;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// is_any</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span>    template&lt;typename Kind, typename... Kinds&gt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="namespaceagr.html#a962b9e5500ec34ba186b3ad88114a677">  104</a></span>&#160;    bool is_any() {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        if constexpr ( ( std::is_same_v&lt;Kind, Kinds&gt; || ... ) ) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            return true;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        return false;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;#endif</div>
+<div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:21</div></div>
+<div class="ttc" id="astructagr_1_1is__streamable_html"><div class="ttname"><a href="structagr_1_1is__streamable.html">agr::is_streamable</a></div><div class="ttdoc">Struct used to check if a type is a streamable or not, i.e. it has operator &lt;&lt; overload or not.</div><div class="ttdef"><b>Definition:</b> type.hpp:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
