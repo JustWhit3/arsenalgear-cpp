@@ -177,7 +177,7 @@ services:
         command: >
             bash -c "cd /proj
             && apt update
-            && apt install git
+            && apt install -y git
             && rm -rf build
             && cmake -B build -D CMAKE_CXX_compiler=clang++ -D CMAKE_CXX_STANDARD=17 -D CMAKE_CXX_STANDARD_REQUIRED=ON 
             && cmake --build build
