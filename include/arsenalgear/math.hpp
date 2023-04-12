@@ -37,7 +37,7 @@ namespace agr {
    * @return T The rounded variable.
    */
     template<typename T>
-    inline constexpr T roundoff( T value, unsigned char prec ) {
+    inline T roundoff( T value, unsigned char prec ) {
         T pow_10 { pow( 10.0f, static_cast<T>( prec ) ) };
 
         return round( value * pow_10 ) / pow_10;
