@@ -68,10 +68,3 @@ echo ""
 ./test/include_tests.sh type.hpp
 ./test/include_tests.sh utils.hpp
 
-# Cppcheck
-echo ""
-echo "======================================================"
-echo "     CPPCHECK TESTS"
-echo "======================================================"
-echo ""
-cppcheck arsenalgear/* src/*

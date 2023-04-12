@@ -19,12 +19,10 @@
 //====================================================
 //     Operator *
 //====================================================
-TEST_CASE( "Testing the * redefinition for string multiplication by an integer." )
- {
-  const std::string example = "a"; 
-
-  CHECK_EQ( example * 3, "aaa" );
-  #if ! _MSC_VER
-  CHECK_EQ( 3 * example, "aaa" );
-  #endif
- }
+TEST_CASE( "Testing the * redefinition for string multiplication by an integer." ) {
+    const std::string example { "a" };
+    CHECK_EQ( example * 3, "aaa" );
+    #if !_MSC_VER
+        CHECK_EQ( 3 * example, "aaa" );
+    #endif
+}

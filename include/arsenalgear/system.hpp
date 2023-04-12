@@ -22,12 +22,11 @@
 //STD headers
 #include <string>
 
-namespace agr
- {
-  //====================================================
-  //     Functions declaration
-  //====================================================
-  extern std::string getCommandOut( const char* command );
- }
+namespace agr {
+    //====================================================
+    //     Functions declaration
+    //====================================================
+    extern std::string getCommandOut( const char* command );
+}
 
 #endif
