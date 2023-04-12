@@ -21,7 +21,6 @@
 
 // STD headers
 #include <string>
-#include <cstdint>
 
 //====================================================
 //     String operators
@@ -35,17 +34,19 @@
  * @param n The integer to be multiplied.
  * @return std::string The multiplied string.
  */
-template<typename T>
-inline std::string operator*( const T& generic_string, uint32_t integer ) {
-    std::string output;
-    output.reserve( integer * generic_string.size() );
+template <typename T>
+inline std::string operator *( const T& generic_string, unsigned int integer ) 
+ {
+  std::string output;
+  output.reserve( integer * generic_string.size() );
 
-    while ( integer-- ) {
-        output += generic_string;
-    }
-
-    return output;
-}
+  while( integer -- ) 
+   {
+    output += generic_string;
+   }
+   
+  return output;
+ }
 
 // int * std::string
 /**
@@ -55,11 +56,12 @@ inline std::string operator*( const T& generic_string, uint32_t integer ) {
  * @param n The integer to be multiplied.
  * @return std::string The multiplied string.
  */
-#if !_MSC_VER
-    template<typename T> 
-    inline std::string operator*( uint32_t integer, const T& generic_string ) {
-        return generic_string * integer;
-    }
+#if ! _MSC_VER
+template <typename T>
+inline std::string operator *( unsigned int integer, const T& generic_string ) 
+ {
+  return generic_string * integer;
+ }
 #endif
 
 #endif

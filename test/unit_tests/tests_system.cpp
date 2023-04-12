@@ -21,10 +21,12 @@
 //============================================
 //     getCommandOut
 //============================================
-TEST_CASE( "Testing the getCommandOut function." ) {
-    CHECK_EQ( agr::getCommandOut( "echo ciao" ), "ciao\n" );
-    std::string my_command { "echo \"asd erd ftr\"" };
-    std::string output { agr::getCommandOut( my_command.c_str() ) };
-    std::vector<std::string> splitted_output { agr::split_string( output, " " ) };
-    CHECK_EQ( splitted_output.back(), "ftr\n" );
-}
+TEST_CASE( "Testing the getCommandOut function." )
+ {
+  CHECK_EQ( agr::getCommandOut( "echo ciao" ), "ciao\n" );
+  
+  std::string my_command = "echo \"asd erd ftr\"";
+  std::string output = agr::getCommandOut( my_command.c_str() );
+  std::vector <std::string> splitted_output = agr::split_string( output, " " );
+  CHECK_EQ( splitted_output.back(), "ftr\n" );
+ }

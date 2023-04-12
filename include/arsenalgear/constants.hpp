@@ -14,27 +14,27 @@
 #ifndef ARSENALGEAR_CONSTANTS_HPP
 #define ARSENALGEAR_CONSTANTS_HPP
 
-namespace agr {
-    
-    //====================================================
-    //     String constants
-    //====================================================
+namespace agr
+ {
+  //==================================================== 
+  //     String constants
+  //====================================================
 
-    // null_str
-    /**
+  // null_str
+  /**
    * @brief The string used to represent the null value.
    * 
    */
-    template<typename T>
-    inline const T null_str { "" };
+  template <typename T>
+  inline const T null_str = "";
 
-    // empty_space
-    /**
+  // empty_space
+  /**
    * @brief The string used to represent the empty space.
    * 
    */
-    template<typename T>
-    inline const T empty_space { " " };
-}
+  template <typename T>
+  inline const T empty_space = " ";
+ }
 
 #endif
