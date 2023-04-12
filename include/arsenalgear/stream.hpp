@@ -13,15 +13,16 @@
 //====================================================
 #pragma once
 #ifndef ARSENALGEAR_STREAM_HPP
-#    define ARSENALGEAR_STREAM_HPP
+#define ARSENALGEAR_STREAM_HPP
 
 //====================================================
 //     Headers
 //====================================================
 
 // STD headers
-#    include <iostream>
-#    include <string>
+#include <iostream>
+#include <string>
+#include <cstdint>
 
 namespace agr {
     //====================================================

@@ -42,8 +42,7 @@ void
     static std::vector<int> v { 1, 2 };
 
     for ( const auto& element: v ) {
-        if ( element == 2 ) std::cout << agr::one( element ) << "."
-                                      << "\n\n";
+        if ( element == 2 ) std::cout << agr::one( element ) << "." << "\n\n";
     }
 
     // multi

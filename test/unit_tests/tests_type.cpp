@@ -39,7 +39,7 @@ TEST_CASE( "Testing is_str function." ) {
 //====================================================
 TEST_CASE( "Testing is_streamable." ) {
     CHECK( agr::is_streamable<std::ostream, int>::value );
-    CHECK( !agr::is_streamable<std::ostream, std::ostream>::value );
+    CHECK( ! agr::is_streamable<std::ostream, std::ostream>::value );
     CHECK( agr::is_streamable<std::ostream, std::string>::value );
 }
 

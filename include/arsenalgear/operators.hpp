@@ -21,6 +21,7 @@
 
 // STD headers
 #include <string>
+#include <cstdint>
 
 //====================================================
 //     String operators
@@ -55,8 +56,8 @@ inline std::string operator*( const T& generic_string, uint32_t integer ) {
  * @return std::string The multiplied string.
  */
 #if !_MSC_VER
-    template<typename T> inline std::string
-        operator*( uint32_t integer, const T& generic_string ) {
+    template<typename T> 
+    inline std::string operator*( uint32_t integer, const T& generic_string ) {
         return generic_string * integer;
     }
 #endif

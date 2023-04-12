@@ -22,6 +22,7 @@
 // STD headers
 #include <map>
 #include <vector>
+#include <algorithm>
 
 namespace agr {
     //====================================================
@@ -42,8 +43,11 @@ namespace agr {
         std::vector<TK> retval;
         retval.clear();
 
-        for ( auto const& element: input_map )
-            retval.push_back( element.first );
+        std::for_each(
+            input_map.cbegin(),
+            input_map.cend(),
+            [ &retval ]( const auto& el ){ retval.push_back( el.first ); }
+        );
 
         return retval;
     }
@@ -62,8 +66,11 @@ namespace agr {
         std::vector<TV> retval;
         retval.clear();
 
-        for ( auto const& element: input_map )
-            retval.push_back( element.second );
+        std::for_each(
+            input_map.cbegin(),
+            input_map.cend(),
+            [ &retval ]( const auto& el ){ retval.push_back( el.second ); }
+        );
 
         return retval;
     }

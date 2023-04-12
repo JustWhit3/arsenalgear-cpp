@@ -37,7 +37,7 @@ namespace agr {
    * @return T The rounded variable.
    */
     template<typename T>
-    inline T roundoff( T value, unsigned char prec ) {
+    inline constexpr T roundoff( T value, unsigned char prec ) {
         T pow_10 { pow( 10.0f, static_cast<T>( prec ) ) };
 
         return round( value * pow_10 ) / pow_10;
@@ -54,7 +54,7 @@ namespace agr {
    * @return bool True if the variable lies in the bound, false otherwise.
    */
     template<typename T>
-    inline bool IsInBounds( T value, T low, T high ) {
+    inline constexpr bool IsInBounds( T value, T low, T high ) {
         return !( value < low ) && ( value < high );
     }
 }

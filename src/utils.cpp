@@ -19,6 +19,7 @@
 #include <regex>
 #include <string>
 #include <vector>
+#include <map>
 
 namespace agr {
     //====================================================

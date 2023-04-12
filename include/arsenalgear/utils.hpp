@@ -20,7 +20,6 @@
 //====================================================
 
 // STD headers
-#include <cmath>
 #include <codecvt>
 #include <locale>
 #include <sstream>
@@ -30,6 +29,7 @@
 #include <string_view>
 #include <type_traits>
 #include <vector>
+#include <cstdint>
 
 namespace agr {
     //====================================================
@@ -112,8 +112,7 @@ namespace agr {
    * @return std::conditional_t<std::is_same_v<CharT, char>, const std::basic_string<CharT>&, std::basic_string<CharT>> The converted string object.
    */
     template<class CharT>
-    std::conditional_t<std::is_same_v<CharT, char>, const std::basic_string<CharT>&, std::basic_string<CharT>>
-        StringConverter( const std::string& input_str ) {
+    std::conditional_t<std::is_same_v<CharT, char>, const std::basic_string<CharT>&, std::basic_string<CharT>> StringConverter( const std::string& input_str ) {
         if constexpr ( std::is_same_v<CharT, char> ) {
             return input_str;
         } else if constexpr ( std::is_same_v<CharT, wchar_t> ) {

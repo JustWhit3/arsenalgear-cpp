@@ -19,7 +19,7 @@
 //     Headers
 //====================================================
 
-//STD headers
+// STD headers
 #include <string>
 
 namespace agr {
