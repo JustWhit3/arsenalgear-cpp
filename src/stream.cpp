@@ -47,9 +47,9 @@ namespace agr {
    * @brief 
    * 
    * @param c 
-   * @return int 
+   * @return int32_t 
    */
-    int savebuf::overflow( int c ) {
+    int32_t savebuf::overflow( int32_t c ) {
         if ( !traits_type::eq_int_type( c, traits_type::eof() ) ) {
             save.push_back( traits_type::to_char_type( c ) );
             return sbuf->sputc( c );
@@ -62,9 +62,9 @@ namespace agr {
     /**
    * @brief 
    * 
-   * @return int 
+   * @return int32_t 
    */
-    int savebuf::sync() {
+    int32_t savebuf::sync() {
         return sbuf->pubsync();
     }
 }

@@ -29,7 +29,7 @@ using namespace std::string_literals;
 //====================================================
 TEST_CASE_TEMPLATE( "Testing the isFLoatingPoint function.", T, double, float, long double ) {
     T type { 0. };
-    const int integer { 2 };
+    const int32_t integer { 2 };
 
     CHECK( !agr::isFloatingPoint( integer ) );
     CHECK( agr::isFloatingPoint( type ) );

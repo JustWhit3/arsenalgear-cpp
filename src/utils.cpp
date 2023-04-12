@@ -32,11 +32,11 @@ namespace agr {
    * @param n_times The times for the string multiplication.
    * @return std::string The multiplied string.
    */
-    std::string multi( const std::string& element, unsigned int n_times ) {
+    std::string multi( const std::string& element, uint32_t n_times ) {
         std::string container;
         container.reserve( n_times * element.size() );
 
-        for ( unsigned int i = 0; i < n_times; i++ )
+        for ( uint32_t i = 0; i < n_times; i++ )
             container.append( element );
         return container;
     }

@@ -41,7 +41,7 @@ namespace agr {
     //====================================================
     //     Functions declaration
     //====================================================
-    extern std::string              multi( const std::string& element, unsigned int n_times );
+    extern std::string multi( const std::string& element, uint32_t n_times );
     extern std::vector<std::string> split_string( const std::string& input, const std::string& regex );
 
     //====================================================

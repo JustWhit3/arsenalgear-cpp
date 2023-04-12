@@ -35,8 +35,7 @@
  * @return std::string The multiplied string.
  */
 template<typename T>
-inline std::string
-    operator*( const T& generic_string, unsigned int integer ) {
+inline std::string operator*( const T& generic_string, uint32_t integer ) {
     std::string output;
     output.reserve( integer * generic_string.size() );
 
@@ -56,9 +55,8 @@ inline std::string
  * @return std::string The multiplied string.
  */
 #if !_MSC_VER
-    template<typename T>
-    inline std::string
-        operator*( unsigned int integer, const T& generic_string ) {
+    template<typename T> inline std::string
+        operator*( uint32_t integer, const T& generic_string ) {
         return generic_string * integer;
     }
 #endif

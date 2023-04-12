@@ -52,8 +52,8 @@ namespace agr {
     private:
 
         // Methods
-        int overflow( int c );
-        int sync();
+        int32_t overflow( int32_t c );
+        int32_t sync();
 
         // Attributes
         std::streambuf *sbuf;
