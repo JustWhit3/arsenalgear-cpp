@@ -86,124 +86,141 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//====================================================</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// STD headers</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;codecvt&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;locale&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;codecvt&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;locale&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//     Enum classes</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7e">   38</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7e">ANSI</a> { <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea8b04d5e3775d298e78455efc5ca404d5">first</a>,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">generic</span> };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceagr.html">agr</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">//     Enum classes</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7e">   39</a></span>&#160;  <span class="keyword">enum class</span> <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7e">ANSI</a> { <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea8b04d5e3775d298e78455efc5ca404d5">first</a>, <span class="keyword">generic</span> };</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//     Functions declaration</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">extern</span> std::string <a class="code" href="namespaceagr.html#a562d67b1ade6b34802403c2736125959">multi</a>( <span class="keyword">const</span> std::string&amp; element, uint32_t n_times );</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">extern</span> std::vector&lt;std::string&gt; <a class="code" href="namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd">split_string</a>( <span class="keyword">const</span> std::string&amp; input, <span class="keyword">const</span> std::string&amp; regex );</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//====================================================</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//     Functions definition</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">//     Functions declaration</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">extern</span> std::string <a class="code" href="namespaceagr.html#a26849e3e5a1662f89d1267093f8eb158">multi</a>( <span class="keyword">const</span> std::string&amp; element, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n_times );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">extern</span> std::vector &lt;std::string&gt; <a class="code" href="namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd">split_string</a>( <span class="keyword">const</span> std::string&amp; input, <span class="keyword">const</span> std::string&amp; regex );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">//====================================================</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">//     Functions definition</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">//====================================================</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// except_error_func</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T_err = std::runtime_error&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespaceagr.html#a60bb5e1fbefa30c3e0f6e24a80d463b8">   61</a></span>&#160;    <span class="keyword">inline</span> T_err <a class="code" href="namespaceagr.html#a60bb5e1fbefa30c3e0f6e24a80d463b8">except_error_func</a>( <span class="keyword">const</span> std::string&amp; beg = <span class="stringliteral">&quot;&quot;</span>, std::string var = <span class="keyword">nullptr</span>, <span class="keyword">const</span> std::string&amp; end = <span class="stringliteral">&quot;&quot;</span> ) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">using namespace </span>std::literals::string_literals;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">static</span> std::ostringstream oss;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        oss.str( <span class="stringliteral">&quot;&quot;</span> );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        oss.clear();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        oss &lt;&lt; <span class="stringliteral">&quot;\033[31m&quot;</span> &lt;&lt; beg &lt;&lt; <span class="stringliteral">&quot; \&quot;&quot;</span>s</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            &lt;&lt; <span class="stringliteral">&quot;\033[1m&quot;</span> &lt;&lt; var &lt;&lt; <span class="stringliteral">&quot;\033[22m&quot;</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            &lt;&lt; <span class="stringliteral">&quot;\&quot; &quot;</span>s &lt;&lt; end &lt;&lt; <span class="stringliteral">&quot;\033[39m&quot;</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> T_err( oss.str() );</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// isFloatingPoint</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">   81</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a>( <span class="keyword">const</span> T&amp; ) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> std::is_floating_point&lt;T&gt;::value;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// except_error_func</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T_err = std::runtime_error&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespaceagr.html#a60bb5e1fbefa30c3e0f6e24a80d463b8">   61</a></span>&#160;  <span class="keyword">inline</span> T_err <a class="code" href="namespaceagr.html#a60bb5e1fbefa30c3e0f6e24a80d463b8">except_error_func</a>( <span class="keyword">const</span> std::string&amp; beg = <span class="stringliteral">&quot;&quot;</span>, std::string var = <span class="keyword">nullptr</span>, <span class="keyword">const</span> std::string&amp; end = <span class="stringliteral">&quot;&quot;</span> )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;   {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">using namespace </span>std::literals::string_literals;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> std::ostringstream oss;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    oss.str( <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    oss.clear();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    oss &lt;&lt; <span class="stringliteral">&quot;\033[31m&quot;</span> &lt;&lt; beg &lt;&lt; <span class="stringliteral">&quot; \&quot;&quot;</span>s &lt;&lt; <span class="stringliteral">&quot;\033[1m&quot;</span> &lt;&lt; var &lt;&lt; <span class="stringliteral">&quot;\033[22m&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\&quot; &quot;</span>s &lt;&lt; end &lt;&lt; <span class="stringliteral">&quot;\033[39m&quot;</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> T_err( oss.str() ); </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;   }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// isFloatingPoint</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">   80</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a>( <span class="keyword">const</span> T&amp; )</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;   {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> std::is_floating_point &lt;T&gt;::value;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;   }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// one</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">   93</a></span>&#160;    <span class="keyword">inline</span> T <a class="code" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">one</a>( <span class="keyword">const</span> T&amp; iterating_var ) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        std::vector&lt;T&gt; counter_;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a>( iterating_var ) ) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">if</span> ( counter_.size() &lt; 2 ) counter_.push_back( iterating_var );</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">if</span> ( counter_.size() == 2 ) <span class="keywordflow">return</span> abs( abs( counter_.front() ) - abs( counter_.back() ) );</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>( 0 );</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        counter_.clear();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// StringConverter</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> CharT&gt;</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">  115</a></span>&#160;    std::conditional_t&lt;std::is_same_v&lt;CharT, char&gt;, <span class="keyword">const</span> std::basic_string&lt;CharT&gt;&amp;, std::basic_string&lt;CharT&gt;&gt; <a class="code" href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">StringConverter</a>( <span class="keyword">const</span> std::string&amp; input_str ) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> constexpr ( std::is_same_v&lt;CharT, char&gt; ) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">return</span> input_str;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr ( std::is_same_v&lt;CharT, wchar_t&gt; ) {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keyword">static</span> std::wstring_convert&lt;std::codecvt_utf8_utf16&lt;wchar_t&gt;&gt; converter_wchar_t;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">return</span> converter_wchar_t.from_bytes( input_str );</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">        #ifndef __APPLE__</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">        #if ( __cplusplus &gt;= 202002L )</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr ( std::is_same_v&lt;CharT, char8_t&gt; ) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>char8_t*<span class="keyword">&gt;</span>( input_str.c_str() );</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">        #endif</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr ( std::is_same_v&lt;CharT, char16_t&gt; ) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="keyword">static</span> std::wstring_convert&lt;std::codecvt_utf8_utf16&lt;char16_t&gt;, char16_t&gt; converter_16_t;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordflow">return</span> converter_16_t.from_bytes( input_str );</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr ( std::is_same_v&lt;CharT, char32_t&gt; ) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keyword">static</span> std::wstring_convert&lt;std::codecvt_utf8_utf16&lt;char32_t&gt;, char32_t&gt; converter_32_t;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordflow">return</span> converter_32_t.from_bytes( input_str );</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">        #endif</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">return</span> StringConverter&lt;CharT&gt;( <span class="stringliteral">&quot;&quot;</span> );</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// is_escape</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment"></span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="namespaceagr.html#a9d9108a0675bd694e9a9eaf2fd577d96">  152</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a9d9108a0675bd694e9a9eaf2fd577d96">is_escape</a>( <span class="keyword">const</span> T&amp; str, <span class="keyword">const</span> <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7e">ANSI</a>&amp; flag ) {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> constexpr ( std::is_convertible_v&lt;T, std::string_view&gt; &amp;&amp; !std::is_same_v&lt;T, std::nullptr_t&gt; ) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">switch</span> ( flag ) {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">case</span> ( <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea8b04d5e3775d298e78455efc5ca404d5">ANSI::first</a> ): {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="keywordflow">return</span> ( std::string_view( str ).length() &lt; 7 ) &amp;&amp; ( str[0] == <span class="charliteral">&#39;\033&#39;</span> );</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="keywordflow">case</span> ( <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea3d517f8924ac7fd03699a29d97dc52d9">ANSI::generic</a> ): {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <span class="keywordflow">return</span> ( std::string_view( str ).find( <span class="charliteral">&#39;\033&#39;</span> ) != std::string_view::npos );</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:21</div></div>
-<div class="ttc" id="anamespaceagr_html_a1d3019dd5d7deec3df2a2c4e01b89f47"><div class="ttname"><a href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">agr::StringConverter</a></div><div class="ttdeci">std::conditional_t&lt; std::is_same_v&lt; CharT, char &gt;, const std::basic_string&lt; CharT &gt; &amp;, std::basic_string&lt; CharT &gt; &gt; StringConverter(const std::string &amp;input_str)</div><div class="ttdoc">Function used to convert an std::string into other string types (std::wstring etc....</div><div class="ttdef"><b>Definition:</b> utils.hpp:115</div></div>
-<div class="ttc" id="anamespaceagr_html_a30f754b298e55c68819829df78d936cb"><div class="ttname"><a href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">agr::isFloatingPoint</a></div><div class="ttdeci">bool isFloatingPoint(const T &amp;)</div><div class="ttdoc">Function to check if an expression (not a type) is a floating point or not. I know this function is a...</div><div class="ttdef"><b>Definition:</b> utils.hpp:81</div></div>
-<div class="ttc" id="anamespaceagr_html_a562d67b1ade6b34802403c2736125959"><div class="ttname"><a href="namespaceagr.html#a562d67b1ade6b34802403c2736125959">agr::multi</a></div><div class="ttdeci">std::string multi(const std::string &amp;element, uint32_t n_times)</div><div class="ttdoc">Function used to multiply a string for n times.</div><div class="ttdef"><b>Definition:</b> utils.cpp:36</div></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// one</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">   93</a></span>&#160;  <span class="keyword">inline</span> T <a class="code" href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">one</a>( <span class="keyword">const</span> T&amp; iterating_var )</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;   {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::vector&lt;T&gt; counter_;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">isFloatingPoint</a>( iterating_var ) )</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;     {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordflow">if</span>( counter_.size() &lt; 2 ) counter_.push_back( iterating_var );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordflow">if</span>( counter_.size() == 2 ) <span class="keywordflow">return</span> abs( abs( counter_.front() ) - abs( counter_.back() ) );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast &lt;</span>T<span class="keyword">&gt;</span> ( 0 );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;     }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    counter_.clear();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;   }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">// StringConverter</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> CharT&gt;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  std::conditional_t&lt;std::is_same_v&lt;CharT, char&gt;, <span class="keyword">const</span> std::basic_string&lt;CharT&gt;&amp;, std::basic_string&lt;CharT&gt;&gt;</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">  118</a></span>&#160;  <a class="code" href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">StringConverter</a>( <span class="keyword">const</span> std::string&amp; input_str )</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;   {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> constexpr( std::is_same_v &lt;CharT, char&gt; ) </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;     {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <span class="keywordflow">return</span> input_str;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;     }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr( std::is_same_v &lt;CharT, wchar_t&gt; )</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;     {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keyword">static</span> std::wstring_convert &lt;std::codecvt_utf8_utf16 &lt;wchar_t&gt;&gt; converter_wchar_t;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      <span class="keywordflow">return</span> converter_wchar_t.from_bytes( input_str );</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;     }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">    #ifndef __APPLE__</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">    #if ( __cplusplus &gt;= 202002L )</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr( std::is_same_v &lt;CharT, char8_t&gt; )</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;     {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast &lt;</span><span class="keyword">const </span>char8_t*<span class="keyword">&gt;</span>( input_str.c_str() );</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;     }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr( std::is_same_v &lt;CharT, char16_t&gt; )</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;     {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keyword">static</span> std::wstring_convert &lt;std::codecvt_utf8_utf16 &lt;char16_t&gt;, char16_t&gt; converter_16_t;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      <span class="keywordflow">return</span> converter_16_t.from_bytes( input_str );</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;     } </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> constexpr( std::is_same_v &lt;CharT, char32_t&gt; )</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;     {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      <span class="keyword">static</span> std::wstring_convert &lt;std::codecvt_utf8_utf16 &lt;char32_t&gt;, char32_t&gt; converter_32_t;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;      <span class="keywordflow">return</span> converter_32_t.from_bytes( input_str );</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;     }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;     {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <span class="keywordflow">return</span> StringConverter&lt;CharT&gt;( <span class="stringliteral">&quot;&quot;</span> );</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;     }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;   }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="comment">// is_escape</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="namespaceagr.html#a9d9108a0675bd694e9a9eaf2fd577d96">  164</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="namespaceagr.html#a9d9108a0675bd694e9a9eaf2fd577d96">is_escape</a>( <span class="keyword">const</span> T&amp; str, <span class="keyword">const</span> <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7e">ANSI</a>&amp; flag )</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;   {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span> constexpr( std::is_convertible_v &lt;T, std::string_view&gt; &amp;&amp; ! std::is_same_v&lt;T, std::nullptr_t&gt; )</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;     {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      <span class="keywordflow">switch</span>( flag )</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;       {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">case</span>( <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea8b04d5e3775d298e78455efc5ca404d5">ANSI::first</a> ): </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;         {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;          <span class="keywordflow">return</span> ( std::string_view( str ).length() &lt; 7 ) &amp;&amp; ( str[0] == <span class="charliteral">&#39;\033&#39;</span> );</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;         }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">case</span>( <a class="code" href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea3d517f8924ac7fd03699a29d97dc52d9">ANSI::generic</a> ):</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;         {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;          <span class="keywordflow">return</span> ( std::string_view( str ).find( <span class="charliteral">&#39;\033&#39;</span> ) != std::string_view::npos );</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;         }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;       }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;     }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;   }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespaceagr_html"><div class="ttname"><a href="namespaceagr.html">agr</a></div><div class="ttdef"><b>Definition:</b> stream.cpp:22</div></div>
+<div class="ttc" id="anamespaceagr_html_a1d3019dd5d7deec3df2a2c4e01b89f47"><div class="ttname"><a href="namespaceagr.html#a1d3019dd5d7deec3df2a2c4e01b89f47">agr::StringConverter</a></div><div class="ttdeci">std::conditional_t&lt; std::is_same_v&lt; CharT, char &gt;, const std::basic_string&lt; CharT &gt; &amp;, std::basic_string&lt; CharT &gt; &gt; StringConverter(const std::string &amp;input_str)</div><div class="ttdoc">Function used to convert an std::string into other string types (std::wstring etc....</div><div class="ttdef"><b>Definition:</b> utils.hpp:118</div></div>
+<div class="ttc" id="anamespaceagr_html_a26849e3e5a1662f89d1267093f8eb158"><div class="ttname"><a href="namespaceagr.html#a26849e3e5a1662f89d1267093f8eb158">agr::multi</a></div><div class="ttdeci">std::string multi(const std::string &amp;element, unsigned int n_times)</div><div class="ttdoc">Function used to multiply a string for n times.</div><div class="ttdef"><b>Definition:</b> utils.cpp:36</div></div>
+<div class="ttc" id="anamespaceagr_html_a30f754b298e55c68819829df78d936cb"><div class="ttname"><a href="namespaceagr.html#a30f754b298e55c68819829df78d936cb">agr::isFloatingPoint</a></div><div class="ttdeci">bool isFloatingPoint(const T &amp;)</div><div class="ttdoc">Function to check if an expression (not a type) is a floating point or not. I know this function is a...</div><div class="ttdef"><b>Definition:</b> utils.hpp:80</div></div>
 <div class="ttc" id="anamespaceagr_html_a60bb5e1fbefa30c3e0f6e24a80d463b8"><div class="ttname"><a href="namespaceagr.html#a60bb5e1fbefa30c3e0f6e24a80d463b8">agr::except_error_func</a></div><div class="ttdeci">T_err except_error_func(const std::string &amp;beg=&quot;&quot;, std::string var=nullptr, const std::string &amp;end=&quot;&quot;)</div><div class="ttdoc">Function used to throw customized stdexception error. This function is extremely specific to my purpo...</div><div class="ttdef"><b>Definition:</b> utils.hpp:61</div></div>
 <div class="ttc" id="anamespaceagr_html_a79c1d16a030bfa822fcf06fcfd56db5a"><div class="ttname"><a href="namespaceagr.html#a79c1d16a030bfa822fcf06fcfd56db5a">agr::one</a></div><div class="ttdeci">T one(const T &amp;iterating_var)</div><div class="ttdoc">Function to find the incremented unit of a loop. Not easy to understand its purpose without context,...</div><div class="ttdef"><b>Definition:</b> utils.hpp:93</div></div>
-<div class="ttc" id="anamespaceagr_html_a9d9108a0675bd694e9a9eaf2fd577d96"><div class="ttname"><a href="namespaceagr.html#a9d9108a0675bd694e9a9eaf2fd577d96">agr::is_escape</a></div><div class="ttdeci">bool is_escape(const T &amp;str, const ANSI &amp;flag)</div><div class="ttdoc">This method is used to check if an input variable is an ANSI escape sequency or not.</div><div class="ttdef"><b>Definition:</b> utils.hpp:152</div></div>
-<div class="ttc" id="anamespaceagr_html_aec178c3f78cfa7e5fd1e438661ad7b7e"><div class="ttname"><a href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7e">agr::ANSI</a></div><div class="ttdeci">ANSI</div><div class="ttdef"><b>Definition:</b> utils.hpp:38</div></div>
+<div class="ttc" id="anamespaceagr_html_a9d9108a0675bd694e9a9eaf2fd577d96"><div class="ttname"><a href="namespaceagr.html#a9d9108a0675bd694e9a9eaf2fd577d96">agr::is_escape</a></div><div class="ttdeci">bool is_escape(const T &amp;str, const ANSI &amp;flag)</div><div class="ttdoc">This method is used to check if an input variable is an ANSI escape sequency or not.</div><div class="ttdef"><b>Definition:</b> utils.hpp:164</div></div>
+<div class="ttc" id="anamespaceagr_html_aec178c3f78cfa7e5fd1e438661ad7b7e"><div class="ttname"><a href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7e">agr::ANSI</a></div><div class="ttdeci">ANSI</div><div class="ttdef"><b>Definition:</b> utils.hpp:39</div></div>
 <div class="ttc" id="anamespaceagr_html_aec178c3f78cfa7e5fd1e438661ad7b7ea3d517f8924ac7fd03699a29d97dc52d9"><div class="ttname"><a href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea3d517f8924ac7fd03699a29d97dc52d9">agr::ANSI::generic</a></div><div class="ttdeci">@ generic</div></div>
 <div class="ttc" id="anamespaceagr_html_aec178c3f78cfa7e5fd1e438661ad7b7ea8b04d5e3775d298e78455efc5ca404d5"><div class="ttname"><a href="namespaceagr.html#aec178c3f78cfa7e5fd1e438661ad7b7ea8b04d5e3775d298e78455efc5ca404d5">agr::ANSI::first</a></div><div class="ttdeci">@ first</div></div>
 <div class="ttc" id="anamespaceagr_html_aeccaa1589b9a22ee3ad2bc2ac798dbcd"><div class="ttname"><a href="namespaceagr.html#aeccaa1589b9a22ee3ad2bc2ac798dbcd">agr::split_string</a></div><div class="ttdeci">std::vector&lt; std::string &gt; split_string(const std::string &amp;input, const std::string &amp;regex)</div><div class="ttdoc">Function used to split a string based on a certain reges.</div><div class="ttdef"><b>Definition:</b> utils.cpp:53</div></div>
