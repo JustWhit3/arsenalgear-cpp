@@ -53,8 +53,7 @@ if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
 endif()
 
 # Compile tests
-option( ARSENALGEAR_TESTS "Enable / disable tests." ON )
-if( ARSENALGEAR_TESTS )
+if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
     add_subdirectory( test )
 else()
     message( STATUS "Skipping tests." )

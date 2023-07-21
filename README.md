@@ -166,7 +166,7 @@ Tests are produced using `-Wall -Wextra -pedantic` flags. To check them you need
 Before running test codes you need to compile them:
 
 ```txt
-cmake -B build
+cmake -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build
 ```
 
