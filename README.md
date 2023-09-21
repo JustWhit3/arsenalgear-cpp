@@ -234,7 +234,6 @@ To launch all tests simultaneously:
 
 ## List of known projects which use this library
 
-- [osmanip](https://github.com/JustWhit3/osmanip)
 - [SAFD-algorithm](https://github.com/JustWhit3/SAFD-algorithm)
 
 ## Credits
