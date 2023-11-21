@@ -15,11 +15,6 @@ if( EXISTS "${LOC_PATH}" )
                          "remove CMakeCache.txt and CMakeFiles." )
 endif()
 
-# Set c++ standard options
-set( CMAKE_CXX_STANDARD 17 )
-set( CMAKE_CXX_STANDARD_REQUIRED ON )
-set( CMAKE_CXX_EXTENSIONS OFF )
-
 # Fetching dependencies
 add_subdirectory( deps )
 
@@ -33,6 +28,9 @@ add_library( arsenalgear STATIC
     src/utils.cpp
 )
 add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
+
+# Set c++ standard options
+target_compile_features(arsenalgear PUBLIC cxx_std_17)
 
 # Adding specific compiler flags
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
