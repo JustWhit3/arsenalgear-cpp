@@ -15,11 +15,13 @@ if( EXISTS "${LOC_PATH}" )
                          "remove CMakeCache.txt and CMakeFiles." )
 endif()
 
+include(GNUInstallDirs)
+
 # Include directories
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/include )
 
 # Create static library
-add_library( arsenalgear STATIC
+add_library( arsenalgear
     src/stream.cpp
     src/system.cpp
     src/utils.cpp
@@ -28,6 +30,9 @@ add_library( arsenalgear::arsenalgear ALIAS arsenalgear )
 
 # Set c++ standard options
 target_compile_features(arsenalgear PUBLIC cxx_std_17)
+
+# Export symbols for Visual Studio in case of shared lib
+set_target_properties(arsenalgear PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 # Adding specific compiler flags
 if( CMAKE_CXX_COMPILER_ID STREQUAL "MSVC" )
@@ -66,21 +71,23 @@ target_include_directories( arsenalgear INTERFACE
 
 install(
     DIRECTORY include/arsenalgear
-    DESTINATION include
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
 # Creating the package files
 install( 
     TARGETS arsenalgear
     EXPORT arsenalgearTargets
-    DESTINATION lib
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 install(
     EXPORT arsenalgearTargets
     FILE arsenalgearTargets.cmake
     NAMESPACE arsenalgear::
-    DESTINATION lib/cmake/arsenalgear
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/arsenalgear
 )
 
 # Configure package files
@@ -89,7 +96,7 @@ include( CMakePackageConfigHelpers )
 configure_package_config_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in
     "${CMAKE_CURRENT_BINARY_DIR}/arsenalgearConfig.cmake"
-    INSTALL_DESTINATION "lib/cmake/arsenalgear"
+    INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/arsenalgear"
     NO_SET_AND_CHECK_MACRO
     NO_CHECK_REQUIRED_COMPONENTS_MACRO
 )
@@ -103,7 +110,7 @@ write_basic_package_version_file(
 install( FILES
     ${CMAKE_CURRENT_BINARY_DIR}/arsenalgearConfig.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/arsenalgearConfigVersion.cmake
-    DESTINATION lib/cmake/arsenalgear
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/arsenalgear
 )
 
 export( EXPORT arsenalgearTargets
