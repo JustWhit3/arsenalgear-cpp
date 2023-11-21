@@ -15,9 +15,6 @@ if( EXISTS "${LOC_PATH}" )
                          "remove CMakeCache.txt and CMakeFiles." )
 endif()
 
-# Fetching dependencies
-add_subdirectory( deps )
-
 # Include directories
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/include )
 
@@ -51,7 +48,11 @@ if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
 endif()
 
 # Compile tests
-if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
+option( ARSENALGEAR_TESTS "Enable / disable tests." ON )
+if( ARSENALGEAR_TESTS )
+    # Fetching dependencies
+    add_subdirectory( deps )
+    
     add_subdirectory( test )
 else()
     message( STATUS "Skipping tests." )
