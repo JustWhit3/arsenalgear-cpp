@@ -254,7 +254,8 @@ To launch all tests simultaneously:
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/ohz10"><img src="https://avatars.githubusercontent.com/u/250468?v=4" width="100px;" alt=""/><br /><sub><b>oz_10</b></sub></a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ohz10"><img src="https://avatars.githubusercontent.com/u/250468?v=4" width="100px;" alt=""/><br /><sub><b>oz_10</b></sub></a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/SpaceIm"><img src="https://avatars.githubusercontent.com/u/30052553?v=4" width="100px;" alt=""/><br /><sub><b>SpaceIm</b></sub></a></td>
     </tr>
   </tbody>
 </table>
