@@ -24,9 +24,19 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "SpaceIm",
+      "name": "SpaceIm",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30052553?v=4",
+      "profile": "https://github.com/SpaceIm",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "commitConvention": "angular",
   "projectName": "arsenalgear-cpp",
-  "projectOwner": "JustWhit3"
+  "projectOwner": "JustWhit3",
+  "commitType": "docs"
 }
